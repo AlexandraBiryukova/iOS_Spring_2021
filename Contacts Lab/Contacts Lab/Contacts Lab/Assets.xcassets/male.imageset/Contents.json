@@ -1,0 +1,16 @@
+{
+  "images" : [
+    {
+      "filename" : "depositphotos_179308460-stock-illustration-unknown-person-silhouette-profile-picture.jpg",
+      "idiom" : "iphone"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  },
+  "properties" : {
+    "preserves-vector-representation" : true,
+    "template-rendering-intent" : "original"
+  }
+}
