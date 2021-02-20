@@ -31,8 +31,10 @@ struct ContactView: View {
             VStack(spacing: 8) {
                 Text(contact.name)
                     .font(.system(size: 24, weight: .medium))
+                    .multilineTextAlignment(.center)
                 Text(contact.phoneNumber)
                     .font(.system(size: 16))
+                    .multilineTextAlignment(.center)
             }
             Spacer()
         }

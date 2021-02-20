@@ -13,7 +13,7 @@ struct AddContactView: View {
     @State private var contact = Contact(name: "", phoneNumber: "", gender: .male)
     private let completion: (Contact) -> ()
     
-    init(completion: @escaping(Contact) -> ()) {
+    init(completion: @escaping (Contact) -> ()) {
         self.completion = completion
     }
     
@@ -31,7 +31,7 @@ struct AddContactView: View {
                 ForEach([Gender.male, Gender.female], id: \.self) {
                     Text($0.rawValue)
                 }
-            }.datePickerStyle(WheelDatePickerStyle())
+            }
             .frame(height: 80)
             .padding(.horizontal, 32)
             Spacer()

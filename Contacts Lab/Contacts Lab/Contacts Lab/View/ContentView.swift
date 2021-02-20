@@ -69,7 +69,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        //        ContentView()
-        ContactDetailsView(contact: .init(name: "adsf", phoneNumber: "adsf", gender: .female), completion: {contact in print(contact)})
+        ContentView()
     }
 }
