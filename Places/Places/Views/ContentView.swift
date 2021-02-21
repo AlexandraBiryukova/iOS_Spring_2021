@@ -67,6 +67,12 @@ struct ContentView: View {
                         addPlace()
                     }
                 }
+//                if selectedLocation != nil {
+//                    NavigationLink(destination: EditView(name: selectedPlace?.name ?? "",
+//                                                         message: selectedPlace?.message ?? "")) {
+//                        Text("Cancel")
+//                    }
+//                }
             }
             .navigationBarTitleDisplayMode(.inline)
             .navigationBarTitle(currentPlace?.name ?? "")
