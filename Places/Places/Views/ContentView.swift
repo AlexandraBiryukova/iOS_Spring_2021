@@ -67,12 +67,16 @@ struct ContentView: View {
                         addPlace()
                     }
                 }
-//                if selectedLocation != nil {
-//                    NavigationLink(destination: EditView(name: selectedPlace?.name ?? "",
-//                                                         message: selectedPlace?.message ?? "")) {
-//                        Text("Cancel")
-//                    }
-//                }
+                if selectedLocation != nil {
+                    NavigationLink(
+                        destination: EditView(place: selectedPlace, completion: { newPlace in
+                            selectedLocation = nil
+                            guard let newPlace = newPlace else { return }
+                            changePlace(newPlace: newPlace)
+                        }),
+                        isActive: .constant($selectedLocation.wrappedValue != nil),
+                        label: { Text("Cancel") }).hidden()
+                }
             }
             .navigationBarTitleDisplayMode(.inline)
             .navigationBarTitle(currentPlace?.name ?? "")
@@ -82,6 +86,11 @@ struct ContentView: View {
                 }
             }
         }
+    }
+    
+    private func changePlace(newPlace: Place) {
+        newPlace.objectWillChange.send()
+        try? self.viewContext.save()
     }
     
     private func addPlace() {
