@@ -11,8 +11,10 @@ import SwiftUI
 
 struct ListView: View {
     @Environment(\.managedObjectContext) private var viewContext
+    
     @Binding private var currentLocation: CLLocationCoordinate2D?
     @Binding private var showList: Bool
+    
     var places: FetchedResults<Place>
     
     init(places: FetchedResults<Place>,
@@ -21,6 +23,7 @@ struct ListView: View {
         self.places = places
         self._currentLocation = currentLocation ?? Binding.constant(nil)
         self._showList = showList
+        
         UITableView.appearance().backgroundColor = .clear
         UITableView.appearance().tableHeaderView = nil
         UITableViewCell.appearance().backgroundColor = .clear
@@ -30,8 +33,7 @@ struct ListView: View {
     var listView: some View {
         if places.isEmpty {
             VStack {
-                Text("No places")
-                    .padding(.top, 24)
+                Text("No places").padding(.top, 24)
                 Spacer()
             }
         } else {
@@ -57,19 +59,15 @@ struct ListView: View {
                         currentLocation = place.coordinate
                     }
                     .listRowBackground(Color.clear)
-                }.onDelete(perform: { indexSet in
-                    deletePlaces(offsets: indexSet)
-                })
+                }.onDelete(perform: { indexSet in deletePlaces(offsets: indexSet) })
             }
         }
     }
     
     var body: some View {
         ZStack {
-            VisualEffectView(effect: UIBlurEffect(style: .light))
-                .edgesIgnoringSafeArea(.all)
-            listView
-                .edgesIgnoringSafeArea(.horizontal)
+            VisualEffectView(effect: UIBlurEffect(style: .light)).edgesIgnoringSafeArea(.all)
+            listView.edgesIgnoringSafeArea(.horizontal)
         }
     }
     

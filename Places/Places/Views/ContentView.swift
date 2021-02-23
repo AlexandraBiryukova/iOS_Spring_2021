@@ -16,6 +16,7 @@ struct ContentView: View {
         predicate: NSPredicate(format: "name.length > 0", ""),
         animation: .default)
     private var places: FetchedResults<Place>
+    
     @State var mapType: String
     @State var newPlaceLocation: CLLocationCoordinate2D?
     @State var currentLocation: CLLocationCoordinate2D?
@@ -48,24 +49,19 @@ struct ContentView: View {
                         newPlaceLocation: $newPlaceLocation,
                         selectedLocation: $selectedLocation,
                         currentLocation: $currentLocation,
-                        places: places)
-                    .ignoresSafeArea()
+                        places: places).ignoresSafeArea()
                 SelectView(mapType: $mapType,
                            places: places,
-                           currentLocation: $currentLocation)
-                    .frame(height: 64)
+                           currentLocation: $currentLocation).frame(height: 64)
                 if showList {
                     ListView(places: places,
                              currentLocation: $currentLocation,
-                             showList: $showList)
-                        .environment(\.managedObjectContext, viewContext)
+                             showList: $showList).environment(\.managedObjectContext, viewContext)
                 }
                 if newPlaceLocation != nil {
                     AlertControlView(newLocation: $newPlaceLocation,
                                      name: $title,
-                                     description: $description) { title, description in
-                        addPlace()
-                    }
+                                     description: $description) { title, description in addPlace() }
                 }
                 if selectedLocation != nil {
                     NavigationLink(
@@ -81,9 +77,7 @@ struct ContentView: View {
             .navigationBarTitleDisplayMode(.inline)
             .navigationBarTitle(currentPlace?.name ?? "")
             .toolbar {
-                Button(action: { showList.toggle() }) {
-                    Image(systemName: showList ? "map" : "folder")
-                }
+                Button(action: { showList.toggle() }) { Image(systemName: showList ? "map" : "folder") }
             }
         }
     }
@@ -122,8 +116,7 @@ struct ContentView_Previews: PreviewProvider {
 
 extension Place {
     @objc dynamic var coordinate: CLLocationCoordinate2D {
-        return .init(latitude: .init(self.latitude),
-                     longitude: .init(self.longitude))
+        .init(latitude: .init(self.latitude), longitude: .init(self.longitude))
     }
     
     override public class func keyPathsForValuesAffectingValue(forKey key: String) -> Set<String>{

@@ -12,6 +12,7 @@ import MapKit
 class Coordinator: NSObject, MKMapViewDelegate, UIGestureRecognizerDelegate {
     var control: MapView
     var gRecognizer = UILongPressGestureRecognizer()
+    
     @Binding var newPlaceLocation: CLLocationCoordinate2D?
     @Binding var selectedLocation: CLLocationCoordinate2D?
     @Binding var currentLocation: CLLocationCoordinate2D?
@@ -59,7 +60,8 @@ class Coordinator: NSObject, MKMapViewDelegate, UIGestureRecognizerDelegate {
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
         let span = MKCoordinateSpan(latitudeDelta: 0.5, longitudeDelta: 0.5)
         mapView.setRegion(.init(center: view.annotation?.coordinate ?? mapView.centerCoordinate,
-                                span: span), animated: true)
+                                span: span),
+                          animated: true)
         currentLocation = view.annotation?.coordinate
     }
 }
@@ -87,6 +89,7 @@ struct MapView: UIViewRepresentable {
     func updateUIView(_ uiView: UIViewType, context: Context) {
         uiView.mapType = mapTypeDict[mapType] ?? .standard
         uiView.removeAnnotations(uiView.annotations)
+        
         uiView.addAnnotations(places.map {
             let annotation = MKPointAnnotation()
             annotation.coordinate = $0.coordinate
@@ -94,6 +97,7 @@ struct MapView: UIViewRepresentable {
             annotation.subtitle = $0.message
             return annotation
         })
+        
         guard let annotation = uiView.annotations.first(where: {
             $0.coordinate.latitude == currentLocation?.latitude &&
                 $0.coordinate.longitude == currentLocation?.longitude

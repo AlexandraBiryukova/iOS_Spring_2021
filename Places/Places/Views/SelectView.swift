@@ -25,8 +25,8 @@ struct SelectView: View {
             currentLocation = places[index].coordinate
         }
     }
-    var mapTypes = ["Normal", "Satellite", "Hybrid"]
     
+    var mapTypes = ["Normal", "Satellite", "Hybrid"]
     var places: FetchedResults<Place>
     
     init(mapType: Binding<String>,
@@ -42,24 +42,16 @@ struct SelectView: View {
             VisualEffectView(effect: UIBlurEffect(style: .light))
                 .edgesIgnoringSafeArea(.all)
             HStack {
-                Image("")
-                    .frame(width: 48, height: 48)
+                Image("").frame(width: 48, height: 48)
                     .contentShape(Rectangle())
-                    .onTapGesture(count: 2, perform: {
-                        index -= 1
-                    })
+                    .onTapGesture(count: 2, perform: { index -= 1 })
                 Picker(selection: $mapType, label: Text("Map Type"), content: {
-                    ForEach(mapTypes, id: \.self){
-                        Text($0)
-                    }
+                    ForEach(mapTypes, id: \.self) { Text($0) }
                 })
                 .pickerStyle(SegmentedPickerStyle())
-                Image("")
-                    .frame(width: 48, height: 48)
+                Image("").frame(width: 48, height: 48)
                     .contentShape(Rectangle())
-                    .onTapGesture(count: 2, perform: {
-                        index += 1
-                    })
+                    .onTapGesture(count: 2, perform: { index += 1 })
             }.padding(.all, 8)
         }
         .ignoresSafeArea(.all)

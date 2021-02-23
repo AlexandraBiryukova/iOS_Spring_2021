@@ -12,6 +12,7 @@ struct AlertControlView: UIViewControllerRepresentable {
     @Binding var newLocation: CLLocationCoordinate2D?
     @Binding var name: String?
     @Binding var description: String?
+    
     let completion: (String, String) -> Void
     
     func makeUIViewController(context: UIViewControllerRepresentableContext<AlertControlView>) -> UIViewController {
@@ -22,37 +23,26 @@ struct AlertControlView: UIViewControllerRepresentable {
         guard context.coordinator.alert == nil else { return }
         let alert = UIAlertController(title: "Add place", message: "Fill all the fields", preferredStyle: .alert)
         context.coordinator.alert = alert
-        alert.addTextField { textField in
-            textField.tag = 0
-            textField.placeholder = "Enter title"
-            textField.text = self.name
-            textField.delegate = context.coordinator
+        [("Enter title", name), ("Enter subtitle", description)].enumerated().forEach { index, content in
+            alert.addTextField { textField in
+                textField.tag = index
+                textField.placeholder = content.0
+                textField.text = content.1
+                textField.delegate = context.coordinator
+            }
         }
-        
-        alert.addTextField { textField in
-            textField.tag = 1
-            textField.placeholder = "Enter subtitle"
-            textField.text = self.description
-            textField.delegate = context.coordinator
-        }
-        
         alert.addAction(UIAlertAction(title: NSLocalizedString("Add", comment: ""), style: .default) { _ in
             if let titleField = alert.textFields?.first,
                let descriptionField = alert.textFields?.last {
                 self.name = titleField.text ?? ""
                 self.description = descriptionField.text ?? ""
             }
-            
-            alert.dismiss(animated: true) {
-                completion(name ?? "", description ?? "")
-            }
+            alert.dismiss(animated: true) { completion(name ?? "", description ?? "") }
         })
         
         if newLocation != nil {
             DispatchQueue.main.async {
-                uiViewController.present(alert, animated: true, completion: {
-                    context.coordinator.alert = nil
-                })
+                uiViewController.present(alert, animated: true, completion: { context.coordinator.alert = nil })
             }
         }
     }
@@ -63,7 +53,6 @@ struct AlertControlView: UIViewControllerRepresentable {
 }
 
 class AlertCoordinator: NSObject, UITextFieldDelegate {
-    
     var alert: UIAlertController?
     var control: AlertControlView
     
