@@ -9,33 +9,36 @@ import SwiftUI
 import MapKit
 import CoreData
 
+final class ContentViewModel: ObservableObject {
+    @Published var mapType: String
+    @Published var newPlaceLocation: CLLocationCoordinate2D?
+    @Published var currentLocation: CLLocationCoordinate2D?
+    
+    @Published var showList: Bool = false
+    @Published var index: Int?
+    @Published var selectedIndex: Int?
+    
+    init(mapType: String) {
+        self.mapType = mapType
+    }
+}
+
 struct ContentView: View {
     @Environment(\.managedObjectContext) private var viewContext
     @FetchRequest(
         sortDescriptors: [NSSortDescriptor(keyPath: \Place.createDate, ascending: true)],
         predicate: NSPredicate(format: "name.length > 0", ""),
         animation: .default)
-    private var places: FetchedResults<Place>
+    var places: FetchedResults<Place>
+    @ObservedObject var viewModel: ContentViewModel
     
-    @State var mapType: String
-    @State var newPlaceLocation: CLLocationCoordinate2D?
-    @State var currentLocation: CLLocationCoordinate2D?
-    @State var selectedLocation: CLLocationCoordinate2D?
-    
-    @State var title: String?
-    @State var description: String?
-    @State var showList: Bool = false
-    
-    private var selectedPlace: Place? {
-        places.first(where: {$0.latitude == selectedLocation?.latitude && $0.longitude == selectedLocation?.longitude })
-    }
-    
-    private var currentPlace: Place? {
-        places.first(where: {$0.latitude == currentLocation?.latitude && $0.longitude == currentLocation?.longitude })
+    var currentPlace: Place? {
+        guard let index = viewModel.index else { return nil }
+        return places[index]
     }
     
     init(mapType: String) {
-        _mapType = State(initialValue: mapType)
+        viewModel = .init(mapType: mapType)
         
         UISegmentedControl.appearance().selectedSegmentTintColor = .black
         UISegmentedControl.appearance().backgroundColor = .white
@@ -45,66 +48,62 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             ZStack(alignment: .bottom) {
-                MapView(mapType: $mapType,
-                        newPlaceLocation: $newPlaceLocation,
-                        selectedLocation: $selectedLocation,
-                        currentLocation: $currentLocation,
+                MapView(mapType: $viewModel.mapType,
+                        newPlaceLocation: $viewModel.newPlaceLocation,
+                        index: $viewModel.index,
+                        selectedIndex: $viewModel.selectedIndex,
                         places: places).ignoresSafeArea()
-                SelectView(mapType: $mapType,
-                           places: places,
-                           currentLocation: $currentLocation).frame(height: 64)
-                if showList {
+                SelectView(mapType: $viewModel.mapType,
+                           count: places.count,
+                           index: $viewModel.index).frame(height: 64)
+                if viewModel.showList {
                     ListView(places: places,
-                             currentLocation: $currentLocation,
-                             showList: $showList).environment(\.managedObjectContext, viewContext)
+                             index: $viewModel.index,
+                             showList: $viewModel.showList)
+                        .environment(\.managedObjectContext, viewContext)
                 }
-                if newPlaceLocation != nil {
-                    AlertControlView(newLocation: $newPlaceLocation,
-                                     name: $title,
-                                     description: $description) { title, description in addPlace() }
+                if viewModel.newPlaceLocation != nil {
+                    AlertControlView(newLocationCoordinate: $viewModel.newPlaceLocation) { title, description in addPlace(title: title, description: description) }
                 }
-                if selectedLocation != nil {
+                if let selectedIndex = viewModel.selectedIndex {
                     NavigationLink(
-                        destination: EditView(place: selectedPlace, completion: { newPlace in
-                            selectedLocation = nil
-                            guard let newPlace = newPlace else { return }
+                        destination: EditView(place: places[selectedIndex], completion: { newPlace in
                             changePlace(newPlace: newPlace)
                         }),
-                        isActive: .constant($selectedLocation.wrappedValue != nil),
+                        isActive: .constant(viewModel.selectedIndex != nil),
                         label: { Text("Cancel") }).hidden()
                 }
             }
             .navigationBarTitleDisplayMode(.inline)
             .navigationBarTitle(currentPlace?.name ?? "")
             .toolbar {
-                Button(action: { showList.toggle() }) { Image(systemName: showList ? "map" : "folder") }
+                Button(action: { viewModel.showList.toggle() }) { Image(systemName: viewModel.showList ? "map" : "folder") }
             }
         }
     }
     
-    private func changePlace(newPlace: Place) {
+    func changePlace(newPlace: Place?) {
+        viewModel.index = viewModel.selectedIndex
+        viewModel.selectedIndex = nil
+        guard let newPlace = newPlace else { return }
         newPlace.objectWillChange.send()
         try? self.viewContext.save()
     }
     
-    private func addPlace() {
-        guard let coordinate = $newPlaceLocation.wrappedValue,
-              let titleText = $title.wrappedValue,
-              let descriptionText = $description.wrappedValue else { return }
+    func addPlace(title: String, description: String) {
+        guard let coordinate = viewModel.newPlaceLocation else { return }
         let newPlace = Place(context: viewContext)
         newPlace.id = UUID().uuidString
         newPlace.latitude = coordinate.latitude
         newPlace.longitude = coordinate.longitude
-        newPlace.name = titleText
+        newPlace.name = title
         newPlace.createDate = Date()
-        newPlace.message = descriptionText
+        newPlace.message = description
+        viewModel.newPlaceLocation = nil
         withAnimation {
             try? viewContext.save()
         }
-        currentLocation = newPlaceLocation
-        newPlaceLocation = nil
-        title = nil
-        description = nil
+        viewModel.index = places.firstIndex(of: newPlace) ?? 0
     }
 }
 

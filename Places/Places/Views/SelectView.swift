@@ -11,30 +11,17 @@ import SwiftUI
 
 struct SelectView: View {
     @Binding var mapType: String
-    @Binding var currentLocation: CLLocationCoordinate2D?
-    @State private var index = 0 {
-        didSet {
-            guard index >= 0 else {
-                index = places.count - 1
-                return
-            }
-            guard index < places.count else {
-                index = 0
-                return
-            }
-            currentLocation = places[index].coordinate
-        }
-    }
+    @Binding var index: Int?
     
-    var mapTypes = ["Normal", "Satellite", "Hybrid"]
-    var places: FetchedResults<Place>
+    private let count: Int
+    private var mapTypes = ["Normal", "Satellite", "Hybrid"]
     
     init(mapType: Binding<String>,
-         places: FetchedResults<Place>,
-         currentLocation: Binding<CLLocationCoordinate2D?>?) {
+         count: Int,
+         index: Binding<Int?>?) {
         self._mapType = mapType
-        self.places = places
-        self._currentLocation = currentLocation ?? Binding.constant(nil)
+        self.count = count
+        self._index = index ?? Binding.constant(nil)
     }
     
     var body: some View {
@@ -44,14 +31,36 @@ struct SelectView: View {
             HStack {
                 Image("").frame(width: 48, height: 48)
                     .contentShape(Rectangle())
-                    .onTapGesture(count: 2, perform: { index -= 1 })
+                    .onTapGesture(count: 2, perform: {
+                        if count > 0 && index == nil {
+                            index = 0
+                        }
+                        guard let index = index else { return }
+                        guard index >= 1 else {
+                            self.index = count - 1
+                            return
+                        }
+                        self.index = index - 1
+                        
+                    })
                 Picker(selection: $mapType, label: Text("Map Type"), content: {
                     ForEach(mapTypes, id: \.self) { Text($0) }
                 })
                 .pickerStyle(SegmentedPickerStyle())
                 Image("").frame(width: 48, height: 48)
                     .contentShape(Rectangle())
-                    .onTapGesture(count: 2, perform: { index += 1 })
+                    .onTapGesture(count: 2, perform: {
+                        if count > 0 && index == nil {
+                            index = 0
+                        }
+                        guard let index = index else { return }
+                        guard index + 1 < count else {
+                            self.index = 0
+                            return
+                        }
+                        self.index = index + 1
+                        
+                    })
             }.padding(.all, 8)
         }
         .ignoresSafeArea(.all)

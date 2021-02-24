@@ -10,38 +10,42 @@ import SwiftUI
 import MapKit
 
 class Coordinator: NSObject, MKMapViewDelegate, UIGestureRecognizerDelegate {
+    var places: FetchedResults<Place>
     var control: MapView
     var gRecognizer = UILongPressGestureRecognizer()
     
     @Binding var newPlaceLocation: CLLocationCoordinate2D?
-    @Binding var selectedLocation: CLLocationCoordinate2D?
-    @Binding var currentLocation: CLLocationCoordinate2D?
+    @Binding var selectedIndex: Int?
+    @Binding var index: Int?
     
     init(_ control: MapView,
+         places: FetchedResults<Place>,
          newPlaceLocation: Binding<CLLocationCoordinate2D?>?,
-         selectedLocation: Binding<CLLocationCoordinate2D?>?,
-         currentLocation: Binding<CLLocationCoordinate2D?>?){
+         selectedIndex: Binding<Int?>,
+         index: Binding<Int?>){
         self.control = control
+        self.places = places
         self._newPlaceLocation = newPlaceLocation ?? Binding.constant(nil)
-        self._selectedLocation = selectedLocation ?? Binding.constant(nil)
-        self._currentLocation = currentLocation ?? Binding.constant(nil)
+        self._selectedIndex = selectedIndex
+        self._index = index
         super.init()
         self.gRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(tapHandler))
         self.gRecognizer.delegate = self
         self.control.mapView.addGestureRecognizer(gRecognizer)
-        
     }
     
     @objc
     func tapHandler(_ gesture: UILongPressGestureRecognizer) {
         let location = gRecognizer.location(in: self.control.mapView)
         let coordinate = self.control.mapView.convert(location, toCoordinateFrom: self.control.mapView)
-        currentLocation = nil
+        index = nil
         newPlaceLocation = coordinate
     }
     
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
-        selectedLocation = view.annotation?.coordinate
+        selectedIndex = places.firstIndex(where: { ($0.latitude == view.annotation?.coordinate.latitude) &&
+            ($0.longitude == view.annotation?.coordinate.longitude)
+        })
     }
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
@@ -58,19 +62,16 @@ class Coordinator: NSObject, MKMapViewDelegate, UIGestureRecognizerDelegate {
     }
     
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
-        let span = MKCoordinateSpan(latitudeDelta: 0.5, longitudeDelta: 0.5)
-        mapView.setRegion(.init(center: view.annotation?.coordinate ?? mapView.centerCoordinate,
-                                span: span),
-                          animated: true)
-        currentLocation = view.annotation?.coordinate
+        let span = MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)
+        mapView.setRegion(.init(center: view.annotation?.coordinate ?? mapView.centerCoordinate, span: span), animated: true)
     }
 }
 
 struct MapView: UIViewRepresentable {
     @Binding var mapType: String
     @Binding var newPlaceLocation: CLLocationCoordinate2D?
-    @Binding var selectedLocation: CLLocationCoordinate2D?
-    @Binding var currentLocation: CLLocationCoordinate2D?
+    @Binding var index: Int?
+    @Binding var selectedIndex: Int?
     
     let mapView = MKMapView()
     
@@ -89,7 +90,7 @@ struct MapView: UIViewRepresentable {
     func updateUIView(_ uiView: UIViewType, context: Context) {
         uiView.mapType = mapTypeDict[mapType] ?? .standard
         uiView.removeAnnotations(uiView.annotations)
-        
+        context.coordinator.places = places
         uiView.addAnnotations(places.map {
             let annotation = MKPointAnnotation()
             annotation.coordinate = $0.coordinate
@@ -97,20 +98,23 @@ struct MapView: UIViewRepresentable {
             annotation.subtitle = $0.message
             return annotation
         })
-        
-        guard let annotation = uiView.annotations.first(where: {
-            $0.coordinate.latitude == currentLocation?.latitude &&
-                $0.coordinate.longitude == currentLocation?.longitude
-        }) else { return }
-        uiView.showAnnotations(uiView.annotations, animated: true)
+        guard let index = index,
+              let annotation = uiView.annotations.first(where: {
+                $0.coordinate.latitude == places[index].latitude &&
+                    $0.coordinate.longitude == places[index].longitude
+              }) else { return }
+        if !uiView.annotations(in: uiView.visibleMapRect).contains(where: { $0.hashValue == annotation.hash }) {
+            uiView.showAnnotations(uiView.annotations, animated: true)
+        }
         uiView.selectAnnotation(annotation, animated: true)
     }
     
     func makeCoordinator() -> Coordinator {
         return Coordinator(self,
+                           places: places,
                            newPlaceLocation: $newPlaceLocation,
-                           selectedLocation: $selectedLocation,
-                           currentLocation: $currentLocation)
+                           selectedIndex: $selectedIndex,
+                           index: $index)
     }
 }
 

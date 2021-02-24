@@ -9,9 +9,7 @@ import MapKit
 import SwiftUI
 
 struct AlertControlView: UIViewControllerRepresentable {
-    @Binding var newLocation: CLLocationCoordinate2D?
-    @Binding var name: String?
-    @Binding var description: String?
+    @Binding var newLocationCoordinate: CLLocationCoordinate2D?
     
     let completion: (String, String) -> Void
     
@@ -23,26 +21,20 @@ struct AlertControlView: UIViewControllerRepresentable {
         guard context.coordinator.alert == nil else { return }
         let alert = UIAlertController(title: "Add place", message: "Fill all the fields", preferredStyle: .alert)
         context.coordinator.alert = alert
-        [("Enter title", name), ("Enter subtitle", description)].enumerated().forEach { index, content in
+        ["Enter title", "Enter subtitle"].enumerated().forEach { index, content in
             alert.addTextField { textField in
                 textField.tag = index
-                textField.placeholder = content.0
-                textField.text = content.1
-                textField.delegate = context.coordinator
+                textField.placeholder = content
             }
         }
         alert.addAction(UIAlertAction(title: NSLocalizedString("Add", comment: ""), style: .default) { _ in
-            if let titleField = alert.textFields?.first,
-               let descriptionField = alert.textFields?.last {
-                self.name = titleField.text ?? ""
-                self.description = descriptionField.text ?? ""
-            }
-            alert.dismiss(animated: true) { completion(name ?? "", description ?? "") }
+            context.coordinator.alert = nil
+            completion(alert.textFields?.first?.text ?? "",  alert.textFields?.last?.text ??  "")
         })
         
-        if newLocation != nil {
+        if $newLocationCoordinate.wrappedValue != nil {
             DispatchQueue.main.async {
-                uiViewController.present(alert, animated: true, completion: { context.coordinator.alert = nil })
+                uiViewController.present(alert, animated: true)
             }
         }
     }
@@ -52,22 +44,11 @@ struct AlertControlView: UIViewControllerRepresentable {
     }
 }
 
-class AlertCoordinator: NSObject, UITextFieldDelegate {
+class AlertCoordinator: NSObject {
     var alert: UIAlertController?
     var control: AlertControlView
     
     init(_ control: AlertControlView) {
         self.control = control
-    }
-    
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        let text = ((textField.text ?? "") as NSString).replacingCharacters(in: range, with: string)
-        switch textField.tag {
-        case 0:
-            self.control.name = text
-        default:
-            self.control.description = text
-        }
-        return true
     }
 }
