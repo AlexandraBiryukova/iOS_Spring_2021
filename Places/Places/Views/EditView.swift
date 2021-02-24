@@ -18,9 +18,9 @@ struct EditView: View {
     
     init(place: Place?, completion: @escaping (Place?) -> Void) {
         self.place = place
+        self.completion = completion
         _name = State(initialValue: place?.name ?? "")
         _message = State(initialValue: place?.message ?? "")
-        self.completion = completion
     }
     
     var body: some View {
@@ -41,18 +41,17 @@ struct EditView: View {
         .navigationBarTitle("Edit")
         .navigationBarBackButtonHidden(true)
         .navigationBarItems(leading:
-                                Button(action: { self.presentationMode.wrappedValue.dismiss()
+                                Button(action: {
+                                    self.presentationMode.wrappedValue.dismiss()
                                     completion(nil)
-                                }) {
-                                    Text("Cancel")
-                                }, trailing:
-                                    Button(action: { self.presentationMode.wrappedValue.dismiss()
-                                        guard let place = place else { return }
-                                        place.name = name
-                                        place.message = message
-                                        completion(place)
-                                    }) {
-                                        Text("Done")
-                                    })
+                                }) { Text("Cancel")},
+                            trailing:
+                                Button(action: {
+                                    self.presentationMode.wrappedValue.dismiss()
+                                    guard let place = place else { return }
+                                    place.name = name
+                                    place.message = message
+                                    completion(place)
+                                }) { Text("Done") })
     }
 }

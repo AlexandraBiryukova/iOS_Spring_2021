@@ -11,16 +11,19 @@ import SwiftUI
 
 struct ListView: View {
     @Environment(\.managedObjectContext) private var viewContext
-    @Binding private var currentLocation: CLLocationCoordinate2D?
+    
+    @Binding private var index: Int?
     @Binding private var showList: Bool
+    
     var places: FetchedResults<Place>
     
     init(places: FetchedResults<Place>,
-         currentLocation: Binding<CLLocationCoordinate2D?>?,
+         index: Binding<Int?>,
          showList: Binding<Bool>) {
         self.places = places
-        self._currentLocation = currentLocation ?? Binding.constant(nil)
+        self._index = index 
         self._showList = showList
+        
         UITableView.appearance().backgroundColor = .clear
         UITableView.appearance().tableHeaderView = nil
         UITableViewCell.appearance().backgroundColor = .clear
@@ -30,8 +33,7 @@ struct ListView: View {
     var listView: some View {
         if places.isEmpty {
             VStack {
-                Text("No places")
-                    .padding(.top, 24)
+                Text("No places").padding(.top, 24)
                 Spacer()
             }
         } else {
@@ -52,28 +54,27 @@ struct ListView: View {
                         }
                     }
                     .contentShape(Rectangle())
-                    .onTapGesture {
+                    .onTapGesture(count: 1) {
                         showList = false
-                        currentLocation = place.coordinate
+                        index = places.firstIndex(of: place)
                     }
                     .listRowBackground(Color.clear)
-                }.onDelete(perform: { indexSet in
-                    deletePlaces(offsets: indexSet)
-                })
+                }.onDelete(perform: { indexSet in deletePlaces(offsets: indexSet) })
             }
         }
     }
     
     var body: some View {
         ZStack {
-            VisualEffectView(effect: UIBlurEffect(style: .light))
-                .edgesIgnoringSafeArea(.all)
-            listView
-                .edgesIgnoringSafeArea(.horizontal)
+            VisualEffectView(effect: UIBlurEffect(style: .light)).edgesIgnoringSafeArea(.all)
+            listView.edgesIgnoringSafeArea(.horizontal)
         }
     }
     
     private func deletePlaces(offsets: IndexSet) {
+        if offsets.first == index {
+            index = nil
+        }
         withAnimation {
             offsets.map { places[$0] }.forEach(viewContext.delete)
             try? viewContext.save()
