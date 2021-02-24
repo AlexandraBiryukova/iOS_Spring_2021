@@ -33,7 +33,7 @@ struct ContentView: View {
     @ObservedObject var viewModel: ContentViewModel
     
     var currentPlace: Place? {
-        guard let index = viewModel.index else { return nil }
+        guard let index = viewModel.index, index < places.count else { return nil }
         return places[index]
     }
     
@@ -62,9 +62,9 @@ struct ContentView: View {
                              showList: $viewModel.showList)
                         .environment(\.managedObjectContext, viewContext)
                 }
-                if viewModel.newPlaceLocation != nil {
-                    AlertControlView(newLocationCoordinate: $viewModel.newPlaceLocation) { title, description in addPlace(title: title, description: description) }
-                }
+//                if viewModel.newPlaceLocation != nil {
+//                    AlertControlView(newLocationCoordinate: $viewModel.newPlaceLocation) { title, description in addPlace(title: title, description: description) }
+//                }
                 if let selectedIndex = viewModel.selectedIndex {
                     NavigationLink(
                         destination: EditView(place: places[selectedIndex], completion: { newPlace in
@@ -72,6 +72,12 @@ struct ContentView: View {
                         }),
                         isActive: .constant(viewModel.selectedIndex != nil),
                         label: { Text("Cancel") }).hidden()
+                }
+                if viewModel.newPlaceLocation != nil {
+                    AlertUIView {
+                        title, descrption in
+                        addPlace(title: title, description: descrption)
+                    }.edgesIgnoringSafeArea(.all)
                 }
             }
             .navigationBarTitleDisplayMode(.inline)

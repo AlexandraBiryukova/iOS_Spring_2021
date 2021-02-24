@@ -99,6 +99,7 @@ struct MapView: UIViewRepresentable {
             return annotation
         })
         guard let index = index,
+              index < places.count,
               let annotation = uiView.annotations.first(where: {
                 $0.coordinate.latitude == places[index].latitude &&
                     $0.coordinate.longitude == places[index].longitude
