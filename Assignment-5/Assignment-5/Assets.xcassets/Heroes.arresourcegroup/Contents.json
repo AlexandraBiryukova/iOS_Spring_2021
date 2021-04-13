@@ -1,0 +1,29 @@
+{
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  },
+  "resources" : [
+    {
+      "filename" : "black panther.arreferenceimage"
+    },
+    {
+      "filename" : "captain America.arreferenceimage"
+    },
+    {
+      "filename" : "doctor strange.arreferenceimage"
+    },
+    {
+      "filename" : "iron man.arreferenceimage"
+    },
+    {
+      "filename" : "spider man.arreferenceimage"
+    },
+    {
+      "filename" : "thor.arreferenceimage"
+    },
+    {
+      "filename" : "vision.arreferenceimage"
+    }
+  ]
+}
