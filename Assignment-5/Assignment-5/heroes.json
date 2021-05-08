@@ -1,0 +1,58 @@
+{
+    "iron man": {
+        "name": "Anthony Edward Stark",
+        "alias": "Iron Man",
+        "dates": "1970 - 2023",
+        "bio": "Anthony Edward Stark is a fictional character portrayed by Robert Downey Jr. in the Marvel Cinematic Universe (MCU) film franchise—based on the Marvel Comics character of the same name—commonly known by his alter ego, Iron Man. In the films, Stark is an industrialist, genius inventor, hero and former playboy who is CEO of Stark Industries.",
+        "country": "USA",
+        "source": "https://en.wikipedia.org/wiki/Tony_Stark_(Marvel_Cinematic_Universe)"
+    },
+    "black panther": {
+        "name": "T'Challa",
+        "alias": "Black Panther",
+        "dates": "n.d. - nowadays",
+        "bio": "Black Panther is a fictional superhero appearing in American comic books published by Marvel Comics. The character was created by writer-editor Stan Lee and writer-artist Jack Kirby, first appearing in Fantastic Four #52 (cover-dated July 1966) in the Silver Age of Comic Books. Black Panther's real name is T'Challa, and he is depicted as the king and protector of the fictional African nation of Wakanda.",
+        "country": "Wakanda",
+        "source": "https://en.wikipedia.org/wiki/Black_Panther_(character)"
+    },
+    "doctor strange": {
+        "name": "Doctor Stephen Strange",
+        "alias": "Doctor Strange",
+        "dates": "n.d. - nowadays",
+        "bio": "Doctor Stephen Strange is a fictional character appearing in American comic books published by Marvel Comics. Created by Steve Ditko,[5] the character first appeared in Strange Tales #110 (cover-dated July 1963). Doctor Strange serves as the Sorcerer Supreme, the primary protector of Earth against magical and mystical threats. Inspired by stories of black magic and Chandu the Magician, Strange was created during the Silver Age of Comic Books to bring a different kind of character and themes of mysticism to Marvel Comics",
+        "country": "USA",
+        "source": "https://en.wikipedia.org/wiki/Doctor_Strange"
+    },
+    "captain America": {
+        "name": "Steven Rogers",
+        "alias": "Captain America",
+        "dates": "1920 - nowadays",
+        "bio": "Captain America is a superhero appearing in American comic books published by Marvel Comics. Created by cartoonists Joe Simon and Jack Kirby, the character first appeared in Captain America Comics #1 (cover dated March 1941) from Timely Comics, a predecessor of Marvel Comics. Captain America was designed as a patriotic supersoldier who often fought the Axis powers of World War II and was Timely Comics' most popular character during the wartime period. The popularity of superheroes waned following the war, and the Captain America comic book was discontinued in 1950, with a short-lived revival in 1953. Since Marvel Comics revived the character in 1964, Captain America has remained in publication.",
+        "country": "USA",
+        "source": "https://en.wikipedia.org/wiki/Captain_America"
+    },
+    "spider man": {
+        "name": "Peter Benjamin Parker",
+        "alias": "Spider Man",
+        "dates": "n.d - nowadays",
+        "bio": "Spider-Man is a fictional superhero created by writer-editor Stan Lee and writer-artist Steve Ditko. He first appeared in the anthology comic book Amazing Fantasy #15 (Aug. 1962) in the Silver Age of Comic Books. He appears in American comic books published by Marvel Comics, as well as in a number of movies, television shows, and video game adaptations set in the Marvel Universe. In the stories, Spider-Man is the alias of Peter Parker, an orphan raised by his Aunt May and Uncle Ben in New York City after his parents Richard and Mary Parker died in a plane crash. Lee and Ditko had the character deal with the struggles of adolescence and financial issues, and accompanied him with many supporting characters, such as J. Jonah Jameson, Harry Osborn, Max Modell, romantic interests Gwen Stacy and Mary Jane Watson, and foes such as Doctor Octopus, the Green Goblin and Venom.",
+        "country": "USA",
+        "source": "https://en.wikipedia.org/wiki/Spider-Man"
+    },
+    "thor": {
+        "name": "Thor Odinson",
+        "alias": "Thor",
+        "dates": "n.d - nowadays",
+        "bio": "Thor Odinson is a fictional character portrayed by Chris Hemsworth in the Marvel Cinematic Universe (MCU) film franchise, based on the Marvel Comics character of the same name. In the films, Thor is one of the most powerful of the Asgardians, an ancient alien civilization with long ties to Earth, who humans consider to be gods. Thor is a founding and central member of the Avengers and joins the Guardians of the Galaxy as well. As of 2021, the character is a central figure of the Marvel Cinematic Universe, having appeared in eight films of the series.",
+        "country": "Asgard",
+        "source": "https://en.wikipedia.org/wiki/Thor_(Marvel_Cinematic_Universe)"
+    },
+    "vision": {
+        "name": "Vision",
+        "alias": "Vision",
+        "dates": "n.d - 2018",
+        "bio": "The Vision is a fictional superhero appearing in American comic books published by Marvel Comics. Created by Roy Thomas and artist John Buscema,[1][2] the character first appeared in Avengers Volume 1 #57 (published in August 1968, with a cover date of October 1968), and is loosely based on the Timely Comics character of the same name who was an alien from another dimension. The Vision is an android (sometimes called a `synthezoid`) built by the villainous robot Ultron created by Hank Pym. Originally intended to act as Ultron's `son` and destroy the Avengers, Vision instead turned on his creator and joined the Avengers to fight for the forces of good. Since then, he has been depicted as a frequent member of the team, and for a time was married to his teammate, the Scarlet Witch. He also served as a member of the Defenders.",
+        "country": "Android",
+        "source": "https://en.wikipedia.org/wiki/Vision_(Marvel_Comics)"
+    }
+}
