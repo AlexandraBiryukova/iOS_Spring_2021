@@ -1,0 +1,24 @@
+/* 
+  Localizable.strings
+  Wall•et
+
+  Created by Alexandra Biryukova on 5/8/21.
+  
+*/
+
+// MARK: - AppLanguage
+"AppLanguage.current" = "Русский";
+"AppLanguage.ru.native" = "Русский";
+"AppLanguage.en.native" = "English";
+"AppLanguage.kk.native" = "Қазақ";
+"AppLanguage.ru.inKazakhLanguage" = "Орыс";
+"AppLanguage.ru.inEnglishLanguage" = "Russian";
+"AppLanguage.en.inKazakhLanguage" = "Ағылшын";
+"AppLanguage.en.inRussianLanguage" = "Английский";
+"AppLanguage.kk.inRussianLanguage" = "Казахский";
+"AppLanguage.kk.inEnglishLanguage" = "Kazakh";
+
+// MARK: - TabView
+"Tab.profile" = "Профиль";
+"Tab.places" = "Места транзакций";
+"Tab.home" = "Главная";

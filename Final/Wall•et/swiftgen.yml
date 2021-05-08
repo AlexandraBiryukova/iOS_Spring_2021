@@ -1,0 +1,14 @@
+xcassets:
+  inputs:
+    - Wall•et/Supporting files/Assets.xcassets
+  outputs:
+    templateName: swift5
+    output: Wall•et/Supporting files/Generated/Assets.generated.swift
+    params:
+      enumName: Assets
+strings:
+  inputs:
+    - Wall•et/Supporting files/ru.lproj/Localizable.strings
+  outputs:
+    - templatePath: Templates/Localization.stencil
+      output: Wall•et/Supporting files/Generated/L10n.generated.swift
