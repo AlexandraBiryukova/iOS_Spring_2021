@@ -20,6 +20,7 @@
 		A806A6AC26469A1400951373 /* Banner.swift in Sources */ = {isa = PBXBuildFile; fileRef = A806A6AB26469A1400951373 /* Banner.swift */; };
 		A806A6B026469A3400951373 /* BannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A806A6AF26469A3400951373 /* BannerView.swift */; };
 		A806A6BE2646A1D300951373 /* SecondaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A806A6BD2646A1D300951373 /* SecondaryButton.swift */; };
+		A835BB4F2646EBFB00EB83BE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A835BB4E2646EBFB00EB83BE /* LaunchScreen.storyboard */; };
 		A8CC21E82646A96A00CA38A4 /* HomeTransactionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8CC21E72646A96A00CA38A4 /* HomeTransactionsView.swift */; };
 		A8CC21EE2646AB7900CA38A4 /* HomeTransactionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8CC21EC2646AB7900CA38A4 /* HomeTransactionCell.xib */; };
 		A8CC21EF2646AB7900CA38A4 /* HomeTransactionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8CC21ED2646AB7900CA38A4 /* HomeTransactionCell.swift */; };
@@ -61,6 +62,7 @@
 		A806A6AB26469A1400951373 /* Banner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Banner.swift; sourceTree = "<group>"; };
 		A806A6AF26469A3400951373 /* BannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerView.swift; sourceTree = "<group>"; };
 		A806A6BD2646A1D300951373 /* SecondaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryButton.swift; sourceTree = "<group>"; };
+		A835BB4E2646EBFB00EB83BE /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A8CC21E72646A96A00CA38A4 /* HomeTransactionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTransactionsView.swift; sourceTree = "<group>"; };
 		A8CC21EC2646AB7900CA38A4 /* HomeTransactionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeTransactionCell.xib; sourceTree = "<group>"; };
 		A8CC21ED2646AB7900CA38A4 /* HomeTransactionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTransactionCell.swift; sourceTree = "<group>"; };
@@ -139,6 +141,7 @@
 		A806A68726468A3900951373 /* Supporting files */ = {
 			isa = PBXGroup;
 			children = (
+				A8CC22342646E7A100CA38A4 /* LaunchScreens */,
 				A806A68C26468A9700951373 /* Generated */,
 				A806A67A2646864200951373 /* Assets.xcassets */,
 				A806A69126468AF100951373 /* Localizable.strings */,
@@ -345,6 +348,14 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		A8CC22342646E7A100CA38A4 /* LaunchScreens */ = {
+			isa = PBXGroup;
+			children = (
+				A835BB4E2646EBFB00EB83BE /* LaunchScreen.storyboard */,
+			);
+			path = LaunchScreens;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -407,6 +418,7 @@
 				A806A67E2646864200951373 /* Preview Assets.xcassets in Resources */,
 				A806A68F26468AF100951373 /* Localizable.strings in Resources */,
 				A806A67B2646864200951373 /* Assets.xcassets in Resources */,
+				A835BB4F2646EBFB00EB83BE /* LaunchScreen.storyboard in Resources */,
 				A8CC21EE2646AB7900CA38A4 /* HomeTransactionCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
