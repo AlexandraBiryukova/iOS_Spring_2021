@@ -9,6 +9,7 @@ import SwiftUI
 
 struct HomeView: View {
     @ObservedObject var homeViewModel = HomeViewModel()
+    @State var transaction: Transaction? = nil
     
     var body: some View {
         NavigationView {
@@ -27,12 +28,13 @@ struct HomeView: View {
                         .font(.system(size: 14))
                         .padding(.horizontal)
                         .foregroundColor(Color(Assets.gray2.color))
-                    SecondaryButton(title: "Добавить транзакцию", image: "plus.circle", action: {
+                    SecondaryButton(title: "Добавить транзакцию", color: Assets.secondary, image: "plus.circle", action: {
                         homeViewModel.addTransaction(transaction: .init(name: "testing", description: "testing", amount: 1234, type: .cash, createDate: Date(), place: nil))
                     })
-                    HomeTransactionsView(transactions: $homeViewModel.transactions, didSelectTransaction: { transaction in
-                        print(transaction)
-                    }).frame(height: homeViewModel.transactionsHeight)
+                    HomeTransactionsView(transactions: $homeViewModel.transactions, didSelectTransaction: { selectedItem in
+                        transaction = selectedItem
+                    })
+                    .frame(height: homeViewModel.transactionsHeight)
                     Spacer()
                 }
             }
@@ -40,6 +42,9 @@ struct HomeView: View {
             .navigationBarTitle(L10n.tabHome, displayMode: .automatic)
         }
         .padding(.top)
+        .sheet(isPresented: .constant($transaction.wrappedValue != nil), onDismiss: { transaction = nil }) {
+            TransactionView(transaction: $transaction)
+        }
     }
 }
 

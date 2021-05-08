@@ -21,6 +21,7 @@
 		A806A6B026469A3400951373 /* BannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A806A6AF26469A3400951373 /* BannerView.swift */; };
 		A806A6BE2646A1D300951373 /* SecondaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A806A6BD2646A1D300951373 /* SecondaryButton.swift */; };
 		A835BB4F2646EBFB00EB83BE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A835BB4E2646EBFB00EB83BE /* LaunchScreen.storyboard */; };
+		A835BB542646EFD800EB83BE /* TransactionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A835BB532646EFD800EB83BE /* TransactionView.swift */; };
 		A8CC21E82646A96A00CA38A4 /* HomeTransactionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8CC21E72646A96A00CA38A4 /* HomeTransactionsView.swift */; };
 		A8CC21EE2646AB7900CA38A4 /* HomeTransactionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8CC21EC2646AB7900CA38A4 /* HomeTransactionCell.xib */; };
 		A8CC21EF2646AB7900CA38A4 /* HomeTransactionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8CC21ED2646AB7900CA38A4 /* HomeTransactionCell.swift */; };
@@ -63,6 +64,7 @@
 		A806A6AF26469A3400951373 /* BannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerView.swift; sourceTree = "<group>"; };
 		A806A6BD2646A1D300951373 /* SecondaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryButton.swift; sourceTree = "<group>"; };
 		A835BB4E2646EBFB00EB83BE /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A835BB532646EFD800EB83BE /* TransactionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionView.swift; sourceTree = "<group>"; };
 		A8CC21E72646A96A00CA38A4 /* HomeTransactionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTransactionsView.swift; sourceTree = "<group>"; };
 		A8CC21EC2646AB7900CA38A4 /* HomeTransactionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeTransactionCell.xib; sourceTree = "<group>"; };
 		A8CC21ED2646AB7900CA38A4 /* HomeTransactionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTransactionCell.swift; sourceTree = "<group>"; };
@@ -336,6 +338,7 @@
 				A806A6AF26469A3400951373 /* BannerView.swift */,
 				A8CC21E72646A96A00CA38A4 /* HomeTransactionsView.swift */,
 				A806A6A826468CCF00951373 /* HomeView.swift */,
+				A835BB532646EFD800EB83BE /* TransactionView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -449,6 +452,7 @@
 				A8CC22182646ADDB00CA38A4 /* String+Replacing.swift in Sources */,
 				A8CC21F42646ABAE00CA38A4 /* HomeTransactionCellModel.swift in Sources */,
 				A8CC21FB2646AC1E00CA38A4 /* TransactionPlace.swift in Sources */,
+				A835BB542646EFD800EB83BE /* TransactionView.swift in Sources */,
 				A8CC22252646AFA800CA38A4 /* UICollectionView+Dequeue.swift in Sources */,
 				A8CC22052646AD5D00CA38A4 /* PhoneNumberFormatter.swift in Sources */,
 				A8CC22042646AD5D00CA38A4 /* PropertyNumberFormatter.swift in Sources */,
