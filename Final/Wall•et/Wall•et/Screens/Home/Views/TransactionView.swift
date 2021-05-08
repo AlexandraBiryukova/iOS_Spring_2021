@@ -59,7 +59,7 @@ struct TransactionView: View {
                                 .padding(.horizontal)
                                 .foregroundColor(Color(Assets.gray2.color))
                             if transaction.place == nil {
-                                EmptyView()
+                                EmptyView(place: .constant($transaction.wrappedValue?.place))
                             }
                         }
                         Spacer()
@@ -70,15 +70,19 @@ struct TransactionView: View {
                 .navigationBarItems(leading: closeButton)
             }
             .padding(.top)
-            .sheet(isPresented: .constant(true), content: {
-                Text("here")
-            })
         }
     }
 }
 
 
 struct EmptyView: View {
+    @Binding var place: TransactionPlace?
+    @State var presentPlaces = false
+    
+    init(place: Binding<TransactionPlace?>) {
+        _place = place
+    }
+    
     var body: some View {
         VStack(spacing: 12) {
             Image(systemName: "location.viewfinder")
@@ -94,6 +98,9 @@ struct EmptyView: View {
                 .multilineTextAlignment(.center)
                 .padding(.horizontal, 24)
             SecondaryButton(title: "Выбрать место транзакции", color: Assets.primary, image: nil) {
+                presentPlaces = true
+            }.sheet(isPresented: $presentPlaces, onDismiss: { presentPlaces = false }) {
+                PlacesView(viewState: .view, place: $place, presentPlaces: $presentPlaces)
             }
         }
     }

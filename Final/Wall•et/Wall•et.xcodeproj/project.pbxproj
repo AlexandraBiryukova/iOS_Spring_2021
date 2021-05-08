@@ -22,6 +22,8 @@
 		A806A6BE2646A1D300951373 /* SecondaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A806A6BD2646A1D300951373 /* SecondaryButton.swift */; };
 		A835BB4F2646EBFB00EB83BE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A835BB4E2646EBFB00EB83BE /* LaunchScreen.storyboard */; };
 		A835BB542646EFD800EB83BE /* TransactionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A835BB532646EFD800EB83BE /* TransactionView.swift */; };
+		A835BB5B264703A500EB83BE /* PlacesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A835BB5A264703A500EB83BE /* PlacesView.swift */; };
+		A835BB5F264703BA00EB83BE /* PlacesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A835BB5E264703BA00EB83BE /* PlacesViewModel.swift */; };
 		A8CC21E82646A96A00CA38A4 /* HomeTransactionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8CC21E72646A96A00CA38A4 /* HomeTransactionsView.swift */; };
 		A8CC21EE2646AB7900CA38A4 /* HomeTransactionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8CC21EC2646AB7900CA38A4 /* HomeTransactionCell.xib */; };
 		A8CC21EF2646AB7900CA38A4 /* HomeTransactionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8CC21ED2646AB7900CA38A4 /* HomeTransactionCell.swift */; };
@@ -65,6 +67,8 @@
 		A806A6BD2646A1D300951373 /* SecondaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryButton.swift; sourceTree = "<group>"; };
 		A835BB4E2646EBFB00EB83BE /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A835BB532646EFD800EB83BE /* TransactionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionView.swift; sourceTree = "<group>"; };
+		A835BB5A264703A500EB83BE /* PlacesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesView.swift; sourceTree = "<group>"; };
+		A835BB5E264703BA00EB83BE /* PlacesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesViewModel.swift; sourceTree = "<group>"; };
 		A8CC21E72646A96A00CA38A4 /* HomeTransactionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTransactionsView.swift; sourceTree = "<group>"; };
 		A8CC21EC2646AB7900CA38A4 /* HomeTransactionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeTransactionCell.xib; sourceTree = "<group>"; };
 		A8CC21ED2646AB7900CA38A4 /* HomeTransactionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTransactionCell.swift; sourceTree = "<group>"; };
@@ -165,6 +169,7 @@
 			children = (
 				A806A6AE26469A2C00951373 /* Home */,
 				A806A6B326469A4000951373 /* Main */,
+				A835BB562647035100EB83BE /* Places */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -191,7 +196,7 @@
 		A806A6AE26469A2C00951373 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				A8CC222A2646B16D00CA38A4 /* ViewModel */,
+				A8CC222A2646B16D00CA38A4 /* ViewModels */,
 				A8CC22292646B16900CA38A4 /* Views */,
 			);
 			path = Home;
@@ -221,6 +226,31 @@
 				A806A6782646864000951373 /* MainTabView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		A835BB562647035100EB83BE /* Places */ = {
+			isa = PBXGroup;
+			children = (
+				A835BB592647037400EB83BE /* ViewModels */,
+				A835BB572647036B00EB83BE /* Views */,
+			);
+			path = Places;
+			sourceTree = "<group>";
+		};
+		A835BB572647036B00EB83BE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A835BB5A264703A500EB83BE /* PlacesView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A835BB592647037400EB83BE /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				A835BB5E264703BA00EB83BE /* PlacesViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		A8CC21EA2646AB2E00CA38A4 /* Cells */ = {
@@ -343,12 +373,12 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		A8CC222A2646B16D00CA38A4 /* ViewModel */ = {
+		A8CC222A2646B16D00CA38A4 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
 				A8CC222B2646B17D00CA38A4 /* HomeViewModel.swift */,
 			);
-			path = ViewModel;
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		A8CC22342646E7A100CA38A4 /* LaunchScreens */ = {
@@ -439,6 +469,7 @@
 				A8CC22152646ADDB00CA38A4 /* Date+Convenience.swift in Sources */,
 				A8CC22192646ADDB00CA38A4 /* Atomic.swift in Sources */,
 				A806A6A926468CCF00951373 /* HomeView.swift in Sources */,
+				A835BB5F264703BA00EB83BE /* PlacesViewModel.swift in Sources */,
 				A806A6772646864000951373 /* Wall_etApp.swift in Sources */,
 				A8CC22062646AD5D00CA38A4 /* PropertyFormatter.swift in Sources */,
 				A806A69F26468BD100951373 /* AppLanguage.swift in Sources */,
@@ -463,6 +494,7 @@
 				A8CC21E82646A96A00CA38A4 /* HomeTransactionsView.swift in Sources */,
 				A8CC221C2646ADDB00CA38A4 /* ValidationRule.swift in Sources */,
 				A8CC22172646ADDB00CA38A4 /* Array+Safe.swift in Sources */,
+				A835BB5B264703A500EB83BE /* PlacesView.swift in Sources */,
 				A806A6A426468C7C00951373 /* AppLanguageStorage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
