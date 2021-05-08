@@ -12,7 +12,7 @@ struct HomeView: View {
     
     var body: some View {
         NavigationView {
-            ScrollView {
+            ScrollView(showsIndicators: false) {
                 VStack(alignment: .leading, spacing: 16) {
                     ScrollView(.horizontal, showsIndicators: false) {
                         HStack(spacing: 8) {
@@ -39,7 +39,7 @@ struct HomeView: View {
             .edgesIgnoringSafeArea(.horizontal)
             .navigationBarTitle(L10n.tabHome, displayMode: .automatic)
         }
-        .padding(.vertical)
+        .padding(.top)
     }
 }
 
