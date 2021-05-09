@@ -3,4 +3,70 @@
    uuid = "DB73FA52-12AB-479C-A7BB-4B7FAA058B79"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "41ACE150-B85B-4104-BC99-26967BC70387"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Wall&#x2022;et/Screens/Main/Views/AmountTextFieldView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
+            landmarkName = "formattedText"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "476A0CE6-5717-4747-98A5-94521F9CA767"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Wall&#x2022;et/Screens/Main/Views/AmountTextFieldView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "22"
+            endingLineNumber = "22"
+            landmarkName = "formattedText"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "476A0CE6-5717-4747-98A5-94521F9CA767 - 6f39af4e1252af5f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Wall_et.AmountTextFieldView.(formattedText in _138315EBD5437A1F8AD2320D068A57B1).getter : SwiftUI.Binding&lt;Swift.String&gt;"
+                  moduleName = "Wall&#x2022;et"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/alexandra/Desktop/iOS/Final/Wall%E2%80%A2et/Wall%E2%80%A2et/Screens/Main/Views/AmountTextFieldView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "22"
+                  endingLineNumber = "22"
+                  offsetFromSymbolStart = "102">
+               </Location>
+               <Location
+                  uuid = "476A0CE6-5717-4747-98A5-94521F9CA767 - 4e99bc7aa57cede0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; Swift.String in Wall_et.AmountTextFieldView.(formattedText in _138315EBD5437A1F8AD2320D068A57B1).getter : SwiftUI.Binding&lt;Swift.String&gt;"
+                  moduleName = "Wall&#x2022;et"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/alexandra/Desktop/iOS/Final/Wall%E2%80%A2et/Wall%E2%80%A2et/Screens/Main/Views/AmountTextFieldView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "22"
+                  endingLineNumber = "22"
+                  offsetFromSymbolStart = "19">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

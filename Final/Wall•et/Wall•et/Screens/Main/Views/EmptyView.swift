@@ -59,7 +59,6 @@ struct EmptyView: View {
                     .foregroundColor(Color(Assets.gray2.color))
                     .font(.system(size: 16))
                     .multilineTextAlignment(.center)
-                    .padding(.horizontal, 24)
             }
             if let actionTitle = actionTitle {
                 SecondaryButton(title: actionTitle, color: Assets.primary, image: nil) {
@@ -67,5 +66,6 @@ struct EmptyView: View {
                 }
             }
         }
+        .padding(.horizontal, 16)
     }
 }

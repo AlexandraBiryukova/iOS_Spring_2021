@@ -46,5 +46,9 @@
 	</array>
 	<key>UIUserInterfaceStyle</key>
 	<string>Light</string>
+	<key>NSCameraUsageDescription</key>
+	<string>Разрешение требуется для возможности сделать фото для профиля и транзакций</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Разрешение требуется для возможности выбрать фото для профиля и транзакций</string>
 </dict>
 </plist>

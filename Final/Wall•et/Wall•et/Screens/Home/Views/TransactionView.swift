@@ -25,23 +25,38 @@ struct TransactionView: View {
         })
     }
     
+    @ViewBuilder
+    var icon: some View {
+        if let transaction = transaction {
+            if let data = transaction.data,
+               let image = UIImage(data: data) {
+                Image(uiImage: image)
+                    .resizable()
+                    .frame(width: 80, height: 80)
+            } else {
+                Image(uiImage: transaction.type.icon)
+                    .resizable()
+                    .foregroundColor(Color(Assets.secondary.color))
+                    .frame(width: 24, height: 24, alignment: .center)
+            }
+        }
+    }
+    
     var body: some View {
         if let transaction = transaction {
             NavigationView {
                 ScrollView(showsIndicators: false) {
                     VStack(alignment: .center, spacing: 24) {
                         VStack(alignment: .center, spacing: 8) {
-                            ZStack {
-                                Image(uiImage: transaction.type.icon)
-                                    .resizable()
-                                    .foregroundColor(Color(Assets.secondary.color))
-                                    .frame(width: 24, height: 24, alignment: .center)
-                            }
+                            ZStack { icon }
                             .frame(width: 80, height: 80)
                             .background(Color(Assets.background.color))
                             .clipShape(Circle())
                             Text(transaction.name)
                                 .font(.system(size: 24))
+                            Text(transaction.description)
+                                .font(.system(size: 16))
+                                .foregroundColor(Color(Assets.gray2.color))
                         }
                         VStack(alignment: .center, spacing: 8) {
                             Text((formatter.string(from: .init(value: transaction.amount), configurator: .init(maximumFractionDigits: 2)) ?? String(transaction.amount)) + " ₸")
@@ -92,9 +107,7 @@ struct TransactionView: View {
 
 struct TransactionView_Previews: PreviewProvider {
     static var previews: some View {
-        Group {
-            TransactionView(transaction: .constant(Transaction(name: "test", description: "test", amount: 1000, type: .card, createDate: Date(), place: nil)), onTransactionChange: {})
-                .previewDevice("iPhone 11 Pro Max")
-        }
+        TransactionView(transaction: .constant(Transaction(name: "test", description: "test", amount: 1000, type: .card, createDate: Date(), place: nil)), onTransactionChange: {})
+            .previewDevice("iPhone 11 Pro Max")
     }
 }

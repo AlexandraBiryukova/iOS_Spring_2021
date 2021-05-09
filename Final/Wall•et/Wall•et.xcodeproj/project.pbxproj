@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8E050426262A330E6CF67AED /* Pods_Wall_et.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD68FBE1D200068E4ED12D23 /* Pods_Wall_et.framework */; };
 		A806A6772646864000951373 /* Wall_etApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A806A6762646864000951373 /* Wall_etApp.swift */; };
 		A806A6792646864000951373 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A806A6782646864000951373 /* MainTabView.swift */; };
 		A806A67B2646864200951373 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A806A67A2646864200951373 /* Assets.xcassets */; };
@@ -27,6 +28,15 @@
 		A835BB622647104400EB83BE /* PlaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A835BB612647104300EB83BE /* PlaceView.swift */; };
 		A835BB662647DF2700EB83BE /* TransactionCreateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A835BB652647DF2600EB83BE /* TransactionCreateView.swift */; };
 		A835BB692647E27300EB83BE /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A835BB682647E27300EB83BE /* EmptyView.swift */; };
+		A835BB6D2647E83800EB83BE /* BaseTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A835BB6C2647E83800EB83BE /* BaseTextFieldView.swift */; };
+		A835BB702647EEED00EB83BE /* AmountTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A835BB6F2647EEEC00EB83BE /* AmountTextFieldView.swift */; };
+		A835BB7426480BAB00EB83BE /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A835BB7326480BAA00EB83BE /* PrimaryButton.swift */; };
+		A835BB7726480C1700EB83BE /* TransactionCreateDateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A835BB7626480C1700EB83BE /* TransactionCreateDateView.swift */; };
+		A835BB7A26480C2E00EB83BE /* TransactionCreatePaymentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A835BB7926480C2E00EB83BE /* TransactionCreatePaymentView.swift */; };
+		A835BB7E26482CB900EB83BE /* ImagePickerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A835BB7D26482CB800EB83BE /* ImagePickerService.swift */; };
+		A835BB8D2648318F00EB83BE /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A835BB8C2648318F00EB83BE /* AlertView.swift */; };
+		A835BB902648483200EB83BE /* ImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A835BB8F2648483200EB83BE /* ImagePickerView.swift */; };
+		A835BB932648487C00EB83BE /* ImageCropperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A835BB922648487B00EB83BE /* ImageCropperView.swift */; };
 		A8CC21E82646A96A00CA38A4 /* HomeTransactionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8CC21E72646A96A00CA38A4 /* HomeTransactionsView.swift */; };
 		A8CC21EE2646AB7900CA38A4 /* HomeTransactionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8CC21EC2646AB7900CA38A4 /* HomeTransactionCell.xib */; };
 		A8CC21EF2646AB7900CA38A4 /* HomeTransactionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8CC21ED2646AB7900CA38A4 /* HomeTransactionCell.swift */; };
@@ -75,6 +85,15 @@
 		A835BB612647104300EB83BE /* PlaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceView.swift; sourceTree = "<group>"; };
 		A835BB652647DF2600EB83BE /* TransactionCreateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCreateView.swift; sourceTree = "<group>"; };
 		A835BB682647E27300EB83BE /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
+		A835BB6C2647E83800EB83BE /* BaseTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTextFieldView.swift; sourceTree = "<group>"; };
+		A835BB6F2647EEEC00EB83BE /* AmountTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmountTextFieldView.swift; sourceTree = "<group>"; };
+		A835BB7326480BAA00EB83BE /* PrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButton.swift; sourceTree = "<group>"; };
+		A835BB7626480C1700EB83BE /* TransactionCreateDateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCreateDateView.swift; sourceTree = "<group>"; };
+		A835BB7926480C2E00EB83BE /* TransactionCreatePaymentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCreatePaymentView.swift; sourceTree = "<group>"; };
+		A835BB7D26482CB800EB83BE /* ImagePickerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerService.swift; sourceTree = "<group>"; };
+		A835BB8C2648318F00EB83BE /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
+		A835BB8F2648483200EB83BE /* ImagePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerView.swift; sourceTree = "<group>"; };
+		A835BB922648487B00EB83BE /* ImageCropperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCropperView.swift; sourceTree = "<group>"; };
 		A8CC21E72646A96A00CA38A4 /* HomeTransactionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTransactionsView.swift; sourceTree = "<group>"; };
 		A8CC21EC2646AB7900CA38A4 /* HomeTransactionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeTransactionCell.xib; sourceTree = "<group>"; };
 		A8CC21ED2646AB7900CA38A4 /* HomeTransactionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTransactionCell.swift; sourceTree = "<group>"; };
@@ -96,6 +115,9 @@
 		A8CC22222646AFA800CA38A4 /* UICollectionView+Register.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Register.swift"; sourceTree = "<group>"; };
 		A8CC22232646AFA800CA38A4 /* UICollectionView+Dequeue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Dequeue.swift"; sourceTree = "<group>"; };
 		A8CC222B2646B17D00CA38A4 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		C81BD830D72AE8D7E1D4D1F3 /* Pods-Wall•et.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wall•et.debug.xcconfig"; path = "Target Support Files/Pods-Wall•et/Pods-Wall•et.debug.xcconfig"; sourceTree = "<group>"; };
+		E168A5E5E7C6289375CC6025 /* Pods-Wall•et.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wall•et.release.xcconfig"; path = "Target Support Files/Pods-Wall•et/Pods-Wall•et.release.xcconfig"; sourceTree = "<group>"; };
+		FD68FBE1D200068E4ED12D23 /* Pods_Wall_et.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Wall_et.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,17 +125,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E050426262A330E6CF67AED /* Pods_Wall_et.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		11E075D697DC569C252D6B83 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C81BD830D72AE8D7E1D4D1F3 /* Pods-Wall•et.debug.xcconfig */,
+				E168A5E5E7C6289375CC6025 /* Pods-Wall•et.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		A806A66A2646864000951373 = {
 			isa = PBXGroup;
 			children = (
 				A806A6752646864000951373 /* Wall•et */,
 				A806A6742646864000951373 /* Products */,
+				11E075D697DC569C252D6B83 /* Pods */,
+				C6FE0E05F2168679AA04C577 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -133,6 +167,7 @@
 				A8CC21FD2646AD5D00CA38A4 /* Formatters */,
 				A8CC22092646ADDB00CA38A4 /* Foundation */,
 				A806A69D26468BC800951373 /* Models */,
+				A835BB7C26482CA400EB83BE /* Services */,
 				A806A6A226468C6D00951373 /* Storages */,
 				A806A69526468B5B00951373 /* Screens */,
 				A806A67F2646864200951373 /* Info.plist */,
@@ -222,6 +257,7 @@
 			isa = PBXGroup;
 			children = (
 				A806A6BD2646A1D300951373 /* SecondaryButton.swift */,
+				A835BB7326480BAA00EB83BE /* PrimaryButton.swift */,
 			);
 			path = Buttons;
 			sourceTree = "<group>";
@@ -231,6 +267,11 @@
 			children = (
 				A835BB682647E27300EB83BE /* EmptyView.swift */,
 				A806A6782646864000951373 /* MainTabView.swift */,
+				A835BB6C2647E83800EB83BE /* BaseTextFieldView.swift */,
+				A835BB6F2647EEEC00EB83BE /* AmountTextFieldView.swift */,
+				A835BB8C2648318F00EB83BE /* AlertView.swift */,
+				A835BB8F2648483200EB83BE /* ImagePickerView.swift */,
+				A835BB922648487B00EB83BE /* ImageCropperView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -259,6 +300,14 @@
 				A835BB5E264703BA00EB83BE /* PlacesViewModel.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		A835BB7C26482CA400EB83BE /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				A835BB7D26482CB800EB83BE /* ImagePickerService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		A8CC21EA2646AB2E00CA38A4 /* Cells */ = {
@@ -378,6 +427,8 @@
 				A806A6A826468CCF00951373 /* HomeView.swift */,
 				A835BB532646EFD800EB83BE /* TransactionView.swift */,
 				A835BB652647DF2600EB83BE /* TransactionCreateView.swift */,
+				A835BB7626480C1700EB83BE /* TransactionCreateDateView.swift */,
+				A835BB7926480C2E00EB83BE /* TransactionCreatePaymentView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -398,6 +449,14 @@
 			path = LaunchScreens;
 			sourceTree = "<group>";
 		};
+		C6FE0E05F2168679AA04C577 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FD68FBE1D200068E4ED12D23 /* Pods_Wall_et.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -405,9 +464,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A806A6822646864200951373 /* Build configuration list for PBXNativeTarget "Wall•et" */;
 			buildPhases = (
+				E229B31A8470C36BB02D0622 /* [CP] Check Pods Manifest.lock */,
 				A806A66F2646864000951373 /* Sources */,
 				A806A6702646864000951373 /* Frameworks */,
 				A806A6712646864000951373 /* Resources */,
+				5A5E09A50357443DF949BF03 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -467,6 +528,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		5A5E09A50357443DF949BF03 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Wall•et/Pods-Wall•et-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Wall•et/Pods-Wall•et-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Wall•et/Pods-Wall•et-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E229B31A8470C36BB02D0622 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Wall•et-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		A806A66F2646864000951373 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -487,21 +590,30 @@
 				A8CC22162646ADDB00CA38A4 /* Array+Factory.swift in Sources */,
 				A8CC22242646AFA800CA38A4 /* UICollectionView+Register.swift in Sources */,
 				A8CC221A2646ADDB00CA38A4 /* Observable.swift in Sources */,
+				A835BB7E26482CB900EB83BE /* ImagePickerService.swift in Sources */,
 				A8CC222C2646B17D00CA38A4 /* HomeViewModel.swift in Sources */,
 				A806A6B026469A3400951373 /* BannerView.swift in Sources */,
+				A835BB702647EEED00EB83BE /* AmountTextFieldView.swift in Sources */,
+				A835BB7426480BAB00EB83BE /* PrimaryButton.swift in Sources */,
 				A835BB622647104400EB83BE /* PlaceView.swift in Sources */,
+				A835BB932648487C00EB83BE /* ImageCropperView.swift in Sources */,
 				A8CC221B2646ADDB00CA38A4 /* Device.swift in Sources */,
+				A835BB7726480C1700EB83BE /* TransactionCreateDateView.swift in Sources */,
 				A8CC22182646ADDB00CA38A4 /* String+Replacing.swift in Sources */,
+				A835BB8D2648318F00EB83BE /* AlertView.swift in Sources */,
 				A8CC21F42646ABAE00CA38A4 /* HomeTransactionCellModel.swift in Sources */,
 				A8CC21FB2646AC1E00CA38A4 /* TransactionPlace.swift in Sources */,
 				A835BB542646EFD800EB83BE /* TransactionView.swift in Sources */,
 				A8CC22252646AFA800CA38A4 /* UICollectionView+Dequeue.swift in Sources */,
 				A8CC22052646AD5D00CA38A4 /* PhoneNumberFormatter.swift in Sources */,
 				A8CC22042646AD5D00CA38A4 /* PropertyNumberFormatter.swift in Sources */,
+				A835BB7A26480C2E00EB83BE /* TransactionCreatePaymentView.swift in Sources */,
 				A8CC21EF2646AB7900CA38A4 /* HomeTransactionCell.swift in Sources */,
 				A806A6AC26469A1400951373 /* Banner.swift in Sources */,
 				A835BB692647E27300EB83BE /* EmptyView.swift in Sources */,
 				A806A69B26468BA900951373 /* L10n.generated.swift in Sources */,
+				A835BB902648483200EB83BE /* ImagePickerView.swift in Sources */,
+				A835BB6D2647E83800EB83BE /* BaseTextFieldView.swift in Sources */,
 				A8CC22032646AD5D00CA38A4 /* PropertyDateFormatter.swift in Sources */,
 				A8CC21E82646A96A00CA38A4 /* HomeTransactionsView.swift in Sources */,
 				A8CC221C2646ADDB00CA38A4 /* ValidationRule.swift in Sources */,
@@ -645,6 +757,7 @@
 		};
 		A806A6832646864200951373 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C81BD830D72AE8D7E1D4D1F3 /* Pods-Wall•et.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -667,6 +780,7 @@
 		};
 		A806A6842646864200951373 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E168A5E5E7C6289375CC6025 /* Pods-Wall•et.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
