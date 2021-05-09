@@ -43,7 +43,10 @@ struct HomeView: View {
         }
         .padding(.top)
         .sheet(isPresented: .constant($transaction.wrappedValue != nil), onDismiss: { transaction = nil }) {
-            TransactionView(transaction: $transaction)
+            TransactionView(transaction: $transaction) {
+                guard let transaction = $transaction.wrappedValue else { return }
+                homeViewModel.changeTransaction(transaction: transaction)
+            }
         }
     }
 }

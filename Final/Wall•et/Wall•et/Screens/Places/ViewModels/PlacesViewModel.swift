@@ -8,7 +8,9 @@
 import SwiftUI
 
 final class PlacesViewModel: ObservableObject {
-    @Published var places: [TransactionPlace] = [.init(name: "Dostyk", address: "dostyk", description: "test", transactions: 4, categories: [], openTime: Date(), closeTime: Date(), isFavourite: false)]
+    @Published var places: [TransactionPlace] = [.init(name: "Dostyk", address: "dostyk", description: "test", transactions: 4, categories: [], openTime: Date(), closeTime: Date(), isFavourite: false),
+                                                 .init(name: "Dostyk", address: "dostyk", description: "test", transactions: 4, categories: [], openTime: Date(), closeTime: Date(), isFavourite: false),
+                                                 .init(name: "Dostyk", address: "dostyk", description: "test", transactions: 4, categories: [], openTime: Date(), closeTime: Date(), isFavourite: false)]
 
     func changePlace(place: TransactionPlace) {
         guard let index = places.firstIndex(where: { $0.id == place.id }) else { return }

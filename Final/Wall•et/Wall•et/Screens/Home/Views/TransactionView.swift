@@ -9,10 +9,13 @@ import SwiftUI
 
 struct TransactionView: View {
     @Binding var transaction: Transaction?
+    @State var presentPlaces = false
+    private let onTransactionChange: () -> Void
     private let formatter = PropertyFormatter(appLanguage: .current)
     
-    init(transaction: Binding<Transaction?>) {
+    init(transaction: Binding<Transaction?>, onTransactionChange: @escaping () -> Void) {
         _transaction = transaction
+        self.onTransactionChange = onTransactionChange
     }
     
     @ViewBuilder
@@ -58,8 +61,14 @@ struct TransactionView: View {
                                 .font(.system(size: 14))
                                 .padding(.horizontal)
                                 .foregroundColor(Color(Assets.gray2.color))
-                            if transaction.place == nil {
-                                EmptyView(place: .constant($transaction.wrappedValue?.place))
+                            if let place = transaction.place {
+                               PlaceView(place: place)
+                                .padding(.horizontal, 16)
+                                .shadow(color: Color(Assets.black.color).opacity(0.2), radius: 8, x: 0, y: 0)
+                            } else {
+                                EmptyView(action: {
+                                    presentPlaces = true
+                                })
                             }
                         }
                         Spacer()
@@ -70,17 +79,21 @@ struct TransactionView: View {
                 .navigationBarItems(leading: closeButton)
             }
             .padding(.top)
+            .sheet(isPresented: $presentPlaces, onDismiss: {
+                presentPlaces = false
+            }) {
+                PlacesView(viewState: .view, transaction: $transaction, presentPlaces: $presentPlaces, onTransactionChange: onTransactionChange)
+            }
         }
     }
 }
 
 
 struct EmptyView: View {
-    @Binding var place: TransactionPlace?
-    @State var presentPlaces = false
+    private let action: () -> Void
     
-    init(place: Binding<TransactionPlace?>) {
-        _place = place
+    init(action: @escaping () -> Void) {
+        self.action = action
     }
     
     var body: some View {
@@ -98,9 +111,7 @@ struct EmptyView: View {
                 .multilineTextAlignment(.center)
                 .padding(.horizontal, 24)
             SecondaryButton(title: "Выбрать место транзакции", color: Assets.primary, image: nil) {
-                presentPlaces = true
-            }.sheet(isPresented: $presentPlaces, onDismiss: { presentPlaces = false }) {
-                PlacesView(viewState: .view, place: $place, presentPlaces: $presentPlaces)
+                action()
             }
         }
     }
@@ -109,7 +120,7 @@ struct EmptyView: View {
 struct TransactionView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            TransactionView(transaction: .constant(Transaction(name: "test", description: "test", amount: 1000, type: .card, createDate: Date(), place: nil)))
+            TransactionView(transaction: .constant(Transaction(name: "test", description: "test", amount: 1000, type: .card, createDate: Date(), place: nil)), onTransactionChange: {})
                 .previewDevice("iPhone 11 Pro Max")
         }
     }

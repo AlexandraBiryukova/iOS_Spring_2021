@@ -13,14 +13,19 @@ struct PlacesView: View {
     }
     
     private let viewState: ViewState
+    private let onTransactionChange: () -> Void
     @ObservedObject var homeViewModel = PlacesViewModel()
-    @Binding var place: TransactionPlace?
+    @Binding var transaction: Transaction?
     @Binding var presentPlaces: Bool
     
-    init(viewState: ViewState, place: Binding<TransactionPlace?> = .constant(nil), presentPlaces: Binding<Bool> = .constant(false)) {
+    init(viewState: ViewState,
+         transaction: Binding<Transaction?> = .constant(nil),
+         presentPlaces: Binding<Bool> = .constant(false),
+         onTransactionChange: @escaping () -> Void) {
         self.viewState = viewState
-        _place = place
+        _transaction = transaction
         _presentPlaces = presentPlaces
+        self.onTransactionChange = onTransactionChange
     }
     
     @ViewBuilder
@@ -35,7 +40,7 @@ struct PlacesView: View {
     @ViewBuilder
     var addButton: some View {
         if viewState == .tab {
-            Button(action: { place = .init() }, label: {
+            Button(action: { }, label: {
                 Text("Добавить")
             })
         }
@@ -44,10 +49,38 @@ struct PlacesView: View {
     var body: some View {
         NavigationView {
             ScrollView(showsIndicators: false) {
-                VStack(alignment: .leading, spacing: 16) {
-                    Text("Фильтр")
+                VStack(alignment: .leading, spacing: 8) {
+                    VStack {
+                        HStack {
+                            Text("Фильтр")
+                                .foregroundColor(Color(Assets.primary.color))
+                                .font(.system(size: 18, weight: .medium))
+                            Spacer()
+                            Image(systemName: "slider.vertical.3")
+                                .resizable()
+                                .foregroundColor(Color(Assets.primary.color))
+                                .frame(width: 24, height: 24)
+                        }.padding(.init(top: 12, leading: 24, bottom: 12, trailing: 24))
+                        Rectangle()
+                            .fill(Color(Assets.divider.color))
+                            .frame(height: 0.5)
+                            .padding(.leading, 24)
+                        
+                    }
                     ForEach(homeViewModel.places) { place in
-                        Text(place.name ?? "")
+                            PlaceView(place: place)
+                                .padding(.horizontal, 16)
+                                .shadow(color: Color(Assets.black.color).opacity(0.2), radius: 8, x: 0, y: 0)
+                                .onTapGesture {
+                                    switch viewState {
+                                    case .view:
+                                        transaction?.place = place
+                                        onTransactionChange()
+                                        self.presentPlaces = false
+                                    default:
+                                        break
+                                    }
+                                }
                     }
                     Spacer()
                 }
@@ -57,16 +90,15 @@ struct PlacesView: View {
             .navigationBarItems(leading: closeButton, trailing: addButton)
         }
         .padding(.top)
-        .sheet(isPresented: .constant($place.wrappedValue != nil && viewState == .tab), onDismiss: { place = nil }) {
-            TransactionView(transaction: .constant(nil))
+        .sheet(isPresented: .constant(false && viewState == .tab), onDismiss: {}) {
+            TransactionView(transaction: .constant(nil), onTransactionChange: {})
         }
     }
 }
 
-
 struct PlacesView_Previews: PreviewProvider {
     static var previews: some View {
-        PlacesView(viewState: .tab)
+        PlacesView(viewState: .tab, onTransactionChange: {})
             .previewDevice("iPhone 11 Pro Max")
     }
 }
