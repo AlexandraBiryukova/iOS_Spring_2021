@@ -25,6 +25,8 @@
 		A835BB5B264703A500EB83BE /* PlacesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A835BB5A264703A500EB83BE /* PlacesView.swift */; };
 		A835BB5F264703BA00EB83BE /* PlacesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A835BB5E264703BA00EB83BE /* PlacesViewModel.swift */; };
 		A835BB622647104400EB83BE /* PlaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A835BB612647104300EB83BE /* PlaceView.swift */; };
+		A835BB662647DF2700EB83BE /* TransactionCreateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A835BB652647DF2600EB83BE /* TransactionCreateView.swift */; };
+		A835BB692647E27300EB83BE /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A835BB682647E27300EB83BE /* EmptyView.swift */; };
 		A8CC21E82646A96A00CA38A4 /* HomeTransactionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8CC21E72646A96A00CA38A4 /* HomeTransactionsView.swift */; };
 		A8CC21EE2646AB7900CA38A4 /* HomeTransactionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8CC21EC2646AB7900CA38A4 /* HomeTransactionCell.xib */; };
 		A8CC21EF2646AB7900CA38A4 /* HomeTransactionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8CC21ED2646AB7900CA38A4 /* HomeTransactionCell.swift */; };
@@ -71,6 +73,8 @@
 		A835BB5A264703A500EB83BE /* PlacesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesView.swift; sourceTree = "<group>"; };
 		A835BB5E264703BA00EB83BE /* PlacesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesViewModel.swift; sourceTree = "<group>"; };
 		A835BB612647104300EB83BE /* PlaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceView.swift; sourceTree = "<group>"; };
+		A835BB652647DF2600EB83BE /* TransactionCreateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCreateView.swift; sourceTree = "<group>"; };
+		A835BB682647E27300EB83BE /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
 		A8CC21E72646A96A00CA38A4 /* HomeTransactionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTransactionsView.swift; sourceTree = "<group>"; };
 		A8CC21EC2646AB7900CA38A4 /* HomeTransactionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeTransactionCell.xib; sourceTree = "<group>"; };
 		A8CC21ED2646AB7900CA38A4 /* HomeTransactionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTransactionCell.swift; sourceTree = "<group>"; };
@@ -225,6 +229,7 @@
 		A806A6BC2646A1C600951373 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				A835BB682647E27300EB83BE /* EmptyView.swift */,
 				A806A6782646864000951373 /* MainTabView.swift */,
 			);
 			path = Views;
@@ -372,6 +377,7 @@
 				A8CC21E72646A96A00CA38A4 /* HomeTransactionsView.swift */,
 				A806A6A826468CCF00951373 /* HomeView.swift */,
 				A835BB532646EFD800EB83BE /* TransactionView.swift */,
+				A835BB652647DF2600EB83BE /* TransactionCreateView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -467,6 +473,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A8CC21F82646ABC800CA38A4 /* Transaction.swift in Sources */,
+				A835BB662647DF2700EB83BE /* TransactionCreateView.swift in Sources */,
 				A806A6BE2646A1D300951373 /* SecondaryButton.swift in Sources */,
 				A806A6792646864000951373 /* MainTabView.swift in Sources */,
 				A8CC22152646ADDB00CA38A4 /* Date+Convenience.swift in Sources */,
@@ -493,6 +500,7 @@
 				A8CC22042646AD5D00CA38A4 /* PropertyNumberFormatter.swift in Sources */,
 				A8CC21EF2646AB7900CA38A4 /* HomeTransactionCell.swift in Sources */,
 				A806A6AC26469A1400951373 /* Banner.swift in Sources */,
+				A835BB692647E27300EB83BE /* EmptyView.swift in Sources */,
 				A806A69B26468BA900951373 /* L10n.generated.swift in Sources */,
 				A8CC22032646AD5D00CA38A4 /* PropertyDateFormatter.swift in Sources */,
 				A8CC21E82646A96A00CA38A4 /* HomeTransactionsView.swift in Sources */,

@@ -62,13 +62,15 @@ struct TransactionView: View {
                                 .padding(.horizontal)
                                 .foregroundColor(Color(Assets.gray2.color))
                             if let place = transaction.place {
-                               PlaceView(place: place)
-                                .padding(.horizontal, 16)
-                                .shadow(color: Color(Assets.black.color).opacity(0.2), radius: 8, x: 0, y: 0)
+                                PlaceView(place: place)
+                                    .padding(.horizontal, 16)
+                                    .shadow(color: Color(Assets.black.color).opacity(0.2), radius: 8, x: 0, y: 0)
                             } else {
-                                EmptyView(action: {
-                                    presentPlaces = true
-                                })
+                                EmptyView(icon: .system(name: "location.viewfinder"),
+                                          title: "Здесь ничего нет",
+                                          description: "Не указано место транзакции. Его можно выбрать из Ваших мест транзакций",
+                                          actionTitle: "Выбрать место транзакции",
+                                          action: { presentPlaces = true })
                             }
                         }
                         Spacer()
@@ -83,35 +85,6 @@ struct TransactionView: View {
                 presentPlaces = false
             }) {
                 PlacesView(viewState: .view, transaction: $transaction, presentPlaces: $presentPlaces, onTransactionChange: onTransactionChange)
-            }
-        }
-    }
-}
-
-
-struct EmptyView: View {
-    private let action: () -> Void
-    
-    init(action: @escaping () -> Void) {
-        self.action = action
-    }
-    
-    var body: some View {
-        VStack(spacing: 12) {
-            Image(systemName: "location.viewfinder")
-                .resizable()
-                .frame(width: 56, height: 56)
-                .foregroundColor(Color(Assets.gray2.color))
-            Text("Здесь ничего нет")
-                .foregroundColor(Color(Assets.gray2.color))
-                .font(.system(size: 20, weight: .semibold))
-            Text("Не указано место транзакции. Его можно выбрать из Ваших мест транзакций")
-                .foregroundColor(Color(Assets.gray2.color))
-                .font(.system(size: 16))
-                .multilineTextAlignment(.center)
-                .padding(.horizontal, 24)
-            SecondaryButton(title: "Выбрать место транзакции", color: Assets.primary, image: nil) {
-                action()
             }
         }
     }

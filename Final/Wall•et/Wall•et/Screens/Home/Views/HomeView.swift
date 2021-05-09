@@ -10,6 +10,7 @@ import SwiftUI
 struct HomeView: View {
     @ObservedObject var homeViewModel = HomeViewModel()
     @State var transaction: Transaction? = nil
+    @State var presentTransactionCreate = false
     
     var body: some View {
         NavigationView {
@@ -42,7 +43,8 @@ struct HomeView: View {
             .navigationBarTitle(L10n.tabHome, displayMode: .automatic)
         }
         .padding(.top)
-        .sheet(isPresented: .constant($transaction.wrappedValue != nil), onDismiss: { transaction = nil }) {
+        .sheet(isPresented: .constant(presentTransactionCreate || $transaction.wrappedValue != nil), onDismiss: { presentTransactionCreate = false
+                transaction = nil }) {
             TransactionView(transaction: $transaction) {
                 guard let transaction = $transaction.wrappedValue else { return }
                 homeViewModel.changeTransaction(transaction: transaction)

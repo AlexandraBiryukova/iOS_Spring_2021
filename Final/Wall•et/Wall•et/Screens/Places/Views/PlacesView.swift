@@ -67,6 +67,10 @@ struct PlacesView: View {
                             .padding(.leading, 24)
                         
                     }
+                    if homeViewModel.places.isEmpty {
+                        EmptyView(icon: .system(name: "mappin.and.ellipse"), title: "Здесь ничего нет", description: "На данный момент Вы не добавили ни одного места транзакции. Добавить их можно в соответствущем разделе приложения")
+                            .padding(.horizontal, 16)
+                    }
                     ForEach(homeViewModel.places) { place in
                             PlaceView(place: place)
                                 .padding(.horizontal, 16)
