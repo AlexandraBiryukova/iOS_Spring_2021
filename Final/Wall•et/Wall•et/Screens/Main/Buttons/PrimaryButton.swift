@@ -1,34 +1,32 @@
 //
-//  SecondaryButton.swift
+//  PrimaryButton.swift
 //  Wall•et
 //
-//  Created by Alexandra Biryukova on 5/8/21.
+//  Created by Alexandra Biryukova on 5/9/21.
 //
 
 import SwiftUI
 
-struct SecondaryButtonStyle: ButtonStyle {
+struct PrimaryButtonStyle: ButtonStyle {
     let color: ColorAsset
+    
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
             .padding()
-            .foregroundColor(Color(color.color))
+            .foregroundColor(Color(Assets.white.color))
             .font(.system(size: 18, weight: .semibold, design: .default))
             .frame(maxWidth: .infinity, minHeight: 48)
-            .background(Color((configuration.isPressed ? color : Assets.white).color).opacity(0.5))
+            .background(Color(color.color.withAlphaComponent(configuration.isPressed ? 0.8 : 1)) )
             .cornerRadius(8)
-            .overlay(
-                RoundedRectangle(cornerRadius: 8)
-                    .stroke(Color(color.color), lineWidth: 1)
-            )
     }
 }
 
-struct SecondaryButton: View {
+struct PrimaryButton: View {
     let title: String
     let color: ColorAsset
     let image: String?
     let action: () -> Void
+    @Environment(\.isEnabled) private var isEnabled: Bool
     
     var body: some View {
         Button(action: action, label: {
@@ -41,6 +39,7 @@ struct SecondaryButton: View {
                 Text(title)
             }
         })
-        .buttonStyle(SecondaryButtonStyle(color: color))
+        .buttonStyle(PrimaryButtonStyle(color: color))
+        .opacity(isEnabled ? 1 : 0.8)
     }
 }

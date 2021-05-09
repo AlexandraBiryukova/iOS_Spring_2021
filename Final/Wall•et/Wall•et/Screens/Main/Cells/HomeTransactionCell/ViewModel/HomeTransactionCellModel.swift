@@ -8,8 +8,13 @@
 import UIKit
 
 struct TransactionCellModel {
-    var icon: UIImage {
+    var smallIcon: UIImage {
         transaction.type.icon
+    }
+    
+    var bigIcon: UIImage? {
+        guard let data = transaction.data else { return nil }
+        return UIImage(data: data)
     }
     
     var title: String {

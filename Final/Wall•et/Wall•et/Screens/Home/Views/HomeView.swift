@@ -9,6 +9,8 @@ import SwiftUI
 
 struct HomeView: View {
     @ObservedObject var homeViewModel = HomeViewModel()
+    @State var transaction: Transaction? = nil
+    @State var presentTransactionCreate = false
     
     var body: some View {
         NavigationView {
@@ -27,12 +29,14 @@ struct HomeView: View {
                         .font(.system(size: 14))
                         .padding(.horizontal)
                         .foregroundColor(Color(Assets.gray2.color))
-                    SecondaryButton(title: "Добавить транзакцию", image: "plus.circle", action: {
-                        homeViewModel.addTransaction(transaction: .init(name: "testing", description: "testing", amount: 1234, type: .cash, createDate: Date(), place: nil))
+                    SecondaryButton(title: "Добавить транзакцию", color: Assets.secondary, image: "plus.circle", action: {
+                        presentTransactionCreate = true
                     })
-                    HomeTransactionsView(transactions: $homeViewModel.transactions, didSelectTransaction: { transaction in
-                        print(transaction)
-                    }).frame(height: homeViewModel.transactionsHeight)
+                    .padding(.horizontal, 16)
+                    HomeTransactionsView(transactions: $homeViewModel.transactions, didSelectTransaction: { selectedItem in
+                        transaction = selectedItem
+                    })
+                    .frame(height: homeViewModel.transactionsHeight)
                     Spacer()
                 }
             }
@@ -40,6 +44,19 @@ struct HomeView: View {
             .navigationBarTitle(L10n.tabHome, displayMode: .automatic)
         }
         .padding(.top)
+        .sheet(isPresented: .constant(presentTransactionCreate || $transaction.wrappedValue != nil), onDismiss: { presentTransactionCreate = false
+                transaction = nil }) {
+            if presentTransactionCreate {
+                TransactionCreateView(presentTransactionCreate: $presentTransactionCreate, onTransactionCreate: { transaction in
+                    homeViewModel.addTransaction(transaction: transaction)
+                })
+            } else {
+                TransactionView(transaction: $transaction) {
+                    guard let transaction = $transaction.wrappedValue else { return }
+                    homeViewModel.changeTransaction(transaction: transaction)
+                }
+            }
+        }
     }
 }
 

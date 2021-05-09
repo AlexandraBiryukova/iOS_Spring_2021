@@ -23,7 +23,7 @@ struct MainTabView: View {
                            icon: { Image(Assets.tabHome.name) })
                 }
             
-            ContentView()
+            PlacesView(viewState: .tab, onTransactionChange: {})
                 .tabItem {
                     Label( title: { Text(L10n.tabPlaces) },
                            icon: { Image(Assets.tabList.name) })

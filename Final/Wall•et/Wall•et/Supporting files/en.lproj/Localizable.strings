@@ -18,6 +18,24 @@
 "AppLanguage.kk.inRussianLanguage" = "Казахский";
 "AppLanguage.kk.inEnglishLanguage" = "Kazakh";
 
+// MARK: - CORE
+"Core.cancel" = "Отмена";
+"Core.go" = "Перейти";
+"Core.done" = "Готово";
+"Core.next" = "Далее";
+"Core.no" = "Нет";
+"Core.yes" = "Да";
+"Core.save" = "Сохранить";
+"Core.delete" = "Удалить";
+"Core.notFound" = "Здесь ничего нет";
+"Core.filter" = "Фильтр";
+
+// MARK: - ImagePickerService
+"ImagePickerService.cameraPermissionDeniedTitle" = "Чтобы продолжить, перейдите в системные настройки и разрешите доступ к камере";
+"ImagePickerService.photoLibraryPermissionDeniedTitle" = "Чтобы продолжить, перейдите в системные настройки и разрешите доступ к галерее";
+"ImagePickerService.camera" = "Сделать фото";
+"ImagePickerService.photoLibrary" = "Выбрать из галереи";
+
 // MARK: - TabView
 "Tab.profile" = "Профиль";
 "Tab.places" = "Места транзакций";

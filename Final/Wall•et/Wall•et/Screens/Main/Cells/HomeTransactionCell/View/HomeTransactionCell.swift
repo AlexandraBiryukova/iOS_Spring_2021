@@ -27,12 +27,12 @@ final class HomeTransactionCell: UICollectionViewCell {
     func configure(with cellModel: TransactionCellModel) {
         titleLabel.text = cellModel.title
         subtitleLabel.text = cellModel.amount
-        iconImageView.image = cellModel.icon
+        iconImageView.image = cellModel.bigIcon ?? cellModel.smallIcon
+        iconImageView.contentMode = cellModel.bigIcon != nil ? .scaleToFill : .center
     }
 
     private func setup() {
         iconImageView.layer.cornerRadius = 28
-        iconImageView.contentMode = .center
         updateColors()
     }
 
