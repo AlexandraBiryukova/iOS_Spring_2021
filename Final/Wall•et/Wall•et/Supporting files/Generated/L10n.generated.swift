@@ -29,6 +29,34 @@ internal enum L10n {
   internal static var appLanguageRuInKazakhLanguage: String { return L10n.tr("Localizable", "AppLanguage.ru.inKazakhLanguage") }
   /// Русский
   internal static var appLanguageRuNative: String { return L10n.tr("Localizable", "AppLanguage.ru.native") }
+  /// Отмена
+  internal static var coreCancel: String { return L10n.tr("Localizable", "Core.cancel") }
+  /// Удалить
+  internal static var coreDelete: String { return L10n.tr("Localizable", "Core.delete") }
+  /// Готово
+  internal static var coreDone: String { return L10n.tr("Localizable", "Core.done") }
+  /// Фильтр
+  internal static var coreFilter: String { return L10n.tr("Localizable", "Core.filter") }
+  /// Перейти
+  internal static var coreGo: String { return L10n.tr("Localizable", "Core.go") }
+  /// Далее
+  internal static var coreNext: String { return L10n.tr("Localizable", "Core.next") }
+  /// Нет
+  internal static var coreNo: String { return L10n.tr("Localizable", "Core.no") }
+  /// Здесь ничего нет
+  internal static var coreNotFound: String { return L10n.tr("Localizable", "Core.notFound") }
+  /// Сохранить
+  internal static var coreSave: String { return L10n.tr("Localizable", "Core.save") }
+  /// Да
+  internal static var coreYes: String { return L10n.tr("Localizable", "Core.yes") }
+  /// Сделать фото
+  internal static var imagePickerServiceCamera: String { return L10n.tr("Localizable", "ImagePickerService.camera") }
+  /// Чтобы продолжить, перейдите в системные настройки и разрешите доступ к камере
+  internal static var imagePickerServiceCameraPermissionDeniedTitle: String { return L10n.tr("Localizable", "ImagePickerService.cameraPermissionDeniedTitle") }
+  /// Выбрать из галереи
+  internal static var imagePickerServicePhotoLibrary: String { return L10n.tr("Localizable", "ImagePickerService.photoLibrary") }
+  /// Чтобы продолжить, перейдите в системные настройки и разрешите доступ к галерее
+  internal static var imagePickerServicePhotoLibraryPermissionDeniedTitle: String { return L10n.tr("Localizable", "ImagePickerService.photoLibraryPermissionDeniedTitle") }
   /// Главная
   internal static var tabHome: String { return L10n.tr("Localizable", "Tab.home") }
   /// Места транзакций

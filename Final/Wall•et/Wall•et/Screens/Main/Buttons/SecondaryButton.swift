@@ -42,6 +42,5 @@ struct SecondaryButton: View {
             }
         })
         .buttonStyle(SecondaryButtonStyle(color: color))
-        .padding(.horizontal)
     }
 }

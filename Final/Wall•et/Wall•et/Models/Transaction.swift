@@ -31,20 +31,23 @@ enum TransactionType: String, Codable, CaseIterable {
 
 struct Transaction: Identifiable, Codable {
     var id = UUID()
+    var data: Data?
     var name: String
-    var description: String?
+    var description: String
     var amount: Double
     var type: TransactionType
     var createDate: Date
     var place: TransactionPlace?
     
     init(name: String = "",
-         description: String? = nil,
+         data: Data? = nil,
+         description: String = "",
          amount: Double = 0,
          type: TransactionType = .cash,
          createDate: Date = Date(),
          place: TransactionPlace? = nil) {
         self.name = name
+        self.data = data
         self.description = description
         self.amount = amount
         self.type = type

@@ -30,8 +30,9 @@ struct HomeView: View {
                         .padding(.horizontal)
                         .foregroundColor(Color(Assets.gray2.color))
                     SecondaryButton(title: "Добавить транзакцию", color: Assets.secondary, image: "plus.circle", action: {
-                        homeViewModel.addTransaction(transaction: .init(name: "testing", description: "testing", amount: 1234, type: .cash, createDate: Date(), place: nil))
+                        presentTransactionCreate = true
                     })
+                    .padding(.horizontal, 16)
                     HomeTransactionsView(transactions: $homeViewModel.transactions, didSelectTransaction: { selectedItem in
                         transaction = selectedItem
                     })
@@ -45,9 +46,15 @@ struct HomeView: View {
         .padding(.top)
         .sheet(isPresented: .constant(presentTransactionCreate || $transaction.wrappedValue != nil), onDismiss: { presentTransactionCreate = false
                 transaction = nil }) {
-            TransactionView(transaction: $transaction) {
-                guard let transaction = $transaction.wrappedValue else { return }
-                homeViewModel.changeTransaction(transaction: transaction)
+            if presentTransactionCreate {
+                TransactionCreateView(presentTransactionCreate: $presentTransactionCreate, onTransactionCreate: { transaction in
+                    homeViewModel.addTransaction(transaction: transaction)
+                })
+            } else {
+                TransactionView(transaction: $transaction) {
+                    guard let transaction = $transaction.wrappedValue else { return }
+                    homeViewModel.changeTransaction(transaction: transaction)
+                }
             }
         }
     }
