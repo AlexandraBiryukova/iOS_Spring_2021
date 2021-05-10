@@ -37,6 +37,6 @@
 "ImagePickerService.photoLibrary" = "Выбрать из галереи";
 
 // MARK: - TabView
-"Tab.profile" = "Профиль";
-"Tab.places" = "Места транзакций";
-"Tab.home" = "Главная";
+"Tab.profile" = "Profile";
+"Tab.places" = "TransactionPlaces";
+"Tab.home" = "Home";

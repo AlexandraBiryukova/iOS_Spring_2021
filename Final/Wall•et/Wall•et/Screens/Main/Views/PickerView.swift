@@ -11,21 +11,32 @@ protocol PickerItem: Codable {
     var title: String { get }
 }
 
+struct Placeholder: PickerItem {
+    var title: String { "" }
+}
+
 struct PickerView<Item: PickerItem>: View {
     @Binding var selectedItem: Item
     @State var presentActionSheet = false
+    let icon: String?
     let title: String
     let items: [Item]
+    let completion: () -> Void
     
-    init(selectedItem: Binding<Item>, items: [Item], title: String) {
+    init(selectedItem: Binding<Item>, items: [Item], title: String, icon: String? = nil, completion: @escaping () -> Void = {}) {
     _selectedItem = selectedItem
         self.items = items
         self.title = title
+        self.icon = icon
+        self.completion = completion
     }
     
     var buttons: [ActionSheet.Button] {
         var actions: [ActionSheet.Button] = items.map { item in
-            .default(Text(item.title), action: { selectedItem = item })
+            .default(Text(item.title), action: {
+                selectedItem = item
+                completion()
+            })
         }
         actions.append(.cancel {
             presentActionSheet = false
@@ -34,7 +45,13 @@ struct PickerView<Item: PickerItem>: View {
     }
     
     var body: some View {
-        HStack(spacing: 4) {
+        HStack(spacing: 12) {
+            if let icon = icon {
+                Image(systemName: icon)
+                    .resizable()
+                    .frame(width: 24, height: 24)
+                    .foregroundColor(Color(Assets.primary.color))
+            }
             Text(title)
                 .font(.system(size: 16))
                 .foregroundColor(Color(Assets.black.color))
@@ -56,6 +73,10 @@ struct PickerView<Item: PickerItem>: View {
                 .stroke(Color(Assets.divider.color), lineWidth: 1)
         )
         .onTapGesture {
+            guard !items.isEmpty else {
+                completion()
+                return
+            }
             presentActionSheet = true
         }
         .actionSheet(isPresented: $presentActionSheet, content: {

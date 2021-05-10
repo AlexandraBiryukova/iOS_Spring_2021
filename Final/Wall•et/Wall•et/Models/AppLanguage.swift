@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum AppLanguage: String, CaseIterable, Codable {
+enum AppLanguage: String, PickerItem, CaseIterable, Codable {
     case kk
     case ru
     case en
@@ -20,7 +20,7 @@ extension AppLanguage {
         Locale(identifier: rawValue)
     }
 
-    var titleNative: String {
+    var title: String {
         switch self {
         case .ru:
             return L10n.appLanguageRuNative
