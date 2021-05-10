@@ -42,6 +42,9 @@
 		A8518401264966DF00FED8EC /* ToggleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8518400264966DF00FED8EC /* ToggleView.swift */; };
 		A851840426496A6400FED8EC /* FilterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A851840326496A6400FED8EC /* FilterModel.swift */; };
 		A851840726496B0600FED8EC /* PlaceDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A851840626496B0600FED8EC /* PlaceDetailView.swift */; };
+		A851840C26497AD700FED8EC /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A851840B26497AD600FED8EC /* ProfileView.swift */; };
+		A85184102649ACF200FED8EC /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = A851840F2649ACF200FED8EC /* Profile.swift */; };
+		A85184132649AD5D00FED8EC /* View+AnimationCompletion.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85184122649AD5D00FED8EC /* View+AnimationCompletion.swift */; };
 		A8CC21E82646A96A00CA38A4 /* HomeTransactionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8CC21E72646A96A00CA38A4 /* HomeTransactionsView.swift */; };
 		A8CC21EE2646AB7900CA38A4 /* HomeTransactionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8CC21EC2646AB7900CA38A4 /* HomeTransactionCell.xib */; };
 		A8CC21EF2646AB7900CA38A4 /* HomeTransactionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8CC21ED2646AB7900CA38A4 /* HomeTransactionCell.swift */; };
@@ -104,6 +107,9 @@
 		A8518400264966DF00FED8EC /* ToggleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleView.swift; sourceTree = "<group>"; };
 		A851840326496A6400FED8EC /* FilterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterModel.swift; sourceTree = "<group>"; };
 		A851840626496B0600FED8EC /* PlaceDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceDetailView.swift; sourceTree = "<group>"; };
+		A851840B26497AD600FED8EC /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		A851840F2649ACF200FED8EC /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		A85184122649AD5D00FED8EC /* View+AnimationCompletion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+AnimationCompletion.swift"; sourceTree = "<group>"; };
 		A8CC21E72646A96A00CA38A4 /* HomeTransactionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTransactionsView.swift; sourceTree = "<group>"; };
 		A8CC21EC2646AB7900CA38A4 /* HomeTransactionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeTransactionCell.xib; sourceTree = "<group>"; };
 		A8CC21ED2646AB7900CA38A4 /* HomeTransactionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTransactionCell.swift; sourceTree = "<group>"; };
@@ -218,6 +224,7 @@
 		A806A69526468B5B00951373 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				A851840A26497AB300FED8EC /* Profile */,
 				A806A6AE26469A2C00951373 /* Home */,
 				A806A6B326469A4000951373 /* Main */,
 				A835BB562647035100EB83BE /* Places */,
@@ -233,6 +240,7 @@
 				A8CC21F72646ABC800CA38A4 /* Transaction.swift */,
 				A8CC21FA2646AC1E00CA38A4 /* TransactionPlace.swift */,
 				A851840326496A6400FED8EC /* FilterModel.swift */,
+				A851840F2649ACF200FED8EC /* Profile.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -346,6 +354,14 @@
 			path = Transactions;
 			sourceTree = "<group>";
 		};
+		A851840A26497AB300FED8EC /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				A851840B26497AD600FED8EC /* ProfileView.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
 		A8CC21EA2646AB2E00CA38A4 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -442,6 +458,7 @@
 			isa = PBXGroup;
 			children = (
 				A8CC22212646AF9000CA38A4 /* UICollectionView */,
+				A85184122649AD5D00FED8EC /* View+AnimationCompletion.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -620,6 +637,7 @@
 				A806A69F26468BD100951373 /* AppLanguage.swift in Sources */,
 				A806A69A26468BA900951373 /* Assets.generated.swift in Sources */,
 				A8CC22162646ADDB00CA38A4 /* Array+Factory.swift in Sources */,
+				A85184132649AD5D00FED8EC /* View+AnimationCompletion.swift in Sources */,
 				A8CC22242646AFA800CA38A4 /* UICollectionView+Register.swift in Sources */,
 				A851840726496B0600FED8EC /* PlaceDetailView.swift in Sources */,
 				A8CC221A2646ADDB00CA38A4 /* Observable.swift in Sources */,
@@ -635,6 +653,7 @@
 				A85183FE26494FB000FED8EC /* SelectView.swift in Sources */,
 				A8CC22182646ADDB00CA38A4 /* String+Replacing.swift in Sources */,
 				A835BB8D2648318F00EB83BE /* AlertView.swift in Sources */,
+				A85184102649ACF200FED8EC /* Profile.swift in Sources */,
 				A8CC21F42646ABAE00CA38A4 /* HomeTransactionCellModel.swift in Sources */,
 				A8CC21FB2646AC1E00CA38A4 /* TransactionPlace.swift in Sources */,
 				A835BB542646EFD800EB83BE /* TransactionView.swift in Sources */,
@@ -649,6 +668,7 @@
 				A835BB902648483200EB83BE /* ImagePickerView.swift in Sources */,
 				A8518401264966DF00FED8EC /* ToggleView.swift in Sources */,
 				A835BB6D2647E83800EB83BE /* BaseTextFieldView.swift in Sources */,
+				A851840C26497AD700FED8EC /* ProfileView.swift in Sources */,
 				A8CC22032646AD5D00CA38A4 /* PropertyDateFormatter.swift in Sources */,
 				A8CC21E82646A96A00CA38A4 /* HomeTransactionsView.swift in Sources */,
 				A8CC221C2646ADDB00CA38A4 /* ValidationRule.swift in Sources */,

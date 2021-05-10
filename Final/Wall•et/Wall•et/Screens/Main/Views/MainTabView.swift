@@ -28,7 +28,7 @@ struct MainTabView: View {
                     Label( title: { Text(L10n.tabPlaces) },
                            icon: { Image(Assets.tabList.name) })
                 }
-            ContentView()
+            ProfileView()
                 .tabItem {
                     Label( title: { Text(L10n.tabProfile) },
                            icon: { Image(Assets.tabProfile.name) })
