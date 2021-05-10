@@ -9,14 +9,27 @@ import SwiftUI
 
 final class PlacesViewModel: ObservableObject {
     @Published var places: [TransactionPlace] = []
+    @Published var filterModel: FilterModel = .init()
+    
+    func getPlaces() {
+        print(filterModel)
+        self.places = []
+    }
 
+    func indexOf(place: TransactionPlace) -> Int? {
+        places.firstIndex(where: { $0.id == place.id })
+    }
+    
     func changePlace(place: TransactionPlace) {
-        guard let index = places.firstIndex(where: { $0.id == place.id }) else { return }
+        guard let index = indexOf(place: place) else {
+            addPlace(place: place)
+            return
+        }
         places[index] = place
     }
     
     func removePlace(place: TransactionPlace) {
-        guard let index = places.firstIndex(where: { $0.id == place.id }) else { return }
+        guard let index = indexOf(place: place) else { return }
         places.remove(at: index)
     }
     

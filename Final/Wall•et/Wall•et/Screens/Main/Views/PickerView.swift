@@ -1,5 +1,5 @@
 //
-//  TransactionCreatePaymentView.swift
+//  PickerView.swift
 //  Wall•et
 //
 //  Created by Alexandra Biryukova on 5/9/21.
@@ -7,16 +7,39 @@
 
 import SwiftUI
 
-struct TransactionCreatePaymentView: View {
-    @Binding var type: TransactionType
+protocol PickerItem: Codable {
+    var title: String { get }
+}
+
+struct PickerView<Item: PickerItem>: View {
+    @Binding var selectedItem: Item
     @State var presentActionSheet = false
+    let title: String
+    let items: [Item]
+    
+    init(selectedItem: Binding<Item>, items: [Item], title: String) {
+    _selectedItem = selectedItem
+        self.items = items
+        self.title = title
+    }
+    
+    var buttons: [ActionSheet.Button] {
+        var actions: [ActionSheet.Button] = items.map { item in
+            .default(Text(item.title), action: { selectedItem = item })
+        }
+        actions.append(.cancel {
+            presentActionSheet = false
+        })
+        return actions
+    }
+    
     var body: some View {
         HStack(spacing: 4) {
-            Text("Тип оплаты")
+            Text(title)
                 .font(.system(size: 16))
                 .foregroundColor(Color(Assets.black.color))
             Spacer()
-            Text(type.title)
+            Text(selectedItem.title)
                 .font(.system(size: 16))
                 .foregroundColor(Color(Assets.primary.color))
             Image(systemName: "chevron.right")
@@ -36,15 +59,7 @@ struct TransactionCreatePaymentView: View {
             presentActionSheet = true
         }
         .actionSheet(isPresented: $presentActionSheet, content: {
-            ActionSheet(title: Text("Выберите тип оплаты"), message: nil, buttons: [
-                .default(Text(TransactionType.card.title), action: { type = .card }),
-                .default(Text(TransactionType.cash.title), action: {
-                    type = .cash
-                }),
-                .cancel {
-                    presentActionSheet = false
-                }
-            ])
+            ActionSheet(title: Text(title), message: nil, buttons: buttons)
         })
     }
 }

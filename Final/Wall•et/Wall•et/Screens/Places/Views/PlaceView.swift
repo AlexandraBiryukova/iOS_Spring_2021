@@ -32,7 +32,7 @@ struct PlaceView: View {
                             .foregroundColor(Color(Assets.black.color))
                             .font(.system(size: 18, weight: .semibold))
                     }
-                    Text(place.description ?? place.address ?? place.categories.joined(separator: ", "))
+                    Text([place.description, place.address, place.category.title].first(where: { !$0.isEmpty }) ?? "")
                         .foregroundColor(Color(Assets.gray2.color))
                         .font(.system(size: 14, weight: .regular))
                 }

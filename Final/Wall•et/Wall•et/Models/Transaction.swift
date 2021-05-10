@@ -7,7 +7,7 @@
 
 import UIKit
 
-enum TransactionType: String, Codable, CaseIterable {
+enum TransactionType: String, Codable, CaseIterable, PickerItem {
     case cash, card
     
     var title: String {

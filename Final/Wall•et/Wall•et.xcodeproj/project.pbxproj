@@ -31,12 +31,17 @@
 		A835BB6D2647E83800EB83BE /* BaseTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A835BB6C2647E83800EB83BE /* BaseTextFieldView.swift */; };
 		A835BB702647EEED00EB83BE /* AmountTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A835BB6F2647EEEC00EB83BE /* AmountTextFieldView.swift */; };
 		A835BB7426480BAB00EB83BE /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A835BB7326480BAA00EB83BE /* PrimaryButton.swift */; };
-		A835BB7726480C1700EB83BE /* TransactionCreateDateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A835BB7626480C1700EB83BE /* TransactionCreateDateView.swift */; };
-		A835BB7A26480C2E00EB83BE /* TransactionCreatePaymentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A835BB7926480C2E00EB83BE /* TransactionCreatePaymentView.swift */; };
+		A835BB7726480C1700EB83BE /* DateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A835BB7626480C1700EB83BE /* DateView.swift */; };
+		A835BB7A26480C2E00EB83BE /* PickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A835BB7926480C2E00EB83BE /* PickerView.swift */; };
 		A835BB7E26482CB900EB83BE /* ImagePickerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A835BB7D26482CB800EB83BE /* ImagePickerService.swift */; };
 		A835BB8D2648318F00EB83BE /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A835BB8C2648318F00EB83BE /* AlertView.swift */; };
 		A835BB902648483200EB83BE /* ImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A835BB8F2648483200EB83BE /* ImagePickerView.swift */; };
 		A835BB932648487C00EB83BE /* ImageCropperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A835BB922648487B00EB83BE /* ImageCropperView.swift */; };
+		A835BB9A26493F8800EB83BE /* FilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A835BB9926493F8700EB83BE /* FilterView.swift */; };
+		A85183FE26494FB000FED8EC /* SelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85183FD26494FB000FED8EC /* SelectView.swift */; };
+		A8518401264966DF00FED8EC /* ToggleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8518400264966DF00FED8EC /* ToggleView.swift */; };
+		A851840426496A6400FED8EC /* FilterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A851840326496A6400FED8EC /* FilterModel.swift */; };
+		A851840726496B0600FED8EC /* PlaceDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A851840626496B0600FED8EC /* PlaceDetailView.swift */; };
 		A8CC21E82646A96A00CA38A4 /* HomeTransactionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8CC21E72646A96A00CA38A4 /* HomeTransactionsView.swift */; };
 		A8CC21EE2646AB7900CA38A4 /* HomeTransactionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8CC21EC2646AB7900CA38A4 /* HomeTransactionCell.xib */; };
 		A8CC21EF2646AB7900CA38A4 /* HomeTransactionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8CC21ED2646AB7900CA38A4 /* HomeTransactionCell.swift */; };
@@ -88,12 +93,17 @@
 		A835BB6C2647E83800EB83BE /* BaseTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTextFieldView.swift; sourceTree = "<group>"; };
 		A835BB6F2647EEEC00EB83BE /* AmountTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmountTextFieldView.swift; sourceTree = "<group>"; };
 		A835BB7326480BAA00EB83BE /* PrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButton.swift; sourceTree = "<group>"; };
-		A835BB7626480C1700EB83BE /* TransactionCreateDateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCreateDateView.swift; sourceTree = "<group>"; };
-		A835BB7926480C2E00EB83BE /* TransactionCreatePaymentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCreatePaymentView.swift; sourceTree = "<group>"; };
+		A835BB7626480C1700EB83BE /* DateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateView.swift; sourceTree = "<group>"; };
+		A835BB7926480C2E00EB83BE /* PickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerView.swift; sourceTree = "<group>"; };
 		A835BB7D26482CB800EB83BE /* ImagePickerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerService.swift; sourceTree = "<group>"; };
 		A835BB8C2648318F00EB83BE /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
 		A835BB8F2648483200EB83BE /* ImagePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerView.swift; sourceTree = "<group>"; };
 		A835BB922648487B00EB83BE /* ImageCropperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCropperView.swift; sourceTree = "<group>"; };
+		A835BB9926493F8700EB83BE /* FilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterView.swift; sourceTree = "<group>"; };
+		A85183FD26494FB000FED8EC /* SelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectView.swift; sourceTree = "<group>"; };
+		A8518400264966DF00FED8EC /* ToggleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleView.swift; sourceTree = "<group>"; };
+		A851840326496A6400FED8EC /* FilterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterModel.swift; sourceTree = "<group>"; };
+		A851840626496B0600FED8EC /* PlaceDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceDetailView.swift; sourceTree = "<group>"; };
 		A8CC21E72646A96A00CA38A4 /* HomeTransactionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTransactionsView.swift; sourceTree = "<group>"; };
 		A8CC21EC2646AB7900CA38A4 /* HomeTransactionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeTransactionCell.xib; sourceTree = "<group>"; };
 		A8CC21ED2646AB7900CA38A4 /* HomeTransactionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTransactionCell.swift; sourceTree = "<group>"; };
@@ -222,6 +232,7 @@
 				A806A6AB26469A1400951373 /* Banner.swift */,
 				A8CC21F72646ABC800CA38A4 /* Transaction.swift */,
 				A8CC21FA2646AC1E00CA38A4 /* TransactionPlace.swift */,
+				A851840326496A6400FED8EC /* FilterModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -265,13 +276,17 @@
 		A806A6BC2646A1C600951373 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				A835BB682647E27300EB83BE /* EmptyView.swift */,
-				A806A6782646864000951373 /* MainTabView.swift */,
-				A835BB6C2647E83800EB83BE /* BaseTextFieldView.swift */,
 				A835BB6F2647EEEC00EB83BE /* AmountTextFieldView.swift */,
 				A835BB8C2648318F00EB83BE /* AlertView.swift */,
+				A835BB6C2647E83800EB83BE /* BaseTextFieldView.swift */,
+				A835BB7626480C1700EB83BE /* DateView.swift */,
+				A835BB682647E27300EB83BE /* EmptyView.swift */,
 				A835BB8F2648483200EB83BE /* ImagePickerView.swift */,
 				A835BB922648487B00EB83BE /* ImageCropperView.swift */,
+				A806A6782646864000951373 /* MainTabView.swift */,
+				A835BB7926480C2E00EB83BE /* PickerView.swift */,
+				A85183FD26494FB000FED8EC /* SelectView.swift */,
+				A8518400264966DF00FED8EC /* ToggleView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -289,7 +304,9 @@
 			isa = PBXGroup;
 			children = (
 				A835BB612647104300EB83BE /* PlaceView.swift */,
+				A851840626496B0600FED8EC /* PlaceDetailView.swift */,
 				A835BB5A264703A500EB83BE /* PlacesView.swift */,
+				A835BB9926493F8700EB83BE /* FilterView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -308,6 +325,25 @@
 				A835BB7D26482CB800EB83BE /* ImagePickerService.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		A835BB9626493F2900EB83BE /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				A806A6AF26469A3400951373 /* BannerView.swift */,
+				A8CC21E72646A96A00CA38A4 /* HomeTransactionsView.swift */,
+				A806A6A826468CCF00951373 /* HomeView.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		A835BB9726493F2F00EB83BE /* Transactions */ = {
+			isa = PBXGroup;
+			children = (
+				A835BB532646EFD800EB83BE /* TransactionView.swift */,
+				A835BB652647DF2600EB83BE /* TransactionCreateView.swift */,
+			);
+			path = Transactions;
 			sourceTree = "<group>";
 		};
 		A8CC21EA2646AB2E00CA38A4 /* Cells */ = {
@@ -422,13 +458,8 @@
 		A8CC22292646B16900CA38A4 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				A806A6AF26469A3400951373 /* BannerView.swift */,
-				A8CC21E72646A96A00CA38A4 /* HomeTransactionsView.swift */,
-				A806A6A826468CCF00951373 /* HomeView.swift */,
-				A835BB532646EFD800EB83BE /* TransactionView.swift */,
-				A835BB652647DF2600EB83BE /* TransactionCreateView.swift */,
-				A835BB7626480C1700EB83BE /* TransactionCreateDateView.swift */,
-				A835BB7926480C2E00EB83BE /* TransactionCreatePaymentView.swift */,
+				A835BB9726493F2F00EB83BE /* Transactions */,
+				A835BB9626493F2900EB83BE /* Home */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -581,6 +612,7 @@
 				A806A6792646864000951373 /* MainTabView.swift in Sources */,
 				A8CC22152646ADDB00CA38A4 /* Date+Convenience.swift in Sources */,
 				A8CC22192646ADDB00CA38A4 /* Atomic.swift in Sources */,
+				A835BB9A26493F8800EB83BE /* FilterView.swift in Sources */,
 				A806A6A926468CCF00951373 /* HomeView.swift in Sources */,
 				A835BB5F264703BA00EB83BE /* PlacesViewModel.swift in Sources */,
 				A806A6772646864000951373 /* Wall_etApp.swift in Sources */,
@@ -589,6 +621,7 @@
 				A806A69A26468BA900951373 /* Assets.generated.swift in Sources */,
 				A8CC22162646ADDB00CA38A4 /* Array+Factory.swift in Sources */,
 				A8CC22242646AFA800CA38A4 /* UICollectionView+Register.swift in Sources */,
+				A851840726496B0600FED8EC /* PlaceDetailView.swift in Sources */,
 				A8CC221A2646ADDB00CA38A4 /* Observable.swift in Sources */,
 				A835BB7E26482CB900EB83BE /* ImagePickerService.swift in Sources */,
 				A8CC222C2646B17D00CA38A4 /* HomeViewModel.swift in Sources */,
@@ -598,7 +631,8 @@
 				A835BB622647104400EB83BE /* PlaceView.swift in Sources */,
 				A835BB932648487C00EB83BE /* ImageCropperView.swift in Sources */,
 				A8CC221B2646ADDB00CA38A4 /* Device.swift in Sources */,
-				A835BB7726480C1700EB83BE /* TransactionCreateDateView.swift in Sources */,
+				A835BB7726480C1700EB83BE /* DateView.swift in Sources */,
+				A85183FE26494FB000FED8EC /* SelectView.swift in Sources */,
 				A8CC22182646ADDB00CA38A4 /* String+Replacing.swift in Sources */,
 				A835BB8D2648318F00EB83BE /* AlertView.swift in Sources */,
 				A8CC21F42646ABAE00CA38A4 /* HomeTransactionCellModel.swift in Sources */,
@@ -607,12 +641,13 @@
 				A8CC22252646AFA800CA38A4 /* UICollectionView+Dequeue.swift in Sources */,
 				A8CC22052646AD5D00CA38A4 /* PhoneNumberFormatter.swift in Sources */,
 				A8CC22042646AD5D00CA38A4 /* PropertyNumberFormatter.swift in Sources */,
-				A835BB7A26480C2E00EB83BE /* TransactionCreatePaymentView.swift in Sources */,
+				A835BB7A26480C2E00EB83BE /* PickerView.swift in Sources */,
 				A8CC21EF2646AB7900CA38A4 /* HomeTransactionCell.swift in Sources */,
 				A806A6AC26469A1400951373 /* Banner.swift in Sources */,
 				A835BB692647E27300EB83BE /* EmptyView.swift in Sources */,
 				A806A69B26468BA900951373 /* L10n.generated.swift in Sources */,
 				A835BB902648483200EB83BE /* ImagePickerView.swift in Sources */,
+				A8518401264966DF00FED8EC /* ToggleView.swift in Sources */,
 				A835BB6D2647E83800EB83BE /* BaseTextFieldView.swift in Sources */,
 				A8CC22032646AD5D00CA38A4 /* PropertyDateFormatter.swift in Sources */,
 				A8CC21E82646A96A00CA38A4 /* HomeTransactionsView.swift in Sources */,
@@ -620,6 +655,7 @@
 				A8CC22172646ADDB00CA38A4 /* Array+Safe.swift in Sources */,
 				A835BB5B264703A500EB83BE /* PlacesView.swift in Sources */,
 				A806A6A426468C7C00951373 /* AppLanguageStorage.swift in Sources */,
+				A851840426496A6400FED8EC /* FilterModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

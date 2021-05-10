@@ -9,28 +9,28 @@ import Foundation
 
 struct TransactionPlace: Identifiable, Codable {
     var id = UUID()
-    var name: String?
-    var address: String?
-    var description: String?
+    var name: String
+    var address: String
+    var description: String
     var transactions: Int = 0
-    var categories: [String] = []
-    var openTime: Date?
-    var closeTime: Date?
+    var category: FilterCategory
+    var openTime: Date = Date()
+    var closeTime: Date = Date()
     var isFavourite = false
     
-    init(name: String? = nil,
-         address: String? = nil,
-         description: String? = nil,
+    init(name: String = "",
+         address: String = "",
+         description: String = "",
          transactions: Int = 0,
-         categories: [String] = [],
-         openTime: Date? = nil,
-         closeTime: Date? = nil,
+         category: FilterCategory = .none,
+         openTime: Date = .init(),
+         closeTime: Date = .init(),
          isFavourite: Bool = false) {
         self.name = name
         self.address = address
         self.description = description
         self.transactions = transactions
-        self.categories = categories
+        self.category = category
         self.openTime = openTime
         self.closeTime = closeTime
         self.isFavourite = isFavourite

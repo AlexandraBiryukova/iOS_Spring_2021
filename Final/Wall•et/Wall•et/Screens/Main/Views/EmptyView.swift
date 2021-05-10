@@ -48,24 +48,27 @@ struct EmptyView: View {
                     .resizable()
                     .frame(width: 56, height: 56)
                     .foregroundColor(Color(Assets.gray2.color))
+                    .padding(.horizontal, 16)
             }
             if let title = title {
                 Text(title)
                     .foregroundColor(Color(Assets.gray2.color))
                     .font(.system(size: 20, weight: .semibold))
+                    .padding(.horizontal, 16)
             }
             if let description = description {
                 Text(description)
                     .foregroundColor(Color(Assets.gray2.color))
                     .font(.system(size: 16))
                     .multilineTextAlignment(.center)
+                    .padding(.horizontal, 16)
             }
             if let actionTitle = actionTitle {
                 SecondaryButton(title: actionTitle, color: Assets.primary, image: nil) {
                     action()
                 }
+                .padding(.horizontal, 16)
             }
         }
-        .padding(.horizontal, 16)
     }
 }

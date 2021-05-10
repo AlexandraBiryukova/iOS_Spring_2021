@@ -18,6 +18,7 @@ struct Wall_etApp: App {
         UINavigationBar.appearance().shadowImage = .init()
         UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)
     }
+    
     var body: some Scene {
         WindowGroup {
             MainTabView()
