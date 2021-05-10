@@ -2,7 +2,6 @@
 // Generated using SwiftGen — https://github.com/SwiftGen/SwiftGen
 
 import Foundation
-import SwiftUI
 
 // swiftlint:disable superfluous_disable_command file_length implicit_return
 

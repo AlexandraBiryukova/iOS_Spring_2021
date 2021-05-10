@@ -39,23 +39,38 @@ struct ProfileView: View {
                         if !(profile.firstName.isEmpty || profile.lastName.isEmpty) {
                             Text(profile.firstName + " " + profile.lastName)
                                 .font(.system(size: 24))
+                                .multilineTextAlignment(.center)
+                                .lineLimit(2)
+                                .truncationMode(.tail)
                         }
                         Text(profile.login)
                             .font(.system(size: 16))
                             .foregroundColor(Color(Assets.gray2.color))
+                            .multilineTextAlignment(.center)
+                            .lineLimit(2)
+                            .truncationMode(.tail)
                         if !profile.phoneNumber.isEmpty,
                            formatter.validatePhoneNumber(input: profile.phoneNumber) {
                             Text(formatter.formattedPhoneNumber(from: profile.phoneNumber) ?? "")
                                 .font(.system(size: 16))
                                 .foregroundColor(Color(Assets.gray2.color))
+                                .multilineTextAlignment(.center)
+                                .lineLimit(2)
+                                .truncationMode(.tail)
                         }
                         if !profile.email.isEmpty,
                            ValidationRule(title: "", pattern: EmailValidationPattern().pattern).check(profile.email) {
                             Text(profile.email)
                                 .font(.system(size: 16))
                                 .foregroundColor(Color(Assets.gray2.color))
+                                .multilineTextAlignment(.center)
+                                .truncationMode(.tail)
+                                .lineLimit(2)
                         }
-                    }.background(Color.white)
+                    }
+                    .background(Color.white)
+                    .padding(.horizontal, 12)
+                    .frame(width: 240, height: 240)
                 }
                 .rotation3DEffect(.degrees(rotateDegrees), axis: (x:0, y:-1, z:0))
                 .background(Color.white)
@@ -106,7 +121,7 @@ struct ProfileView: View {
         .sheet(isPresented: $presentInfo, onDismiss: {
             presentInfo = false
         }) {
-            ProfileView()
+            ProfileInfoView(presentProfileInfo: $presentInfo, profile: $profile)
         }
     }
 }

@@ -45,6 +45,7 @@ internal enum Assets {
   internal static let familyBudget = ImageAsset(name: "family-budget")
   internal static let launchBackground = ImageAsset(name: "launch-background")
   internal static let locationPin = ImageAsset(name: "location-pin")
+  internal static let profileAvatar = ImageAsset(name: "profile-avatar")
   internal static let startups = ImageAsset(name: "startups")
 }
 // swiftlint:enable identifier_name line_length nesting type_body_length type_name
