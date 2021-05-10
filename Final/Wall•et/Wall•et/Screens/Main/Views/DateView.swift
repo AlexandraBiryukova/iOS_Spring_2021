@@ -1,5 +1,5 @@
 //
-//  TransactionCreateDateView.swift
+//  DateView.swift
 //  Wall•et
 //
 //  Created by Alexandra Biryukova on 5/9/21.
@@ -7,20 +7,21 @@
 
 import SwiftUI
 
-struct TransactionCreateDateView: View {
+struct DateView: View {
     enum DateType {
         case time, date
     }
-    @Binding var createDate: Date
-    let type: DateType
+    @Binding var date: Date
+    let title: String
+    let type: DatePickerComponents
     
     var body: some View {
         ZStack {
             HStack(spacing: 4) {
-                Text(type == .date ? "Дата транзакции" : "Время транзакции")
+                Text(title)
                     .font(.system(size: 16))
                     .foregroundColor(Color(Assets.black.color))
-                DatePicker("", selection: $createDate, displayedComponents: type == .time ? .hourAndMinute : .date)
+                DatePicker("", selection: $date, displayedComponents: type)
                     .datePickerStyle(CompactDatePickerStyle())
                     .environment(\.locale, AppLanguage.current.locale)
             }

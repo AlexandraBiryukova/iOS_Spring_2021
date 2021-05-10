@@ -14,9 +14,11 @@ struct PlacesView: View {
     
     private let viewState: ViewState
     private let onTransactionChange: () -> Void
-    @ObservedObject var homeViewModel = PlacesViewModel()
-    @Binding var transaction: Transaction?
-    @Binding var presentPlaces: Bool
+    
+    @ObservedObject private var placesViewModel = PlacesViewModel()
+    @Binding private var transaction: Transaction?
+    @Binding private var presentPlaces: Bool
+    @State private var presentFilter: Bool = false
     
     init(viewState: ViewState,
          transaction: Binding<Transaction?> = .constant(nil),
@@ -49,7 +51,7 @@ struct PlacesView: View {
     var body: some View {
         NavigationView {
             ScrollView(showsIndicators: false) {
-                VStack(alignment: .leading, spacing: 8) {
+                VStack(alignment: .center, spacing: 8) {
                     VStack {
                         HStack {
                             Text("Фильтр")
@@ -67,11 +69,14 @@ struct PlacesView: View {
                             .padding(.leading, 24)
                         
                     }
-                    if homeViewModel.places.isEmpty {
-                        EmptyView(icon: .system(name: "mappin.and.ellipse"), title: "Здесь ничего нет", description: "На данный момент Вы не добавили ни одного места транзакции. Добавить их можно в соответствущем разделе приложения")
-                            .padding(.horizontal, 16)
+                    .background(Color.white)
+                    .onTapGesture {
+                        presentFilter = true
                     }
-                    ForEach(homeViewModel.places) { place in
+                    if placesViewModel.places.isEmpty {
+                        EmptyView(icon: .system(name: "mappin.and.ellipse"), title: "Здесь ничего нет", description: "На данный момент Вы не добавили ни одного места транзакции. Добавить их можно в соответствущем разделе приложения")
+                    }
+                    ForEach(placesViewModel.places) { place in
                             PlaceView(place: place)
                                 .padding(.horizontal, 16)
                                 .shadow(color: Color(Assets.black.color).opacity(0.2), radius: 8, x: 0, y: 0)
@@ -94,8 +99,11 @@ struct PlacesView: View {
             .navigationBarItems(leading: closeButton, trailing: addButton)
         }
         .padding(.top)
-        .sheet(isPresented: .constant(false && viewState == .tab), onDismiss: {}) {
-            TransactionView(transaction: .constant(nil), onTransactionChange: {})
+        .sheet(isPresented: $presentFilter, onDismiss: { presentFilter = false }) {
+            FilterView(filterModel: placesViewModel.filterModel, presentFilter: $presentFilter, onFilterSelect: { filterModel in
+                placesViewModel.filterModel = filterModel
+                placesViewModel.getPlaces()
+            })
         }
     }
 }

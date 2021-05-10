@@ -79,11 +79,11 @@ struct TransactionCreateView: View {
                             .padding(.horizontal, 16)
                     }
                     VStack(alignment: .center, spacing: 12) {
-                        TransactionCreatePaymentView(type: $transaction.type)
+                        PickerView(selectedItem: $transaction.type, items: TransactionType.allCases, title: "Выберите тип оплаты")
                             .padding(.horizontal, 16)
-                        TransactionCreateDateView(createDate: $transaction.createDate, type: .date)
+                        DateView(date: $transaction.createDate, title: "Дата транзакции", type: .date)
                             .padding(.horizontal, 16)
-                        TransactionCreateDateView(createDate: $transaction.createDate, type: .time)
+                        DateView(date: $transaction.createDate, title: "Время транзакции", type: .hourAndMinute)
                             .padding(.horizontal, 16)
                     }
                     PrimaryButton(title: "Добавить", color: Assets.primary, image: nil, action: {
