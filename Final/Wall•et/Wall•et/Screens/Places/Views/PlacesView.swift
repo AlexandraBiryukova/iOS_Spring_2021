@@ -19,6 +19,8 @@ struct PlacesView: View {
     @Binding private var transaction: Transaction?
     @Binding private var presentPlaces: Bool
     @State private var presentFilter: Bool = false
+    @State private var place: TransactionPlace?
+    @State private var showPlaceDetail: Bool = false
     
     init(viewState: ViewState,
          transaction: Binding<Transaction?> = .constant(nil),
@@ -42,7 +44,10 @@ struct PlacesView: View {
     @ViewBuilder
     var addButton: some View {
         if viewState == .tab {
-            Button(action: { }, label: {
+            Button(action: {
+                showPlaceDetail = true
+                place = .init()
+            }, label: {
                 Text("Добавить")
             })
         }
@@ -77,19 +82,20 @@ struct PlacesView: View {
                         EmptyView(icon: .system(name: "mappin.and.ellipse"), title: "Здесь ничего нет", description: "На данный момент Вы не добавили ни одного места транзакции. Добавить их можно в соответствущем разделе приложения")
                     }
                     ForEach(placesViewModel.places) { place in
-                            PlaceView(place: place)
-                                .padding(.horizontal, 16)
-                                .shadow(color: Color(Assets.black.color).opacity(0.2), radius: 8, x: 0, y: 0)
-                                .onTapGesture {
-                                    switch viewState {
-                                    case .view:
-                                        transaction?.place = place
-                                        onTransactionChange()
-                                        self.presentPlaces = false
-                                    default:
-                                        break
-                                    }
+                        PlaceView(place: place)
+                            .padding(.horizontal, 16)
+                            .shadow(color: Color(Assets.black.color).opacity(0.2), radius: 8, x: 0, y: 0)
+                            .onTapGesture {
+                                switch viewState {
+                                case .view:
+                                    transaction?.place = place
+                                    onTransactionChange()
+                                    self.presentPlaces = false
+                                default:
+                                    showPlaceDetail = true
+                                    self.place = place
                                 }
+                            }
                     }
                     Spacer()
                 }
@@ -99,11 +105,22 @@ struct PlacesView: View {
             .navigationBarItems(leading: closeButton, trailing: addButton)
         }
         .padding(.top)
-        .sheet(isPresented: $presentFilter, onDismiss: { presentFilter = false }) {
-            FilterView(filterModel: placesViewModel.filterModel, presentFilter: $presentFilter, onFilterSelect: { filterModel in
-                placesViewModel.filterModel = filterModel
-                placesViewModel.getPlaces()
-            })
+        .sheet(isPresented: .constant($presentFilter.wrappedValue || $showPlaceDetail.wrappedValue), onDismiss: {
+            presentFilter = false
+            showPlaceDetail = false
+            place = nil
+        }) {
+            if let place = $place.wrappedValue,
+               $showPlaceDetail.wrappedValue {
+                PlaceDetailView(viewState: placesViewModel.indexOf(place: place) == nil ? .create : .edit, showPlaceDetail: $showPlaceDetail, place: .init(initialValue: place), onPlaceEdit: { place in
+                    placesViewModel.changePlace(place: place)
+                })
+            } else {
+                FilterView(filterModel: placesViewModel.filterModel, presentFilter: $presentFilter, onFilterSelect: { filterModel in
+                    placesViewModel.filterModel = filterModel
+                    placesViewModel.getPlaces()
+                })
+            }
         }
     }
 }

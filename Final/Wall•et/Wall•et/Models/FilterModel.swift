@@ -27,6 +27,7 @@ enum TransactionsCount: String, Codable, PickerItem, CaseIterable {
 enum FilterCategory: String, Codable, PickerItem, CaseIterable {
     case products
     case clothes
+    case none
     
     var title: String {
         switch self {

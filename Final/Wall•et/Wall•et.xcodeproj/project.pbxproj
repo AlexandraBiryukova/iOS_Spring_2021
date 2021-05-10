@@ -41,6 +41,7 @@
 		A85183FE26494FB000FED8EC /* SelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85183FD26494FB000FED8EC /* SelectView.swift */; };
 		A8518401264966DF00FED8EC /* ToggleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8518400264966DF00FED8EC /* ToggleView.swift */; };
 		A851840426496A6400FED8EC /* FilterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A851840326496A6400FED8EC /* FilterModel.swift */; };
+		A851840726496B0600FED8EC /* PlaceDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A851840626496B0600FED8EC /* PlaceDetailView.swift */; };
 		A8CC21E82646A96A00CA38A4 /* HomeTransactionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8CC21E72646A96A00CA38A4 /* HomeTransactionsView.swift */; };
 		A8CC21EE2646AB7900CA38A4 /* HomeTransactionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8CC21EC2646AB7900CA38A4 /* HomeTransactionCell.xib */; };
 		A8CC21EF2646AB7900CA38A4 /* HomeTransactionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8CC21ED2646AB7900CA38A4 /* HomeTransactionCell.swift */; };
@@ -102,6 +103,7 @@
 		A85183FD26494FB000FED8EC /* SelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectView.swift; sourceTree = "<group>"; };
 		A8518400264966DF00FED8EC /* ToggleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleView.swift; sourceTree = "<group>"; };
 		A851840326496A6400FED8EC /* FilterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterModel.swift; sourceTree = "<group>"; };
+		A851840626496B0600FED8EC /* PlaceDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceDetailView.swift; sourceTree = "<group>"; };
 		A8CC21E72646A96A00CA38A4 /* HomeTransactionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTransactionsView.swift; sourceTree = "<group>"; };
 		A8CC21EC2646AB7900CA38A4 /* HomeTransactionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeTransactionCell.xib; sourceTree = "<group>"; };
 		A8CC21ED2646AB7900CA38A4 /* HomeTransactionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTransactionCell.swift; sourceTree = "<group>"; };
@@ -302,6 +304,7 @@
 			isa = PBXGroup;
 			children = (
 				A835BB612647104300EB83BE /* PlaceView.swift */,
+				A851840626496B0600FED8EC /* PlaceDetailView.swift */,
 				A835BB5A264703A500EB83BE /* PlacesView.swift */,
 				A835BB9926493F8700EB83BE /* FilterView.swift */,
 			);
@@ -618,6 +621,7 @@
 				A806A69A26468BA900951373 /* Assets.generated.swift in Sources */,
 				A8CC22162646ADDB00CA38A4 /* Array+Factory.swift in Sources */,
 				A8CC22242646AFA800CA38A4 /* UICollectionView+Register.swift in Sources */,
+				A851840726496B0600FED8EC /* PlaceDetailView.swift in Sources */,
 				A8CC221A2646ADDB00CA38A4 /* Observable.swift in Sources */,
 				A835BB7E26482CB900EB83BE /* ImagePickerService.swift in Sources */,
 				A8CC222C2646B17D00CA38A4 /* HomeViewModel.swift in Sources */,
