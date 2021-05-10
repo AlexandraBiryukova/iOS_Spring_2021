@@ -79,6 +79,8 @@ struct FilterView: View {
                             .padding(.horizontal, 16)
                         PickerView(selectedItem: $filterModel.count, items: TransactionsCount.allCases, title: "Количество транзакций")
                             .padding(.horizontal, 16)
+                        ToggleView(isEnabled: $filterModel.onlyFavourites, title: "Только избранные")
+                            .padding(.horizontal, 16)
                     }
                     SelectView(isSelected: $filterModel.usingPeriod, title: "ПЕРИОД ТРАНЗАКЦИЙ")
                         .padding(.horizontal, 16)
