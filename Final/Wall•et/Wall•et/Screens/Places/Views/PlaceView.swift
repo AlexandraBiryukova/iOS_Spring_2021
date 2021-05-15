@@ -60,6 +60,5 @@ struct PlaceView: View {
             RoundedRectangle(cornerRadius: 16)
                 .stroke(Color(Assets.divider.color), lineWidth: 1)
         )
-        
     }
 }

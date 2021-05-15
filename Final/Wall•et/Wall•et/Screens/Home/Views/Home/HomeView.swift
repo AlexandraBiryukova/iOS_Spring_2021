@@ -44,8 +44,11 @@ struct HomeView: View {
             .navigationBarTitle(L10n.tabHome, displayMode: .automatic)
         }
         .padding(.top)
-        .sheet(isPresented: .constant(presentTransactionCreate || $transaction.wrappedValue != nil), onDismiss: { presentTransactionCreate = false
-                transaction = nil }) {
+        .sheet(isPresented: .constant(presentTransactionCreate || $transaction.wrappedValue != nil), onDismiss: {
+                presentTransactionCreate = false
+                transaction = nil
+            homeViewModel.updatePlaces()
+        }) {
             if presentTransactionCreate {
                 TransactionCreateView(presentTransactionCreate: $presentTransactionCreate, onTransactionCreate: { transaction in
                     homeViewModel.addTransaction(transaction: transaction)

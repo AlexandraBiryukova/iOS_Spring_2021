@@ -16,7 +16,7 @@ struct PrimaryButtonStyle: ButtonStyle {
             .foregroundColor(Color(Assets.white.color))
             .font(.system(size: 18, weight: .semibold, design: .default))
             .frame(maxWidth: .infinity, minHeight: 48)
-            .background(Color(color.color.withAlphaComponent(configuration.isPressed ? 0.8 : 1)) )
+            .background(LinearGradient(gradient: .init(colors: [Color(Assets.primary.color.withAlphaComponent(configuration.isPressed ? 0.8 : 1)), Color(Assets.secondary.color.withAlphaComponent(configuration.isPressed ? 0.8 : 1))]), startPoint: .trailing, endPoint: .leading))
             .cornerRadius(8)
     }
 }

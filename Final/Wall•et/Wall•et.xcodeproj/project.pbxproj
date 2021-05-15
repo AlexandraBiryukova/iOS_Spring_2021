@@ -48,6 +48,9 @@
 		A85184162649B22B00FED8EC /* ProfileInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85184152649B22A00FED8EC /* ProfileInfoView.swift */; };
 		A851841A2649B59400FED8EC /* PhoneNumberTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85184192649B59400FED8EC /* PhoneNumberTextFieldView.swift */; };
 		A8C16D62264FD58800F9CCB1 /* AppStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C16D61264FD58800F9CCB1 /* AppStorage.swift */; };
+		A8C16D7026500ACC00F9CCB1 /* ProfileStatisticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C16D6F26500ACB00F9CCB1 /* ProfileStatisticsView.swift */; };
+		A8C16D7326500C9F00F9CCB1 /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C16D7226500C9F00F9CCB1 /* ProgressBar.swift */; };
+		A8C16D77265036EB00F9CCB1 /* ProfileStatisticsGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C16D76265036E900F9CCB1 /* ProfileStatisticsGraphView.swift */; };
 		A8CC21E82646A96A00CA38A4 /* HomeTransactionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8CC21E72646A96A00CA38A4 /* HomeTransactionsView.swift */; };
 		A8CC21EE2646AB7900CA38A4 /* HomeTransactionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8CC21EC2646AB7900CA38A4 /* HomeTransactionCell.xib */; };
 		A8CC21EF2646AB7900CA38A4 /* HomeTransactionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8CC21ED2646AB7900CA38A4 /* HomeTransactionCell.swift */; };
@@ -116,6 +119,9 @@
 		A85184152649B22A00FED8EC /* ProfileInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInfoView.swift; sourceTree = "<group>"; };
 		A85184192649B59400FED8EC /* PhoneNumberTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumberTextFieldView.swift; sourceTree = "<group>"; };
 		A8C16D61264FD58800F9CCB1 /* AppStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStorage.swift; sourceTree = "<group>"; };
+		A8C16D6F26500ACB00F9CCB1 /* ProfileStatisticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileStatisticsView.swift; sourceTree = "<group>"; };
+		A8C16D7226500C9F00F9CCB1 /* ProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBar.swift; sourceTree = "<group>"; };
+		A8C16D76265036E900F9CCB1 /* ProfileStatisticsGraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileStatisticsGraphView.swift; sourceTree = "<group>"; };
 		A8CC21E72646A96A00CA38A4 /* HomeTransactionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTransactionsView.swift; sourceTree = "<group>"; };
 		A8CC21EC2646AB7900CA38A4 /* HomeTransactionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeTransactionCell.xib; sourceTree = "<group>"; };
 		A8CC21ED2646AB7900CA38A4 /* HomeTransactionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTransactionCell.swift; sourceTree = "<group>"; };
@@ -303,6 +309,7 @@
 				A85183FD26494FB000FED8EC /* SelectView.swift */,
 				A8518400264966DF00FED8EC /* ToggleView.swift */,
 				A85184192649B59400FED8EC /* PhoneNumberTextFieldView.swift */,
+				A8C16D7226500C9F00F9CCB1 /* ProgressBar.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -367,6 +374,8 @@
 			children = (
 				A85184152649B22A00FED8EC /* ProfileInfoView.swift */,
 				A851840B26497AD600FED8EC /* ProfileView.swift */,
+				A8C16D6F26500ACB00F9CCB1 /* ProfileStatisticsView.swift */,
+				A8C16D76265036E900F9CCB1 /* ProfileStatisticsGraphView.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -647,6 +656,7 @@
 				A806A69F26468BD100951373 /* AppLanguage.swift in Sources */,
 				A806A69A26468BA900951373 /* Assets.generated.swift in Sources */,
 				A8CC22162646ADDB00CA38A4 /* Array+Factory.swift in Sources */,
+				A8C16D77265036EB00F9CCB1 /* ProfileStatisticsGraphView.swift in Sources */,
 				A85184132649AD5D00FED8EC /* View+AnimationCompletion.swift in Sources */,
 				A8CC22242646AFA800CA38A4 /* UICollectionView+Register.swift in Sources */,
 				A8C16D62264FD58800F9CCB1 /* AppStorage.swift in Sources */,
@@ -656,6 +666,7 @@
 				A8CC222C2646B17D00CA38A4 /* HomeViewModel.swift in Sources */,
 				A806A6B026469A3400951373 /* BannerView.swift in Sources */,
 				A835BB702647EEED00EB83BE /* AmountTextFieldView.swift in Sources */,
+				A8C16D7026500ACC00F9CCB1 /* ProfileStatisticsView.swift in Sources */,
 				A835BB7426480BAB00EB83BE /* PrimaryButton.swift in Sources */,
 				A835BB622647104400EB83BE /* PlaceView.swift in Sources */,
 				A835BB932648487C00EB83BE /* ImageCropperView.swift in Sources */,
@@ -666,6 +677,7 @@
 				A835BB8D2648318F00EB83BE /* AlertView.swift in Sources */,
 				A85184102649ACF200FED8EC /* Profile.swift in Sources */,
 				A8CC21F42646ABAE00CA38A4 /* HomeTransactionCellModel.swift in Sources */,
+				A8C16D7326500C9F00F9CCB1 /* ProgressBar.swift in Sources */,
 				A8CC21FB2646AC1E00CA38A4 /* TransactionPlace.swift in Sources */,
 				A835BB542646EFD800EB83BE /* TransactionView.swift in Sources */,
 				A8CC22252646AFA800CA38A4 /* UICollectionView+Dequeue.swift in Sources */,

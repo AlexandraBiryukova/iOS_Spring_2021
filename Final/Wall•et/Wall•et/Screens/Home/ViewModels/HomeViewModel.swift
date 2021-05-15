@@ -40,6 +40,14 @@ final class HomeViewModel: ObservableObject {
         storage.transactions = transactions
     }
     
+    func updatePlaces() {
+        var places = storage.places
+        storage.places.enumerated().forEach { element in
+            places[element.offset].transactions = storage.transactions.filter { $0.placeId == element.element.id }
+        }
+        storage.places = places
+    }
+    
     var transactionsHeight: CGFloat {
         guard !transactions.isEmpty else { return 0 }
         let tableWidth = UIScreen.main.bounds.width - 32

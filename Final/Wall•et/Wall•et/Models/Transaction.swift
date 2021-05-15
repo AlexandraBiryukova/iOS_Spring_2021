@@ -29,7 +29,7 @@ enum TransactionType: String, Codable, CaseIterable, PickerItem {
     }
 }
 
-struct Transaction: Identifiable, Codable {
+struct Transaction: Identifiable, Codable, Hashable {
     var id = UUID()
     var data: Data?
     var name: String
@@ -53,5 +53,9 @@ struct Transaction: Identifiable, Codable {
         self.type = type
         self.createDate = createDate
         self.placeId = placeId
+    }
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
     }
 }

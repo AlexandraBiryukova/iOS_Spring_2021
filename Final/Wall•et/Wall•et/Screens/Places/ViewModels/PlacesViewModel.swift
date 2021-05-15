@@ -58,4 +58,11 @@ final class PlacesViewModel: ObservableObject {
         storage.places = mainPlaces
         getPlaces()
     }
+    
+    func removePlace(place: TransactionPlace) {
+        guard let index = indexOf(place: place) else { return }
+        mainPlaces.remove(at: index)
+        storage.places = mainPlaces
+        getPlaces()
+    }
 }

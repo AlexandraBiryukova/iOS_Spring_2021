@@ -58,7 +58,7 @@ final class AppStorage {
     }
     
     var places: [TransactionPlace] {
-        get { (try? Disk.retrieve(Constants.places.rawValue, from: .caches, as: [TransactionPlace].self)) ?? [] }
+        get { ((try? Disk.retrieve(Constants.places.rawValue, from: .caches, as: [TransactionPlace].self)) ?? []).sorted(by: { $0.transactions.count > $1.transactions.count }) }
         set { try? Disk.save(newValue, to: .caches, as: Constants.places.rawValue) }
     }
     

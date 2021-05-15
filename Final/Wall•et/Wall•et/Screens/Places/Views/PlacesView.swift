@@ -80,22 +80,43 @@ struct PlacesView: View {
                     }
                     if placesViewModel.places.isEmpty {
                         EmptyView(icon: .system(name: "mappin.and.ellipse"), title: "Здесь ничего нет", description: "На данный момент Вы не добавили ни одного места транзакции. Добавить их можно в соответствущем разделе приложения")
-                    }
-                    ForEach(placesViewModel.places) { place in
-                        PlaceView(place: place)
-                            .padding(.horizontal, 16)
-                            .shadow(color: Color(Assets.black.color).opacity(0.2), radius: 8, x: 0, y: 0)
-                            .onTapGesture {
-                                switch viewState {
-                                case .view:
-                                    transaction?.placeId = place.id
-                                    onTransactionChange()
-                                    self.presentPlaces = false
-                                default:
-                                    showPlaceDetail = true
-                                    self.place = place
+                    } else {
+                        ForEach(placesViewModel.places) { place in
+                            PlaceView(place: place)
+                                .padding(.horizontal, 16)
+                                .shadow(color: Color(Assets.black.color).opacity(0.2), radius: 8, x: 0, y: 0)
+                                .onTapGesture {
+                                    switch viewState {
+                                    case .view:
+                                        transaction?.placeId = place.id
+                                        onTransactionChange()
+                                        self.presentPlaces = false
+                                    default:
+                                        showPlaceDetail = true
+                                        self.place = place
+                                    }
+                                }.contextMenu {
+                                    Button {
+                                        switch viewState {
+                                        case .view:
+                                            transaction?.placeId = place.id
+                                            onTransactionChange()
+                                            self.presentPlaces = false
+                                        default:
+                                            showPlaceDetail = true
+                                            self.place = place
+                                        }
+                                    } label: {
+                                        Label(viewState == .view ? "Выбрать место" : "Редактировать место",
+                                              systemImage: "mappin.and.ellipse")
+                                    }
+                                    Button {
+                                        placesViewModel.removePlace(place: place)
+                                    } label: {
+                                        Label("Удалить место", systemImage: "xmark.bin")
+                                    }
                                 }
-                            }
+                        }
                     }
                     Spacer()
                 }
