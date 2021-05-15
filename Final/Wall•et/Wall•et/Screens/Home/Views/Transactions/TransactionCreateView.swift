@@ -79,7 +79,7 @@ struct TransactionCreateView: View {
                             .padding(.horizontal, 16)
                     }
                     VStack(alignment: .center, spacing: 12) {
-                        PickerView(selectedItem: $transaction.type, items: TransactionType.allCases, title: "Выберите тип оплаты")
+                        PickerView(selectedItem: $transaction.type, items: TransactionType.allCases, title: "Тип оплаты")
                             .padding(.horizontal, 16)
                         DateView(date: $transaction.createDate, title: "Дата транзакции", type: .date)
                             .padding(.horizontal, 16)
