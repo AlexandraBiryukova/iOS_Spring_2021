@@ -8,7 +8,7 @@
 import SwiftUI
 
 final class PlacesViewModel: ObservableObject {
-    @Published var places: [TransactionPlace] = []
+    @Published var places: [TransactionPlace] = [.init(name: "Test", address: "Test", description: "Test", transactions: 5, category: .clothes, openTime: Date(), closeTime: Date(), isFavourite: true)]
     @Published var filterModel: FilterModel = .init()
     
     func getPlaces() {
