@@ -22,6 +22,21 @@ enum TransactionsCount: String, Codable, PickerItem, CaseIterable {
             return self.rawValue
         }
     }
+    
+    var range: (min: Int, max: Int) {
+        switch self {
+        case .none:
+            return (0, Int.max)
+        case .zero:
+            return (0, 0)
+        case .between0and10:
+            return (0, 10)
+        case .between10and25:
+            return (10, 25)
+        case .moreThan25:
+            return (25, Int.max)
+        }
+    }
 }
 
 enum FilterCategory: String, Codable, PickerItem, CaseIterable {

@@ -33,8 +33,7 @@ struct ProfileInfoView: View {
     
     var icon: some View {
         var imageView: Image
-        if let data = profile.data,
-           let image = UIImage(data: data) {
+        if let image = profile.image {
             imageView = Image(uiImage: image)
         } else {
             imageView = Image(Assets.profileAvatar.name)
@@ -104,7 +103,7 @@ struct ProfileInfoView: View {
         }
         .padding(.top)
         .sheet(isPresented: $presentPicker, onDismiss: { }) {
-            ImagePicker(data: $profile.data, sourceType: type)
+            ImagePicker(image: $profile.image, data: .constant(nil), sourceType: type)
         }
     }
 }

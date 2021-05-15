@@ -37,7 +37,7 @@ struct Transaction: Identifiable, Codable {
     var amount: Double
     var type: TransactionType
     var createDate: Date
-    var place: TransactionPlace?
+    var placeId: UUID?
     
     init(name: String = "",
          data: Data? = nil,
@@ -45,13 +45,13 @@ struct Transaction: Identifiable, Codable {
          amount: Double = 0,
          type: TransactionType = .cash,
          createDate: Date = Date(),
-         place: TransactionPlace? = nil) {
+         placeId: UUID? = nil) {
         self.name = name
         self.data = data
         self.description = description
         self.amount = amount
         self.type = type
         self.createDate = createDate
-        self.place = place
+        self.placeId = placeId
     }
 }

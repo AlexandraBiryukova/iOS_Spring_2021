@@ -47,6 +47,7 @@
 		A85184132649AD5D00FED8EC /* View+AnimationCompletion.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85184122649AD5D00FED8EC /* View+AnimationCompletion.swift */; };
 		A85184162649B22B00FED8EC /* ProfileInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85184152649B22A00FED8EC /* ProfileInfoView.swift */; };
 		A851841A2649B59400FED8EC /* PhoneNumberTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85184192649B59400FED8EC /* PhoneNumberTextFieldView.swift */; };
+		A8C16D62264FD58800F9CCB1 /* AppStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C16D61264FD58800F9CCB1 /* AppStorage.swift */; };
 		A8CC21E82646A96A00CA38A4 /* HomeTransactionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8CC21E72646A96A00CA38A4 /* HomeTransactionsView.swift */; };
 		A8CC21EE2646AB7900CA38A4 /* HomeTransactionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8CC21EC2646AB7900CA38A4 /* HomeTransactionCell.xib */; };
 		A8CC21EF2646AB7900CA38A4 /* HomeTransactionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8CC21ED2646AB7900CA38A4 /* HomeTransactionCell.swift */; };
@@ -114,6 +115,7 @@
 		A85184122649AD5D00FED8EC /* View+AnimationCompletion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+AnimationCompletion.swift"; sourceTree = "<group>"; };
 		A85184152649B22A00FED8EC /* ProfileInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInfoView.swift; sourceTree = "<group>"; };
 		A85184192649B59400FED8EC /* PhoneNumberTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumberTextFieldView.swift; sourceTree = "<group>"; };
+		A8C16D61264FD58800F9CCB1 /* AppStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStorage.swift; sourceTree = "<group>"; };
 		A8CC21E72646A96A00CA38A4 /* HomeTransactionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTransactionsView.swift; sourceTree = "<group>"; };
 		A8CC21EC2646AB7900CA38A4 /* HomeTransactionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeTransactionCell.xib; sourceTree = "<group>"; };
 		A8CC21ED2646AB7900CA38A4 /* HomeTransactionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTransactionCell.swift; sourceTree = "<group>"; };
@@ -253,6 +255,7 @@
 			isa = PBXGroup;
 			children = (
 				A806A6A326468C7C00951373 /* AppLanguageStorage.swift */,
+				A8C16D61264FD58800F9CCB1 /* AppStorage.swift */,
 			);
 			path = Storages;
 			sourceTree = "<group>";
@@ -646,6 +649,7 @@
 				A8CC22162646ADDB00CA38A4 /* Array+Factory.swift in Sources */,
 				A85184132649AD5D00FED8EC /* View+AnimationCompletion.swift in Sources */,
 				A8CC22242646AFA800CA38A4 /* UICollectionView+Register.swift in Sources */,
+				A8C16D62264FD58800F9CCB1 /* AppStorage.swift in Sources */,
 				A851840726496B0600FED8EC /* PlaceDetailView.swift in Sources */,
 				A8CC221A2646ADDB00CA38A4 /* Observable.swift in Sources */,
 				A835BB7E26482CB900EB83BE /* ImagePickerService.swift in Sources */,

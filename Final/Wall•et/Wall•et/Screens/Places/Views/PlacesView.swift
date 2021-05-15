@@ -88,7 +88,7 @@ struct PlacesView: View {
                             .onTapGesture {
                                 switch viewState {
                                 case .view:
-                                    transaction?.place = place
+                                    transaction?.placeId = place.id
                                     onTransactionChange()
                                     self.presentPlaces = false
                                 default:
@@ -121,7 +121,9 @@ struct PlacesView: View {
                     placesViewModel.getPlaces()
                 })
             }
-        }
+        }.onAppear(perform: {
+            placesViewModel.getPlaces()
+        })
     }
 }
 

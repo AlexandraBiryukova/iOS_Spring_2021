@@ -12,7 +12,7 @@ struct TransactionPlace: Identifiable, Codable {
     var name: String
     var address: String
     var description: String
-    var transactions: Int = 0
+    var transactions: [Transaction] = []
     var category: FilterCategory
     var openTime: Date = Date()
     var closeTime: Date = Date()
@@ -21,7 +21,7 @@ struct TransactionPlace: Identifiable, Codable {
     init(name: String = "",
          address: String = "",
          description: String = "",
-         transactions: Int = 0,
+         transactions: [Transaction] = [],
          category: FilterCategory = .none,
          openTime: Date = .init(),
          closeTime: Date = .init(),

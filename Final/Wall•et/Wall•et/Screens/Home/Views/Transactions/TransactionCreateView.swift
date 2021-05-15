@@ -105,7 +105,7 @@ struct TransactionCreateView: View {
         }
         .padding(.top)
         .sheet(isPresented: $presentPicker, onDismiss: { }) {
-            ImagePicker(data: $transaction.data, sourceType: type)
+            ImagePicker(image: .constant(nil), data: $transaction.data, sourceType: type)
         }
     }
 }

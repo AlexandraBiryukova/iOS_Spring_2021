@@ -8,10 +8,13 @@
 import SwiftUI
 
 struct PlaceView: View {
-    private let place: TransactionPlace
+    private var place: TransactionPlace
+    
+    private let appStorage = AppStorage(keychain: .init(), userDefaults: UserDefaults.standard)
     
     init(place: TransactionPlace) {
         self.place = place
+        self.place.transactions = appStorage.transactions.filter { $0.placeId == place.id }
     }
     
     var body: some View {
@@ -37,9 +40,9 @@ struct PlaceView: View {
                         .font(.system(size: 14, weight: .regular))
                 }
                 Spacer()
-                if place.transactions > 0 {
+                if place.transactions.count > 0 {
                     ZStack {
-                        Text(String(place.transactions))
+                        Text(String(place.transactions.count))
                             .foregroundColor(Color(Assets.white.color))
                             .frame(width: 24, height: 24, alignment: .center)
                     }

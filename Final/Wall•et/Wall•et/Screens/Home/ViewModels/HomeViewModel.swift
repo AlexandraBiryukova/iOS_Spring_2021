@@ -5,6 +5,7 @@
 //  Created by Alexandra Biryukova on 5/8/21.
 //
 
+import KeychainAccess
 import SwiftUI
 
 final class HomeViewModel: ObservableObject {
@@ -13,21 +14,30 @@ final class HomeViewModel: ObservableObject {
         .init(image: Assets.childEducation.name, url: "https://www.personalfn.com/guide/steps-to-plan-childs-education"),
         .init(image: Assets.startups.name, url: "https://www.forbes.com/advisor/investing/invest-in-startups/")
     ]
-//
-    @Published var transactions: [Transaction] = [.init(name: "Test", description: "Test", amount: 1000, type: .card, createDate: Date(), place: nil)]
+    
+    @Published var transactions: [Transaction] = []
+    
+    private let storage = AppStorage(keychain: Keychain(), userDefaults: UserDefaults.standard)
+    
+    init() {
+        transactions = storage.transactions
+    }
 
     func changeTransaction(transaction: Transaction) {
         guard let index = transactions.firstIndex(where: { $0.id == transaction.id }) else { return }
         transactions[index] = transaction
+        storage.transactions = transactions
     }
     
     func removeTransaction(transaction: Transaction) {
         guard let index = transactions.firstIndex(where: { $0.id == transaction.id }) else { return }
         transactions.remove(at: index)
+        storage.transactions = transactions
     }
     
     func addTransaction(transaction: Transaction) {
         transactions.append(transaction)
+        storage.transactions = transactions
     }
     
     var transactionsHeight: CGFloat {

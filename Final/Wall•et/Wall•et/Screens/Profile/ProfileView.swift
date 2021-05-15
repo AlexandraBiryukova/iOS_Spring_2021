@@ -5,24 +5,30 @@
 //  Created by Alexandra Biryukova on 5/10/21.
 //
 
+import KeychainAccess
 import SwiftUI
 
 struct ProfileView: View {
-    @State private var profile = Profile()
+    @State private var profile: Profile
     @State private var presentInfo = false
     @State private var currentLanguage = AppLanguage.current
     @State private var rotateDegrees: Double = 0
     @State private var wasRotated = false
     
     private let formatter = PropertyFormatter(appLanguage: .current)
+    private let appStorage: AppStorage
+    
+    init() {
+        appStorage = .init(keychain: Keychain(), userDefaults: UserDefaults.standard)
+        _profile = .init(initialValue: appStorage.profile)
+    }
     
     var icon: some View {
         var imageView: Image
         if wasRotated {
             imageView = Image(uiImage: .init())
         } else {
-            if let data = profile.data,
-               let image = UIImage(data: data) {
+            if let image = profile.image {
                 imageView = Image(uiImage: image)
             } else {
                 imageView = Image(uiImage: Assets.launchBackground.image)
@@ -120,6 +126,8 @@ struct ProfileView: View {
         .padding(.top)
         .sheet(isPresented: $presentInfo, onDismiss: {
             presentInfo = false
+            appStorage.updateProfile(profile: profile)
+            
         }) {
             ProfileInfoView(presentProfileInfo: $presentInfo, profile: $profile)
         }
