@@ -48,7 +48,7 @@ struct PlacesView: View {
                 showPlaceDetail = true
                 place = .init()
             }, label: {
-                Text("Добавить")
+                Text(L10n.transactionCreateAdd)
             })
         }
     }
@@ -59,7 +59,7 @@ struct PlacesView: View {
                 VStack(alignment: .center, spacing: 8) {
                     VStack {
                         HStack {
-                            Text("Фильтр")
+                            Text(L10n.coreFilter)
                                 .foregroundColor(Color(Assets.primary.color))
                                 .font(.system(size: 18, weight: .medium))
                             Spacer()
@@ -79,7 +79,7 @@ struct PlacesView: View {
                         presentFilter = true
                     }
                     if placesViewModel.places.isEmpty {
-                        EmptyView(icon: .system(name: "mappin.and.ellipse"), title: "Здесь ничего нет", description: "На данный момент Вы не добавили ни одного места транзакции. Добавить их можно в соответствущем разделе приложения")
+                        EmptyView(icon: .system(name: "mappin.and.ellipse"), title: L10n.coreNotFound, description: L10n.placesNoPlace)
                     } else {
                         ForEach(placesViewModel.places) { place in
                             PlaceView(place: place)
@@ -107,13 +107,13 @@ struct PlacesView: View {
                                             self.place = place
                                         }
                                     } label: {
-                                        Label(viewState == .view ? "Выбрать место" : "Редактировать место",
+                                        Label(viewState == .view ? L10n.placesChoose : L10n.placeEdit,
                                               systemImage: "mappin.and.ellipse")
                                     }
                                     Button {
                                         placesViewModel.removePlace(place: place)
                                     } label: {
-                                        Label("Удалить место", systemImage: "xmark.bin")
+                                        Label(L10n.placesDelete, systemImage: "xmark.bin")
                                     }
                                 }
                         }

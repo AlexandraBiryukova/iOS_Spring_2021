@@ -13,9 +13,9 @@ enum TransactionType: String, Codable, CaseIterable, PickerItem {
     var title: String {
         switch self {
         case .cash:
-            return "Оплата наличными"
+            return L10n.transactionCash
         case .card:
-            return "Оплата картой"
+            return L10n.transactionCard
         }
     }
     

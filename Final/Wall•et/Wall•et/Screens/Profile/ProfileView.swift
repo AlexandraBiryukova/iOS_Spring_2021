@@ -110,15 +110,15 @@ struct ProfileView: View {
                         .padding(.top, 24)
                 }
                 VStack(alignment: .leading, spacing: 12) {
-                    PickerView(selectedItem: .constant(Placeholder()), items: [], title: "Общая информация", icon: "rectangle.stack.person.crop"){
+                    PickerView(selectedItem: .constant(Placeholder()), items: [], title: L10n.profileGeneralInfo, icon: "rectangle.stack.person.crop"){
                         presentInfo = true
                     }
                     .padding(.horizontal, 16)
-                    PickerView(selectedItem: .constant(Placeholder()), items: [], title: "Статистика", icon: "hourglass.bottomhalf.fill") {
+                    PickerView(selectedItem: .constant(Placeholder()), items: [], title: L10n.profileStatistics, icon: "hourglass.bottomhalf.fill") {
                         presentStatistics = true
                     }
                     .padding(.horizontal, 16)
-                    PickerView(selectedItem: $currentLanguage, items: [], title: "Язык", icon: "globe") {
+                    PickerView(selectedItem: $currentLanguage, items: [], title: L10n.profileLanguage, icon: "globe") {
                         UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!)
                     }
                     .padding(.horizontal, 16)

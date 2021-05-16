@@ -34,7 +34,7 @@ struct ProfileStatisticsView: View {
             ScrollView(showsIndicators: false) {
                 VStack(spacing: 40) {
                     VStack(alignment: .leading, spacing: 16) {
-                        Text("Категории мест транзакций")
+                        Text(L10n.profileTransactionPlaces)
                             .font(.system(size: 24, weight: .bold))
                             .foregroundColor(Color(Assets.black.color))
                         ForEach(FilterCategory.allCases, id: \.self) { category in
@@ -54,7 +54,7 @@ struct ProfileStatisticsView: View {
                         }
                     }
                     VStack(alignment: .leading, spacing: 16) {
-                        Text("Транзакции мест")
+                        Text(L10n.profilePlaceTransactions)
                             .font(.system(size: 24, weight: .bold))
                             .foregroundColor(Color(Assets.black.color))
                         ProfileStatisticsGraphView(dataPoints: points, colors: colors)
@@ -68,14 +68,14 @@ struct ProfileStatisticsView: View {
                                     Text(place.name + " - " + place.category.title)
                                         .font(.system(size: 12, weight: .semibold))
                                         .foregroundColor(Color(Assets.black.color))
-                                    Text("Кол-во транзакций: " + String(place.transactions.count))
+                                    Text(L10n.profileTransactionsCount(place.transactions.count))
                                         .font(.system(size: 12, weight: .regular))
                                         .foregroundColor(Color(Assets.gray3.color))
                                 }
                             }
                         }
                         .padding(.horizontal, 16)
-                        Text("Типы оплаты")
+                        Text(L10n.profilePaymentTypes)
                             .font(.system(size: 24, weight: .bold))
                             .foregroundColor(Color(Assets.black.color))
                             .padding(.top, 24)
@@ -99,7 +99,7 @@ struct ProfileStatisticsView: View {
                 }
             }
             .padding(.horizontal, 16)
-            .navigationBarTitle("Статистика", displayMode: .inline)
+            .navigationBarTitle(L10n.profileStatistics, displayMode: .inline)
             .navigationBarItems(leading: closeButton)
         }
         .padding(.top)

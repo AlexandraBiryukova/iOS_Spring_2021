@@ -6,6 +6,9 @@
   
 */
 
+// MARK: - AmountTextField
+"AmountTextField.placeHolder" = "Сумма транзакции";
+
 // MARK: - AppLanguage
 "AppLanguage.current" = "Русский";
 "AppLanguage.ru.native" = "Русский";
@@ -30,13 +33,81 @@
 "Core.notFound" = "Здесь ничего нет";
 "Core.filter" = "Фильтр";
 
+// MARK: - Filter
+"Filter.Category.all" = "Все";
+"Filter.Category.products" = "Еда и продукты";
+"Filter.Category.clothes" = "Одежда и обувь";
+"Filter.Count.none" = "Любое";
+"Filter.apply" = "Применить";
+"Filter.reset" = "Сбросить";
+"Filter.startDate" = "С какой даты";
+"Filter.endDate" = "До какой даты";
+"Filter.period" = "Период транзакций";
+"Filter.onlyFav" = "Только избранные";
+"Filter.count" = "Количество транзакций";
+
+// MARK: - Home
+"Home.recent" = "Недавние транзакции";
+
 // MARK: - ImagePickerService
 "ImagePickerService.cameraPermissionDeniedTitle" = "Чтобы продолжить, перейдите в системные настройки и разрешите доступ к камере";
 "ImagePickerService.photoLibraryPermissionDeniedTitle" = "Чтобы продолжить, перейдите в системные настройки и разрешите доступ к галерее";
 "ImagePickerService.camera" = "Сделать фото";
 "ImagePickerService.photoLibrary" = "Выбрать из галереи";
 
+// MARK: - PhoneNumberTextfield
+"PhoneNumberTextField.placeholder" = "Номер телефона";
+
+// MARK: - Place
+"Place.add" = "Добавить место транзакции";
+"Place.edit" = "Редактировать место";
+"Place.address" = "Адрес";
+"Place.addToFav" = "Добавить в избранное";
+"Place.category" = "Категория";
+"Place.workTime" = "ГРАФИК РАБОТЫ МЕСТА";
+"Place.openTime" = "Время открытия";
+"Place.closeTime" = "Время закрытия";
+"Place.whyTitle" = "Зачем добавлять места транзакций?";
+"Place.whyDescription" = "С их помощью Вы сможете выявить, где больше всего Вы тратите свои деньги. Созданные Вами транзакции можно будет привязать к любому из мест.";
+"Place.whyAction" = "Понятно";
+
+// MARK: - Places
+"Places.noPlace" = "На данный момент Вы не добавили ни одного места транзакции. Добавить их можно в соответствущем разделе приложения";
+"Places.choose" = "Выбрать место";
+"Places.delete" = "Удалить место";
+
+// MARK: - Profile
+"Profile.changePhoto" = "Изменить фото";
+"Profile.login" = "Логин";
+"Profile.firstName" = "Имя";
+"Profile.lastName" = "Фамилия";
+"Profile.email" = "E-mail";
+"Profile.generalInfo" = "Общая информация";
+"Profile.language" = "Язык";
+"Profile.statistics" = "Статистика";
+"Profile.paymentTypes" = "Типы оплаты";
+"Profile.transactionsCount" = "Кол-во транзакций: %d";
+"Profile.transactionPlaces" = "Категории мест транзакций";
+"Profile.placeTransactions" = "Транзакции мест";
+
 // MARK: - TabView
 "Tab.profile" = "Profile";
 "Tab.places" = "TransactionPlaces";
 "Tab.home" = "Home";
+
+// MARK: - Transaction
+"Transaction.cash" = "Оплата наличными";
+"Transaction.card" = "Оплата картой";
+"Transaction.place" = "Место транзакции";
+"Transaction.noPlace" = "Не указано место транзакции. Его можно выбрать из Ваших мест транзакций";
+"Transaction.choosePlace" = "Выбрать место транзакции";
+
+// MARK: - TransactionCreate
+"TransactionCreate.choosePhoto" = "Выбрать фото";
+"TransactionCreate.name" = "Название";
+"TransactionCreate.description" = "Дополнительное описание";
+"TransactionCreate.paymentType" = "Тип оплаты";
+"TransactionCreate.date" = "Дата транзакции";
+"TransactionCreate.time" = "Время транзакции";
+"TransactionCreate.add" = "Добавить";
+"TransactionCreate.addTransaction" = "Добавить транзакцию";

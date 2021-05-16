@@ -17,7 +17,7 @@ enum TransactionsCount: String, Codable, PickerItem, CaseIterable {
     var title: String {
         switch self {
         case .none:
-            return "Любое"
+            return L10n.filterCountNone
         default:
             return self.rawValue
         }
@@ -47,11 +47,11 @@ enum FilterCategory: String, Codable, PickerItem, CaseIterable {
     var title: String {
         switch self {
         case .none:
-            return "Все"
+            return L10n.filterCategoryAll
         case .products:
-            return "Еда и продукты"
+            return L10n.filterCategoryProducts
         case .clothes:
-            return "Одежда и обувь"
+            return L10n.filterCategoryClothes
         }
     }
 }

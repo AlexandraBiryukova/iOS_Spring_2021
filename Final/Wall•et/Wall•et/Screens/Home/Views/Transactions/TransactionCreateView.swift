@@ -49,7 +49,7 @@ struct TransactionCreateView: View {
                                 .background(Color(Assets.background.color))
                                 .clipShape(Circle())
                         }
-                        SecondaryButton(title: "Выбрать фото", color: Assets.primary, image: "photo.on.rectangle", action: {
+                        SecondaryButton(title: L10n.transactionCreateChoosePhoto, color: Assets.primary, image: "photo.on.rectangle", action: {
                             alert = imagePickerService.presentImagePickerSourceTypesSelect { selectedType in
                                 presentAlert = false
                                 guard let selectedType = selectedType else { return }
@@ -73,20 +73,20 @@ struct TransactionCreateView: View {
                     VStack(alignment: .center, spacing: 12) {
                         AmountTextFieldView(amount: $transaction.amount)
                             .padding(.horizontal, 16)
-                        BaseTextFieldView(text: $transaction.name, placeholder: "Название")
+                        BaseTextFieldView(text: $transaction.name, placeholder: L10n.transactionCreateName)
                             .padding(.horizontal, 16)
-                        BaseTextFieldView(text: $transaction.description, placeholder: "Дополнительное описание")
+                        BaseTextFieldView(text: $transaction.description, placeholder: L10n.transactionCreateDescription)
                             .padding(.horizontal, 16)
                     }
                     VStack(alignment: .center, spacing: 12) {
-                        PickerView(selectedItem: $transaction.type, items: TransactionType.allCases, title: "Тип оплаты")
+                        PickerView(selectedItem: $transaction.type, items: TransactionType.allCases, title: L10n.transactionCreatePaymentType)
                             .padding(.horizontal, 16)
-                        DateView(date: $transaction.createDate, title: "Дата транзакции", type: .date)
+                        DateView(date: $transaction.createDate, title: L10n.transactionCreateDate, type: .date)
                             .padding(.horizontal, 16)
-                        DateView(date: $transaction.createDate, title: "Время транзакции", type: .hourAndMinute)
+                        DateView(date: $transaction.createDate, title: L10n.transactionCreateTime, type: .hourAndMinute)
                             .padding(.horizontal, 16)
                     }
-                    PrimaryButton(title: "Добавить", color: Assets.primary, image: nil, action: {
+                    PrimaryButton(title: L10n.transactionCreateAdd, color: Assets.primary, image: nil, action: {
                         onTransactionCreate(transaction)
                         presentTransactionCreate = false
                     })
@@ -100,7 +100,7 @@ struct TransactionCreateView: View {
                 }
             }
             .padding(.horizontal, 16)
-            .navigationBarTitle("Добавить транзакцию", displayMode: .inline)
+            .navigationBarTitle(L10n.transactionCreateAddTransaction, displayMode: .inline)
             .navigationBarItems(leading: closeButton)
         }
         .padding(.top)

@@ -74,7 +74,7 @@ struct TransactionView: View {
                                 )
                         }
                         VStack(alignment: .leading, spacing: 8) {
-                            Text("МЕСТО ТРАНЗАКЦИИ")
+                            Text(L10n.transactionPlace.uppercased())
                                 .font(.system(size: 14))
                                 .padding(.horizontal)
                                 .foregroundColor(Color(Assets.gray2.color))
@@ -85,9 +85,9 @@ struct TransactionView: View {
                                     .shadow(color: Color(Assets.black.color).opacity(0.2), radius: 8, x: 0, y: 0)
                             } else {
                                 EmptyView(icon: .system(name: "location.viewfinder"),
-                                          title: "Здесь ничего нет",
-                                          description: "Не указано место транзакции. Его можно выбрать из Ваших мест транзакций",
-                                          actionTitle: "Выбрать место транзакции",
+                                          title: L10n.coreNotFound,
+                                          description: L10n.transactionNoPlace,
+                                          actionTitle: L10n.transactionChoosePlace,
                                           action: { presentPlaces = true })
                             }
                         }

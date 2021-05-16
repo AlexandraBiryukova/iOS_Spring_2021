@@ -56,7 +56,7 @@ struct ProfileInfoView: View {
                 VStack(spacing: 24) {
                     VStack(alignment: .center, spacing: 8) {
                         icon
-                        SecondaryButton(title: "Изменить фото", color: Assets.primary, image: "photo.on.rectangle", action: {
+                        SecondaryButton(title: L10n.profileChangePhoto, color: Assets.primary, image: "photo.on.rectangle", action: {
                             alert = imagePickerService.presentImagePickerSourceTypesSelect { selectedType in
                                 presentAlert = false
                                 guard let selectedType = selectedType else { return }
@@ -80,13 +80,13 @@ struct ProfileInfoView: View {
                     VStack(alignment: .center, spacing: 12) {
                         PhoneNumberTextFieldView(value: $profile.phoneNumber)
                             .padding(.horizontal, 16)
-                        BaseTextFieldView(text: $profile.login, placeholder: "Логин")
+                        BaseTextFieldView(text: $profile.login, placeholder: L10n.profileLogin)
                             .padding(.horizontal, 16)
-                        BaseTextFieldView(text: $profile.firstName, placeholder: "Имя")
+                        BaseTextFieldView(text: $profile.firstName, placeholder: L10n.profileFirstName)
                             .padding(.horizontal, 16)
-                        BaseTextFieldView(text: $profile.lastName, placeholder: "Фамилия")
+                        BaseTextFieldView(text: $profile.lastName, placeholder: L10n.profileLastName)
                             .padding(.horizontal, 16)
-                        BaseTextFieldView(text: $profile.email, placeholder: "E-mail")
+                        BaseTextFieldView(text: $profile.email, placeholder: L10n.profileEmail)
                             .padding(.horizontal, 16)
                     }
                     .padding(.horizontal, 16)
@@ -98,7 +98,7 @@ struct ProfileInfoView: View {
                 }
             }
             .padding(.horizontal, 16)
-            .navigationBarTitle("Общая информация", displayMode: .inline)
+            .navigationBarTitle(L10n.profileGeneralInfo, displayMode: .inline)
             .navigationBarItems(leading: closeButton)
         }
         .padding(.top)

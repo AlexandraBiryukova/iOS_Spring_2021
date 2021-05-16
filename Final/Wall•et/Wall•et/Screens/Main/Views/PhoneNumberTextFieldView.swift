@@ -9,7 +9,7 @@ import SwiftUI
 
 struct PhoneNumberTextFieldView: View {
     @Binding var value: String
-    var placeholder: String = "Номер телефона"
+    var placeholder: String = L10n.phoneNumberTextFieldPlaceholder
     @State var isEditing = false
     
     init(value: Binding<String>) {
