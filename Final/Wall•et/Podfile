@@ -4,11 +4,7 @@
 target 'Wall•et' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
-  pod 'CropViewController'
   pod 'Disk', '0.6.4'
-  pod 'Kingfisher', '5.15.5'
-  pod 'SVGKit', '2.1.1'
-  pod 'SwiftMessages', '8.0.2'
   pod 'KeychainAccess'
   # Pods for Wall•et
 
