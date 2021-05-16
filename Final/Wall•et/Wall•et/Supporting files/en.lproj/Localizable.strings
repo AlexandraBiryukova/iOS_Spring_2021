@@ -7,7 +7,7 @@
 */
 
 // MARK: - AmountTextField
-"AmountTextField.placeHolder" = "Сумма транзакции";
+"AmountTextField.placeHolder" = "Transaction amount";
 
 // MARK: - AppLanguage
 "AppLanguage.current" = "Русский";
@@ -22,73 +22,73 @@
 "AppLanguage.kk.inEnglishLanguage" = "Kazakh";
 
 // MARK: - CORE
-"Core.cancel" = "Отмена";
-"Core.go" = "Перейти";
-"Core.done" = "Готово";
-"Core.next" = "Далее";
-"Core.no" = "Нет";
-"Core.yes" = "Да";
-"Core.save" = "Сохранить";
-"Core.delete" = "Удалить";
-"Core.notFound" = "Здесь ничего нет";
-"Core.filter" = "Фильтр";
+"Core.cancel" = "Cancel";
+"Core.go" = "Go";
+"Core.done" = "Done";
+"Core.next" = "Next";
+"Core.no" = "No";
+"Core.yes" = "Yes";
+"Core.save" = "Save";
+"Core.delete" = "Delete";
+"Core.notFound" = "There's nothing here";
+"Core.filter" = "Filter";
 
 // MARK: - Filter
-"Filter.Category.all" = "Все";
-"Filter.Category.products" = "Еда и продукты";
-"Filter.Category.clothes" = "Одежда и обувь";
-"Filter.Count.none" = "Любое";
-"Filter.apply" = "Применить";
-"Filter.reset" = "Сбросить";
-"Filter.startDate" = "С какой даты";
-"Filter.endDate" = "До какой даты";
-"Filter.period" = "Период транзакций";
-"Filter.onlyFav" = "Только избранные";
-"Filter.count" = "Количество транзакций";
+"Filter.Category.all" = "All";
+"Filter.Category.products" = "Food and products";
+"Filter.Category.clothes" = "Clothes and shoes";
+"Filter.Count.none" = "Any";
+"Filter.apply" = "Apply";
+"Filter.reset" = "Reset";
+"Filter.startDate" = "From";
+"Filter.endDate" = "Until";
+"Filter.period" = "Transactions period";
+"Filter.onlyFav" = "Only favourites";
+"Filter.count" = "Transactions count";
 
 // MARK: - Home
-"Home.recent" = "Недавние транзакции";
+"Home.recent" = "Recent transactions";
 
 // MARK: - ImagePickerService
-"ImagePickerService.cameraPermissionDeniedTitle" = "Чтобы продолжить, перейдите в системные настройки и разрешите доступ к камере";
-"ImagePickerService.photoLibraryPermissionDeniedTitle" = "Чтобы продолжить, перейдите в системные настройки и разрешите доступ к галерее";
-"ImagePickerService.camera" = "Сделать фото";
-"ImagePickerService.photoLibrary" = "Выбрать из галереи";
+"ImagePickerService.cameraPermissionDeniedTitle" = "To continue, go to system preferences and allow access to the camera";
+"ImagePickerService.photoLibraryPermissionDeniedTitle" = "To continue, go to system preferences and allow access to the gallery";
+"ImagePickerService.camera" = "Make a photo";
+"ImagePickerService.photoLibrary" = "Choose from gallery";
 
 // MARK: - PhoneNumberTextfield
-"PhoneNumberTextField.placeholder" = "Номер телефона";
+"PhoneNumberTextField.placeholder" = "Phone number";
 
 // MARK: - Place
-"Place.add" = "Добавить место транзакции";
-"Place.edit" = "Редактировать место";
-"Place.address" = "Адрес";
-"Place.addToFav" = "Добавить в избранное";
-"Place.category" = "Категория";
-"Place.workTime" = "ГРАФИК РАБОТЫ МЕСТА";
-"Place.openTime" = "Время открытия";
-"Place.closeTime" = "Время закрытия";
-"Place.whyTitle" = "Зачем добавлять места транзакций?";
-"Place.whyDescription" = "С их помощью Вы сможете выявить, где больше всего Вы тратите свои деньги. Созданные Вами транзакции можно будет привязать к любому из мест.";
-"Place.whyAction" = "Понятно";
+"Place.add" = "Choose transaction place";
+"Place.edit" = "Edit place";
+"Place.address" = "Address";
+"Place.addToFav" = "Add to favourites";
+"Place.category" = "Category";
+"Place.workTime" = "SCHEDULE OF WORK PLACE";
+"Place.openTime" = "Open time";
+"Place.closeTime" = "Close time";
+"Place.whyTitle" = "Why add transaction locations?";
+"Place.whyDescription" = "With their help, you will be able to identify where most of all you spend your money. The transactions you have created can be linked to any of the locations.";
+"Place.whyAction" = "OK";
 
 // MARK: - Places
-"Places.noPlace" = "На данный момент Вы не добавили ни одного места транзакции. Добавить их можно в соответствущем разделе приложения";
-"Places.choose" = "Выбрать место";
-"Places.delete" = "Удалить место";
+"Places.noPlace" = "At the moment, you have not added a single transaction location. You can add them in the appropriate section of the application.";
+"Places.choose" = "Choose place";
+"Places.delete" = "Delete place";
 
 // MARK: - Profile
-"Profile.changePhoto" = "Изменить фото";
-"Profile.login" = "Логин";
-"Profile.firstName" = "Имя";
-"Profile.lastName" = "Фамилия";
+"Profile.changePhoto" = "Change photo";
+"Profile.login" = "Login";
+"Profile.firstName" = "First name";
+"Profile.lastName" = "Last name";
 "Profile.email" = "E-mail";
-"Profile.generalInfo" = "Общая информация";
-"Profile.language" = "Язык";
-"Profile.statistics" = "Статистика";
-"Profile.paymentTypes" = "Типы оплаты";
-"Profile.transactionsCount" = "Кол-во транзакций: %d";
-"Profile.transactionPlaces" = "Категории мест транзакций";
-"Profile.placeTransactions" = "Транзакции мест";
+"Profile.generalInfo" = "General info";
+"Profile.language" = "Language";
+"Profile.statistics" = "Statistics";
+"Profile.paymentTypes" = "Payment types";
+"Profile.transactionsCount" = "Transactions count: %d";
+"Profile.transactionPlaces" = "Transaction place categories";
+"Profile.placeTransactions" = "Place transactions";
 
 // MARK: - TabView
 "Tab.profile" = "Profile";
@@ -96,18 +96,18 @@
 "Tab.home" = "Home";
 
 // MARK: - Transaction
-"Transaction.cash" = "Оплата наличными";
-"Transaction.card" = "Оплата картой";
-"Transaction.place" = "Место транзакции";
-"Transaction.noPlace" = "Не указано место транзакции. Его можно выбрать из Ваших мест транзакций";
-"Transaction.choosePlace" = "Выбрать место транзакции";
+"Transaction.cash" = "Cash payment";
+"Transaction.card" = "Card payment";
+"Transaction.place" = "Transaction place";
+"Transaction.noPlace" = "Transaction location not specified. It can be selected from your transaction locations";
+"Transaction.choosePlace" = "Choose transaction place";
 
 // MARK: - TransactionCreate
-"TransactionCreate.choosePhoto" = "Выбрать фото";
-"TransactionCreate.name" = "Название";
-"TransactionCreate.description" = "Дополнительное описание";
-"TransactionCreate.paymentType" = "Тип оплаты";
-"TransactionCreate.date" = "Дата транзакции";
-"TransactionCreate.time" = "Время транзакции";
-"TransactionCreate.add" = "Добавить";
-"TransactionCreate.addTransaction" = "Добавить транзакцию";
+"TransactionCreate.choosePhoto" = "Choose photo";
+"TransactionCreate.name" = "Name";
+"TransactionCreate.description" = "Additional description";
+"TransactionCreate.paymentType" = "Payment time";
+"TransactionCreate.date" = "Transaction date";
+"TransactionCreate.time" = "Transaction time";
+"TransactionCreate.add" = "Add";
+"TransactionCreate.addTransaction" = "Add transaction";
