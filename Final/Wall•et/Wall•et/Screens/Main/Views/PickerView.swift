@@ -50,7 +50,7 @@ struct PickerView<Item: PickerItem>: View {
                 Image(systemName: icon)
                     .resizable()
                     .frame(width: 24, height: 24)
-                    .foregroundColor(Color(Assets.primary.color))
+                    .gradientForeground(colors: [Color(Assets.primary.color), Color(Assets.secondary.color)])
             }
             Text(title)
                 .font(.system(size: 16))

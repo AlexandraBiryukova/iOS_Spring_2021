@@ -10,6 +10,7 @@ import SwiftUI
 
 struct ImagePicker: UIViewControllerRepresentable {
     @Environment(\.presentationMode) var presentationMode
+    @Binding var image: UIImage?
     @Binding var data: Data?
     let sourceType: UIImagePickerController.SourceType?
     
@@ -42,6 +43,7 @@ class PickerCoordinator: NSObject, UINavigationControllerDelegate, UIImagePicker
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
         if let uiImage = info[.originalImage] as? UIImage {
+            parent.image = uiImage
             parent.data = uiImage.pngData()
         }
         

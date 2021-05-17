@@ -5,24 +5,31 @@
 //  Created by Alexandra Biryukova on 5/10/21.
 //
 
+import KeychainAccess
 import SwiftUI
 
 struct ProfileView: View {
-    @State private var profile = Profile()
+    @State private var profile: Profile
     @State private var presentInfo = false
+    @State private var presentStatistics = false
     @State private var currentLanguage = AppLanguage.current
     @State private var rotateDegrees: Double = 0
     @State private var wasRotated = false
     
     private let formatter = PropertyFormatter(appLanguage: .current)
+    private let appStorage: AppStorage
+    
+    init() {
+        appStorage = .init(keychain: Keychain(), userDefaults: UserDefaults.standard)
+        _profile = .init(initialValue: appStorage.profile)
+    }
     
     var icon: some View {
         var imageView: Image
         if wasRotated {
             imageView = Image(uiImage: .init())
         } else {
-            if let data = profile.data,
-               let image = UIImage(data: data) {
+            if let image = profile.image {
                 imageView = Image(uiImage: image)
             } else {
                 imageView = Image(uiImage: Assets.launchBackground.image)
@@ -79,7 +86,7 @@ struct ProfileView: View {
         .frame(width: 240, height: 240)
         .clipShape(Circle())
         .shadow(color: Color(Assets.black.color).opacity(0.5), radius: 16, x: 0, y: 12)
-        .overlay(Circle().stroke(Color(Assets.primary.color), lineWidth: 8))
+        .overlay(Circle().stroke(LinearGradient(gradient: .init(colors: [Color(Assets.primary.color), Color(Assets.secondary.color)]), startPoint: .top, endPoint: .bottom), lineWidth: 8))
         .rotation3DEffect(.degrees(rotateDegrees), axis: (x:0, y:1, z:0))
         .onTapGesture {
             withAnimation(.linear(duration: 1)) {
@@ -103,11 +110,15 @@ struct ProfileView: View {
                         .padding(.top, 24)
                 }
                 VStack(alignment: .leading, spacing: 12) {
-                    PickerView(selectedItem: .constant(Placeholder()), items: [], title: "Общая информация", icon: "rectangle.stack.person.crop"){
+                    PickerView(selectedItem: .constant(Placeholder()), items: [], title: L10n.profileGeneralInfo, icon: "rectangle.stack.person.crop"){
                         presentInfo = true
                     }
                     .padding(.horizontal, 16)
-                    PickerView(selectedItem: $currentLanguage, items: [], title: "Язык", icon: "globe") {
+                    PickerView(selectedItem: .constant(Placeholder()), items: [], title: L10n.profileStatistics, icon: "hourglass.bottomhalf.fill") {
+                        presentStatistics = true
+                    }
+                    .padding(.horizontal, 16)
+                    PickerView(selectedItem: $currentLanguage, items: [], title: L10n.profileLanguage, icon: "globe") {
                         UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!)
                     }
                     .padding(.horizontal, 16)
@@ -118,10 +129,16 @@ struct ProfileView: View {
             .navigationBarTitle(L10n.tabProfile, displayMode: .large)
         }
         .padding(.top)
-        .sheet(isPresented: $presentInfo, onDismiss: {
+        .sheet(isPresented: .constant($presentInfo.wrappedValue || $presentStatistics.wrappedValue), onDismiss: {
             presentInfo = false
+            presentStatistics = false
+            appStorage.updateProfile(profile: profile)
         }) {
-            ProfileInfoView(presentProfileInfo: $presentInfo, profile: $profile)
+            if presentInfo {
+                ProfileInfoView(presentProfileInfo: $presentInfo, profile: $profile)
+            } else {
+                ProfileStatisticsView(presentStatistics: $presentStatistics)
+            }
         }
     }
 }

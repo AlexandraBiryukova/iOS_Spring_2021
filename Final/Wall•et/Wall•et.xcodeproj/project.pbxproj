@@ -36,7 +36,6 @@
 		A835BB7E26482CB900EB83BE /* ImagePickerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A835BB7D26482CB800EB83BE /* ImagePickerService.swift */; };
 		A835BB8D2648318F00EB83BE /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A835BB8C2648318F00EB83BE /* AlertView.swift */; };
 		A835BB902648483200EB83BE /* ImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A835BB8F2648483200EB83BE /* ImagePickerView.swift */; };
-		A835BB932648487C00EB83BE /* ImageCropperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A835BB922648487B00EB83BE /* ImageCropperView.swift */; };
 		A835BB9A26493F8800EB83BE /* FilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A835BB9926493F8700EB83BE /* FilterView.swift */; };
 		A85183FE26494FB000FED8EC /* SelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85183FD26494FB000FED8EC /* SelectView.swift */; };
 		A8518401264966DF00FED8EC /* ToggleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8518400264966DF00FED8EC /* ToggleView.swift */; };
@@ -47,6 +46,10 @@
 		A85184132649AD5D00FED8EC /* View+AnimationCompletion.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85184122649AD5D00FED8EC /* View+AnimationCompletion.swift */; };
 		A85184162649B22B00FED8EC /* ProfileInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85184152649B22A00FED8EC /* ProfileInfoView.swift */; };
 		A851841A2649B59400FED8EC /* PhoneNumberTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85184192649B59400FED8EC /* PhoneNumberTextFieldView.swift */; };
+		A8C16D62264FD58800F9CCB1 /* AppStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C16D61264FD58800F9CCB1 /* AppStorage.swift */; };
+		A8C16D7026500ACC00F9CCB1 /* ProfileStatisticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C16D6F26500ACB00F9CCB1 /* ProfileStatisticsView.swift */; };
+		A8C16D7326500C9F00F9CCB1 /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C16D7226500C9F00F9CCB1 /* ProgressBar.swift */; };
+		A8C16D77265036EB00F9CCB1 /* ProfileStatisticsGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C16D76265036E900F9CCB1 /* ProfileStatisticsGraphView.swift */; };
 		A8CC21E82646A96A00CA38A4 /* HomeTransactionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8CC21E72646A96A00CA38A4 /* HomeTransactionsView.swift */; };
 		A8CC21EE2646AB7900CA38A4 /* HomeTransactionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8CC21EC2646AB7900CA38A4 /* HomeTransactionCell.xib */; };
 		A8CC21EF2646AB7900CA38A4 /* HomeTransactionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8CC21ED2646AB7900CA38A4 /* HomeTransactionCell.swift */; };
@@ -103,7 +106,6 @@
 		A835BB7D26482CB800EB83BE /* ImagePickerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerService.swift; sourceTree = "<group>"; };
 		A835BB8C2648318F00EB83BE /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
 		A835BB8F2648483200EB83BE /* ImagePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerView.swift; sourceTree = "<group>"; };
-		A835BB922648487B00EB83BE /* ImageCropperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCropperView.swift; sourceTree = "<group>"; };
 		A835BB9926493F8700EB83BE /* FilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterView.swift; sourceTree = "<group>"; };
 		A85183FD26494FB000FED8EC /* SelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectView.swift; sourceTree = "<group>"; };
 		A8518400264966DF00FED8EC /* ToggleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleView.swift; sourceTree = "<group>"; };
@@ -114,6 +116,10 @@
 		A85184122649AD5D00FED8EC /* View+AnimationCompletion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+AnimationCompletion.swift"; sourceTree = "<group>"; };
 		A85184152649B22A00FED8EC /* ProfileInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInfoView.swift; sourceTree = "<group>"; };
 		A85184192649B59400FED8EC /* PhoneNumberTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumberTextFieldView.swift; sourceTree = "<group>"; };
+		A8C16D61264FD58800F9CCB1 /* AppStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStorage.swift; sourceTree = "<group>"; };
+		A8C16D6F26500ACB00F9CCB1 /* ProfileStatisticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileStatisticsView.swift; sourceTree = "<group>"; };
+		A8C16D7226500C9F00F9CCB1 /* ProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBar.swift; sourceTree = "<group>"; };
+		A8C16D76265036E900F9CCB1 /* ProfileStatisticsGraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileStatisticsGraphView.swift; sourceTree = "<group>"; };
 		A8CC21E72646A96A00CA38A4 /* HomeTransactionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTransactionsView.swift; sourceTree = "<group>"; };
 		A8CC21EC2646AB7900CA38A4 /* HomeTransactionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeTransactionCell.xib; sourceTree = "<group>"; };
 		A8CC21ED2646AB7900CA38A4 /* HomeTransactionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTransactionCell.swift; sourceTree = "<group>"; };
@@ -253,6 +259,7 @@
 			isa = PBXGroup;
 			children = (
 				A806A6A326468C7C00951373 /* AppLanguageStorage.swift */,
+				A8C16D61264FD58800F9CCB1 /* AppStorage.swift */,
 			);
 			path = Storages;
 			sourceTree = "<group>";
@@ -294,12 +301,12 @@
 				A835BB7626480C1700EB83BE /* DateView.swift */,
 				A835BB682647E27300EB83BE /* EmptyView.swift */,
 				A835BB8F2648483200EB83BE /* ImagePickerView.swift */,
-				A835BB922648487B00EB83BE /* ImageCropperView.swift */,
 				A806A6782646864000951373 /* MainTabView.swift */,
 				A835BB7926480C2E00EB83BE /* PickerView.swift */,
 				A85183FD26494FB000FED8EC /* SelectView.swift */,
 				A8518400264966DF00FED8EC /* ToggleView.swift */,
 				A85184192649B59400FED8EC /* PhoneNumberTextFieldView.swift */,
+				A8C16D7226500C9F00F9CCB1 /* ProgressBar.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -364,6 +371,8 @@
 			children = (
 				A85184152649B22A00FED8EC /* ProfileInfoView.swift */,
 				A851840B26497AD600FED8EC /* ProfileView.swift */,
+				A8C16D6F26500ACB00F9CCB1 /* ProfileStatisticsView.swift */,
+				A8C16D76265036E900F9CCB1 /* ProfileStatisticsGraphView.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -424,12 +433,12 @@
 		A8CC22092646ADDB00CA38A4 /* Foundation */ = {
 			isa = PBXGroup;
 			children = (
-				A8CC220A2646ADDB00CA38A4 /* Date+Convenience.swift */,
-				A8CC220B2646ADDB00CA38A4 /* Extensions */,
 				A8CC22112646ADDB00CA38A4 /* Atomic.swift */,
 				A8CC22122646ADDB00CA38A4 /* Observable.swift */,
 				A8CC22132646ADDB00CA38A4 /* Device.swift */,
 				A8CC22142646ADDB00CA38A4 /* ValidationRule.swift */,
+				A8CC220A2646ADDB00CA38A4 /* Date+Convenience.swift */,
+				A8CC220B2646ADDB00CA38A4 /* Extensions */,
 			);
 			path = Foundation;
 			sourceTree = "<group>";
@@ -644,17 +653,19 @@
 				A806A69F26468BD100951373 /* AppLanguage.swift in Sources */,
 				A806A69A26468BA900951373 /* Assets.generated.swift in Sources */,
 				A8CC22162646ADDB00CA38A4 /* Array+Factory.swift in Sources */,
+				A8C16D77265036EB00F9CCB1 /* ProfileStatisticsGraphView.swift in Sources */,
 				A85184132649AD5D00FED8EC /* View+AnimationCompletion.swift in Sources */,
 				A8CC22242646AFA800CA38A4 /* UICollectionView+Register.swift in Sources */,
+				A8C16D62264FD58800F9CCB1 /* AppStorage.swift in Sources */,
 				A851840726496B0600FED8EC /* PlaceDetailView.swift in Sources */,
 				A8CC221A2646ADDB00CA38A4 /* Observable.swift in Sources */,
 				A835BB7E26482CB900EB83BE /* ImagePickerService.swift in Sources */,
 				A8CC222C2646B17D00CA38A4 /* HomeViewModel.swift in Sources */,
 				A806A6B026469A3400951373 /* BannerView.swift in Sources */,
 				A835BB702647EEED00EB83BE /* AmountTextFieldView.swift in Sources */,
+				A8C16D7026500ACC00F9CCB1 /* ProfileStatisticsView.swift in Sources */,
 				A835BB7426480BAB00EB83BE /* PrimaryButton.swift in Sources */,
 				A835BB622647104400EB83BE /* PlaceView.swift in Sources */,
-				A835BB932648487C00EB83BE /* ImageCropperView.swift in Sources */,
 				A8CC221B2646ADDB00CA38A4 /* Device.swift in Sources */,
 				A835BB7726480C1700EB83BE /* DateView.swift in Sources */,
 				A85183FE26494FB000FED8EC /* SelectView.swift in Sources */,
@@ -662,6 +673,7 @@
 				A835BB8D2648318F00EB83BE /* AlertView.swift in Sources */,
 				A85184102649ACF200FED8EC /* Profile.swift in Sources */,
 				A8CC21F42646ABAE00CA38A4 /* HomeTransactionCellModel.swift in Sources */,
+				A8C16D7326500C9F00F9CCB1 /* ProgressBar.swift in Sources */,
 				A8CC21FB2646AC1E00CA38A4 /* TransactionPlace.swift in Sources */,
 				A835BB542646EFD800EB83BE /* TransactionView.swift in Sources */,
 				A8CC22252646AFA800CA38A4 /* UICollectionView+Dequeue.swift in Sources */,

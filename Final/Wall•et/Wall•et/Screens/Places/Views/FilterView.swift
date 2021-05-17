@@ -32,30 +32,30 @@ struct FilterView: View {
             ScrollView(showsIndicators: false) {
                 VStack(alignment: .leading, spacing: 24) {
                     VStack(spacing: 12) {
-                        PickerView(selectedItem: $filterModel.category, items: FilterCategory.allCases, title: "Категория")
+                        PickerView(selectedItem: $filterModel.category, items: FilterCategory.allCases, title: L10n.placeCategory)
                             .padding(.horizontal, 16)
-                        PickerView(selectedItem: $filterModel.count, items: TransactionsCount.allCases, title: "Количество транзакций")
+                        PickerView(selectedItem: $filterModel.count, items: TransactionsCount.allCases, title: L10n.filterCount)
                             .padding(.horizontal, 16)
-                        ToggleView(isEnabled: $filterModel.onlyFavourites, title: "Только избранные")
+                        ToggleView(isEnabled: $filterModel.onlyFavourites, title: L10n.filterOnlyFav)
                             .padding(.horizontal, 16)
                     }
-                    SelectView(isSelected: $filterModel.usingPeriod, title: "ПЕРИОД ТРАНЗАКЦИЙ")
+                    SelectView(isSelected: $filterModel.usingPeriod, title: L10n.filterPeriod.uppercased())
                         .padding(.horizontal, 16)
                     if $filterModel.usingPeriod.wrappedValue {
                         VStack(spacing: 12) {
-                            DateView(date: $filterModel.startDate, title: "C какой даты", type: .date)
+                            DateView(date: $filterModel.startDate, title: L10n.filterStartDate, type: .date)
                                 .padding(.horizontal, 16)
-                            DateView(date: $filterModel.endDate, title: "До какой даты", type: .date)
+                            DateView(date: $filterModel.endDate, title: L10n.filterEndDate, type: .date)
                                 .padding(.horizontal, 16)
                         }
                     }
                     VStack(alignment: .center, spacing: 12) {
-                        SecondaryButton(title: "Cбросить", color: Assets.red, image: nil, action: {
+                        SecondaryButton(title: L10n.filterReset, color: Assets.red, image: nil, action: {
                             filterModel = .init()
                             onFilterSelect(filterModel)
                         })
                         .padding(.horizontal, 16)
-                        PrimaryButton(title: "Применить", color: Assets.primary, image: nil, action: {
+                        PrimaryButton(title: L10n.filterApply, color: Assets.primary, image: nil, action: {
                             onFilterSelect(filterModel)
                             presentFilter = false
                         })
@@ -66,7 +66,7 @@ struct FilterView: View {
                 .frame(width: UIScreen.main.bounds.width)
             }
             .padding(.horizontal, 16)
-            .navigationBarTitle("Фильтр", displayMode: .inline)
+            .navigationBarTitle(L10n.coreFilter, displayMode: .inline)
             .navigationBarItems(leading: closeButton)
         }
         .padding(.top)

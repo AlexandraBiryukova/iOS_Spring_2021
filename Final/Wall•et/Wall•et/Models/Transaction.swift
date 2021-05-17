@@ -13,9 +13,9 @@ enum TransactionType: String, Codable, CaseIterable, PickerItem {
     var title: String {
         switch self {
         case .cash:
-            return "Оплата наличными"
+            return L10n.transactionCash
         case .card:
-            return "Оплата картой"
+            return L10n.transactionCard
         }
     }
     
@@ -29,7 +29,7 @@ enum TransactionType: String, Codable, CaseIterable, PickerItem {
     }
 }
 
-struct Transaction: Identifiable, Codable {
+struct Transaction: Identifiable, Codable, Hashable {
     var id = UUID()
     var data: Data?
     var name: String
@@ -37,7 +37,7 @@ struct Transaction: Identifiable, Codable {
     var amount: Double
     var type: TransactionType
     var createDate: Date
-    var place: TransactionPlace?
+    var placeId: UUID?
     
     init(name: String = "",
          data: Data? = nil,
@@ -45,13 +45,17 @@ struct Transaction: Identifiable, Codable {
          amount: Double = 0,
          type: TransactionType = .cash,
          createDate: Date = Date(),
-         place: TransactionPlace? = nil) {
+         placeId: UUID? = nil) {
         self.name = name
         self.data = data
         self.description = description
         self.amount = amount
         self.type = type
         self.createDate = createDate
-        self.place = place
+        self.placeId = placeId
+    }
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
     }
 }

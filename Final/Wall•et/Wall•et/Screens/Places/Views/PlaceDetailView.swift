@@ -15,13 +15,13 @@ struct PlaceDetailView: View {
         var title: String {
             switch self {
             case .create:
-                return "Добавить место транзакции"
+                return L10n.placeAdd
             case .edit:
-                return "Редактировать место"
+                return L10n.placeEdit
             }
         }
         var actionTitle: String {
-            self == .create ? "Добавить" : "Сохранить"
+            self == .create ? L10n.transactionCreateAdd : L10n.coreSave
         }
     }
     
@@ -66,32 +66,32 @@ struct PlaceDetailView: View {
                 }
                 VStack(alignment: .leading, spacing: 24) {
                     VStack(alignment: .center, spacing: 12) {
-                        BaseTextFieldView(text: $place.name, placeholder: "Название")
+                        BaseTextFieldView(text: $place.name, placeholder: L10n.transactionCreateName)
                             .padding(.horizontal, 16)
-                        BaseTextFieldView(text: $place.address, placeholder: "Адрес")
+                        BaseTextFieldView(text: $place.address, placeholder: L10n.placeAddress)
                             .padding(.horizontal, 16)
-                        BaseTextFieldView(text: $place.description, placeholder: "Дополнительное описание")
+                        BaseTextFieldView(text: $place.description, placeholder: L10n.transactionCreateDescription)
                             .padding(.horizontal, 16)
                     }
                     VStack(spacing: 12) {
-                        PickerView(selectedItem: $place.category, items: FilterCategory.allCases, title: "Категория")
+                        PickerView(selectedItem: $place.category, items: FilterCategory.allCases, title: L10n.placeCategory)
                             .padding(.horizontal, 16)
-                        ToggleView(isEnabled: $place.isFavourite, title: "Добавить в избранное")
+                        ToggleView(isEnabled: $place.isFavourite, title: L10n.placeAddToFav)
                             .padding(.horizontal, 16)
                     }
-                    SelectView(isSelected: $showWorkTime, title: "ГРАФИК РАБОТЫ МЕСТА")
+                    SelectView(isSelected: $showWorkTime, title: L10n.placeWorkTime)
                         .padding(.horizontal, 16)
                     if $showWorkTime.wrappedValue {
                         VStack(spacing: 12) {
-                            DateView(date: $place.openTime, title: "Время открытия", type: .hourAndMinute)
+                            DateView(date: $place.openTime, title: L10n.placeOpenTime, type: .hourAndMinute)
                                 .padding(.horizontal, 16)
-                            DateView(date: $place.closeTime, title: "Время закрытия", type: .hourAndMinute)
+                            DateView(date: $place.closeTime, title: L10n.placeCloseTime, type: .hourAndMinute)
                                 .padding(.horizontal, 16)
                         }
                     }
                     VStack(alignment: .center, spacing: 12) {
                         if viewState == .create {
-                            SecondaryButton(title: "Зачем добавлять места транзакций?", color: Assets.primary, image: nil, action: {
+                            SecondaryButton(title: L10n.placeWhyTitle, color: Assets.primary, image: nil, action: {
                                 showAlert = true
                             })
                             .padding(.horizontal, 16)
@@ -113,8 +113,8 @@ struct PlaceDetailView: View {
         }
         .padding(.top)
         .alert(isPresented: $showAlert, content: {
-            Alert(title: Text("Зачем добавлять места транзакций?"),
-                  message: Text("С их помощью Вы сможете выявить, где больше всего Вы тратите свои деньги. Созданные Вами транзакции можно будет привязать к любому из мест."), dismissButton: .default(Text("Понятно")))
+            Alert(title: Text(L10n.placeWhyTitle),
+                  message: Text(L10n.placeWhyDescription), dismissButton: .default(Text(L10n.placeWhyAction)))
         })
     }
 }

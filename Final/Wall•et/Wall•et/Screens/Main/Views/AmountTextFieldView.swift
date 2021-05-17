@@ -9,7 +9,7 @@ import SwiftUI
 
 struct AmountTextFieldView: View {
     @Binding var value: Double
-    var placeholder: String = "Сумма транзакции"
+    var placeholder: String = L10n.amountTextFieldPlaceHolder
     @State var isEditing = false
     
     init(amount: Binding<Double>) {

@@ -48,7 +48,7 @@ struct PlacesView: View {
                 showPlaceDetail = true
                 place = .init()
             }, label: {
-                Text("Добавить")
+                Text(L10n.transactionCreateAdd)
             })
         }
     }
@@ -59,7 +59,7 @@ struct PlacesView: View {
                 VStack(alignment: .center, spacing: 8) {
                     VStack {
                         HStack {
-                            Text("Фильтр")
+                            Text(L10n.coreFilter)
                                 .foregroundColor(Color(Assets.primary.color))
                                 .font(.system(size: 18, weight: .medium))
                             Spacer()
@@ -79,23 +79,44 @@ struct PlacesView: View {
                         presentFilter = true
                     }
                     if placesViewModel.places.isEmpty {
-                        EmptyView(icon: .system(name: "mappin.and.ellipse"), title: "Здесь ничего нет", description: "На данный момент Вы не добавили ни одного места транзакции. Добавить их можно в соответствущем разделе приложения")
-                    }
-                    ForEach(placesViewModel.places) { place in
-                        PlaceView(place: place)
-                            .padding(.horizontal, 16)
-                            .shadow(color: Color(Assets.black.color).opacity(0.2), radius: 8, x: 0, y: 0)
-                            .onTapGesture {
-                                switch viewState {
-                                case .view:
-                                    transaction?.place = place
-                                    onTransactionChange()
-                                    self.presentPlaces = false
-                                default:
-                                    showPlaceDetail = true
-                                    self.place = place
+                        EmptyView(icon: .system(name: "mappin.and.ellipse"), title: L10n.coreNotFound, description: L10n.placesNoPlace)
+                    } else {
+                        ForEach(placesViewModel.places) { place in
+                            PlaceView(place: place)
+                                .padding(.horizontal, 16)
+                                .shadow(color: Color(Assets.black.color).opacity(0.2), radius: 8, x: 0, y: 0)
+                                .onTapGesture {
+                                    switch viewState {
+                                    case .view:
+                                        transaction?.placeId = place.id
+                                        onTransactionChange()
+                                        self.presentPlaces = false
+                                    default:
+                                        showPlaceDetail = true
+                                        self.place = place
+                                    }
+                                }.contextMenu {
+                                    Button {
+                                        switch viewState {
+                                        case .view:
+                                            transaction?.placeId = place.id
+                                            onTransactionChange()
+                                            self.presentPlaces = false
+                                        default:
+                                            showPlaceDetail = true
+                                            self.place = place
+                                        }
+                                    } label: {
+                                        Label(viewState == .view ? L10n.placesChoose : L10n.placeEdit,
+                                              systemImage: "mappin.and.ellipse")
+                                    }
+                                    Button {
+                                        placesViewModel.removePlace(place: place)
+                                    } label: {
+                                        Label(L10n.placesDelete, systemImage: "xmark.bin")
+                                    }
                                 }
-                            }
+                        }
                     }
                     Spacer()
                 }
@@ -121,7 +142,9 @@ struct PlacesView: View {
                     placesViewModel.getPlaces()
                 })
             }
-        }
+        }.onAppear(perform: {
+            placesViewModel.getPlaces()
+        })
     }
 }
 

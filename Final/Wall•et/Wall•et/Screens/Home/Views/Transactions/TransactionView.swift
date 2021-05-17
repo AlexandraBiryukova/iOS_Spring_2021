@@ -5,6 +5,7 @@
 //  Created by Alexandra Biryukova on 5/8/21.
 //
 
+import KeychainAccess
 import SwiftUI
 
 struct TransactionView: View {
@@ -12,6 +13,7 @@ struct TransactionView: View {
     @State var presentPlaces = false
     private let onTransactionChange: () -> Void
     private let formatter = PropertyFormatter(appLanguage: .current)
+    private let storage = AppStorage(keychain: Keychain(), userDefaults: UserDefaults.standard)
     
     init(transaction: Binding<Transaction?>, onTransactionChange: @escaping () -> Void) {
         _transaction = transaction
@@ -72,19 +74,20 @@ struct TransactionView: View {
                                 )
                         }
                         VStack(alignment: .leading, spacing: 8) {
-                            Text("МЕСТО ТРАНЗАКЦИИ")
+                            Text(L10n.transactionPlace.uppercased())
                                 .font(.system(size: 14))
                                 .padding(.horizontal)
                                 .foregroundColor(Color(Assets.gray2.color))
-                            if let place = transaction.place {
+                            if let placeId = transaction.placeId,
+                               let place = storage.places.first(where: { ($0.id == placeId) })  {
                                 PlaceView(place: place)
                                     .padding(.horizontal, 16)
                                     .shadow(color: Color(Assets.black.color).opacity(0.2), radius: 8, x: 0, y: 0)
                             } else {
                                 EmptyView(icon: .system(name: "location.viewfinder"),
-                                          title: "Здесь ничего нет",
-                                          description: "Не указано место транзакции. Его можно выбрать из Ваших мест транзакций",
-                                          actionTitle: "Выбрать место транзакции",
+                                          title: L10n.coreNotFound,
+                                          description: L10n.transactionNoPlace,
+                                          actionTitle: L10n.transactionChoosePlace,
                                           action: { presentPlaces = true })
                             }
                         }
@@ -107,7 +110,7 @@ struct TransactionView: View {
 
 struct TransactionView_Previews: PreviewProvider {
     static var previews: some View {
-        TransactionView(transaction: .constant(Transaction(name: "test", description: "test", amount: 1000, type: .card, createDate: Date(), place: nil)), onTransactionChange: {})
+        TransactionView(transaction: .constant(Transaction(name: "test", description: "test", amount: 1000, type: .card, createDate: Date(), placeId: nil)), onTransactionChange: {})
             .previewDevice("iPhone 11 Pro Max")
     }
 }

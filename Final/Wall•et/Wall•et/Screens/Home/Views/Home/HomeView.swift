@@ -25,11 +25,11 @@ struct HomeView: View {
                         .padding(.vertical, 16)
                         .padding(.horizontal)
                     }
-                    Text("НЕДАВНИЕ ТРАНЗАКЦИИ")
+                    Text(L10n.homeRecent.uppercased())
                         .font(.system(size: 14))
                         .padding(.horizontal)
                         .foregroundColor(Color(Assets.gray2.color))
-                    SecondaryButton(title: "Добавить транзакцию", color: Assets.secondary, image: "plus.circle", action: {
+                    SecondaryButton(title: L10n.transactionCreateAddTransaction, color: Assets.secondary, image: "plus.circle", action: {
                         presentTransactionCreate = true
                     })
                     .padding(.horizontal, 16)
@@ -44,8 +44,11 @@ struct HomeView: View {
             .navigationBarTitle(L10n.tabHome, displayMode: .automatic)
         }
         .padding(.top)
-        .sheet(isPresented: .constant(presentTransactionCreate || $transaction.wrappedValue != nil), onDismiss: { presentTransactionCreate = false
-                transaction = nil }) {
+        .sheet(isPresented: .constant(presentTransactionCreate || $transaction.wrappedValue != nil), onDismiss: {
+                presentTransactionCreate = false
+                transaction = nil
+            homeViewModel.updatePlaces()
+        }) {
             if presentTransactionCreate {
                 TransactionCreateView(presentTransactionCreate: $presentTransactionCreate, onTransactionCreate: { transaction in
                     homeViewModel.addTransaction(transaction: transaction)
