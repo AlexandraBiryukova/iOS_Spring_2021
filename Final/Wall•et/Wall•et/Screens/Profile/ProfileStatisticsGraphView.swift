@@ -47,6 +47,7 @@ struct LineGraph: Shape {
         }
         
         return Path { p in
+            guard dataPoints.count > 0 else { return }
             let start = dataPoints[0]
             p.move(to: CGPoint(x: 0, y: (1-start) * rect.height))
             for idx in dataPoints.indices {
